@@ -1,0 +1,254 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+	<!-- Contenido -->
+	<section class="content">
+		<form role="form" name="route">
+			<div class="row">
+				<button class="btn btn-danger pull-left"
+				data-toggle="tooltip" 
+		        data-placement="top" 
+		        data-html="true"
+		        data-original-title="Registre una nueva ruta si esta no aparece al buscar <br> en Origen y/o Destino"
+		        ng-click="showModal = true">Crear Ruta</button>
+			</div>
+			<div class="row">
+				<fieldset ng-repeat="field in fieldsets"
+					style="position: relative;">
+					<legend>Ruta {{$index + 1}}</legend>
+					<button class="btn btn-danger" id="newPrice{{$index}}" ng-click="addNewPrice(field.Id)">
+						Nueva Tarifa
+					</button>
+					
+					<button id="btn-{{$index + 1}}" class="btn btn-small btn-danger"
+						style="position: absolute; top: .6rem; right: .01rem;"
+						ng-click="removeRoute(field.Id)">x</button>
+
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>{{'PROVEEDORES.Registro.registroProveedores.tabElement.labelOrigen' | translate}}:</label>
+								<div class="input-group">
+									<span class="input-group-addon"> <i
+										class="fa fa-map-marker" aria-hidden="true"></i>
+									</span>  
+									<select 
+										ng-model="field.origin"
+										class="form-control" select2
+										data-minimum-results-for-search="Infinity"
+										name="estadoRemi" id="estadoRemi"
+										ng-options="org as org.nbUbicacion for org in origenes | orderBy: 'nbUbicacion'">
+										<option value="">Seleccione</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>{{'PROVEEDORES.Registro.registroProveedores.tabElement.labelDestino' | translate}}:</label>
+								<div class="input-group">
+									<span class="input-group-addon"> <i
+										class="fa fa-map-marker" aria-hidden="true"></i>
+									</span>
+									<select 
+										ng-model="field.destination"
+										class="form-control" select2
+										data-minimum-results-for-search="Infinity"
+										name="detinoConsul" id="detinoConsul"
+										ng-options="dest as dest.nbUbicacion for dest in destinos | orderBy: 'nbUbicacion'">
+										<option value="">Seleccione</option>
+									</select>
+								</div>
+							</div>
+						</div>
+	
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>{{'COTIZACION.Nuevo.categoria'| translate}}:</label>
+								<div class="input-group">
+									<span class="input-group-addon"> <i class="fa fa-list"></i></span>
+									
+									<select 
+										name="category{{$index}}" id="category{{$index}}" class="form-control"
+										select-picker multiple
+										idioma-sp="{{currentLanguage}}"
+										data-actions-box="true"
+										data-selected-text-format="count > 2"
+										ng-model="field.categories" 
+										ng-options="c as c.nbCategoria for c in categories"
+										ng-change="filtraSubcategoria(field.categories)">
+									</select>
+								</div>
+							</div>
+						</div>
+	
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>{{'COTIZACION.Nuevo.subcategoria'| translate}}:</label>
+								<div class="input-group">
+									<span class="input-group-addon"> <i class="fa fa-list"></i></span>
+										<select class="form-control" select2
+											name="subcategory{{$index}}" id="subcategory{{$index}}"
+											multiple="multiple" 
+											data-allow-clear="true"
+											idioma-s2="{{currentLanguage}}"
+											ng-model="field.subcategories"
+											ng-options="sm.nbOpcion group by sm.nbGroup for sm in subcategoriasFiltro">
+										</select>
+								</div>
+							</div>
+						</div>
+					</div>		
+					
+					<div class="row">
+							
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>Tipo de Vehículo:</label>
+								<div class="input-group">
+									<span class="input-group-addon">
+										<i class="fa fa-list-alt"></i>
+									</span>
+									
+									<select name="truck{{$index}}" id="truck{{$index}}" class="form-control"
+										select-picker multiple
+										idioma-sp="{{currentLanguage}}"
+										data-actions-box="true"
+										data-selected-text-format="count > 2"
+										ng-model="field.listTrucks"
+										ng-options="t as t.nbTipoCamion for t in truckTypes">
+									</select>
+								</div>
+							</div>
+						</div>
+	
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>{{'PROVEEDORES.Registro.registroProveedores.tabElement.labelCoin' | translate}}:</label>
+								<div class="input-group">
+									<span class="input-group-addon"> <i
+										class="fa fa-money" aria-hidden="true"></i>
+									</span>
+									<select name="coin{{$index}}" id="coin{{$index}}"  select2 class="form-control"
+										idioma-s2="{{currentLanguage}}" ng-model="field.coin">
+										<option value="">{{'APP.Base.mensaje.seleccioneOpcion'|translate}}</option>
+										<option value="Peso">Peso</option>
+										<option value="Dolar">Dolar</option>
+										<option value="Euro">Euro</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-3" ng-repeat="priceO in field.prices">
+							<div class="form-group"> 
+								<label>Tarifa {{$index + 1}}</label>
+								<div class="input-group">
+									<span class="input-group-addon"> <i
+										class="fa fa-money" aria-hidden="true"></i>
+									</span>
+									<input type="text" name="priceC{{$index}}" id="priceC{{$index}}" ng-model="priceO.price" class="form-control text-right">
+								</div>
+							</div>
+						</div>
+						
+<!-- 						<div class="col-md-3"> -->
+<!-- 							<div class="form-group"> -->
+<!-- 								<label>{{'PROVEEDORES.Registro.registroProveedores.tabElement.labelPrice' | translate}}:</label> -->
+<!-- 								<div class="input-group"> -->
+<!-- 									<span class="input-group-addon"> <i -->
+<!-- 										class="fa fa-money" aria-hidden="true"></i> -->
+<!-- 									</span> -->
+<!-- 									<input type="text" name="price{{$index}}" id="price{{$index}}" ng-model="field.price" class="form-control text-right"> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+						
+<!-- 						<div class="col-md-3"> -->
+<!-- 							<div class="form-group"> -->
+<!-- 								<label>{{'PROVEEDORES.Registro.registroProveedores.tabElement.labelPrice2' | translate}}:</label> -->
+<!-- 								<div class="input-group"> -->
+<!-- 									<span class="input-group-addon"> <i -->
+<!-- 										class="fa fa-money" aria-hidden="true"></i> -->
+<!-- 									</span> -->
+<!-- 									<input type="text" name="priceTwo{{$index}}" id="priceTwo{{$index}}" ng-model="field.priceTwo" class="form-control text-right"> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="row">
+				<a ng-click="addNewRoute()" class="pull-right" target="_self">Nueva
+					ruta</a>
+			</div>
+		</form>
+		
+		<modal visible="showModal" size-modal="md" noescape modalstatic>
+            <modal-header title="Nueva Ruta"></modal-header>
+            <modal-body>
+                <div class="row">
+                	<div class="col-md-6">
+                		<div class="form-group">
+							<label>{{'PROVEEDORES.Registro.registroProveedores.tabElement.labelOrigen' | translate}}:</label>
+							<div class="input-group">
+								<span class="input-group-addon"> <i
+									class="fa fa-map-marker" aria-hidden="true"></i>
+								</span>
+								<input type="text" class="form-control" ng-model="newe.origen">
+							</div>
+						</div>
+                	</div>
+                	
+                	<div class="col-md-6">
+                		<div class="form-group">
+							<label>{{'PROVEEDORES.Registro.registroProveedores.tabElement.labelDestino' | translate}}:</label>
+							<div class="input-group">
+								<span class="input-group-addon"> <i
+									class="fa fa-map-marker" aria-hidden="true"></i>
+								</span>
+								<input type="text" class="form-control" ng-model="newe.destino">
+							</div>
+						</div>
+                	</div>
+                </div>
+                
+                <div class="row">
+                	<div class="col-md-6">
+                		<div class="form-group">
+							<label>Latitud:</label>
+							<div class="input-group">
+								<span class="input-group-addon"> <i
+									class="fa fa-location-arrow" aria-hidden="true"></i>
+								</span>
+								<input type="text" class="form-control" ng-model="newe.latitud">
+							</div>
+						</div>
+                	</div>
+                	
+                	<div class="col-md-6">
+                		<div class="form-group">
+							<label>Longitud:</label>
+							<div class="input-group">
+								<span class="input-group-addon"> <i
+									class="fa fa-location-arrow" aria-hidden="true"></i>
+								</span>
+								<input type="text" class="form-control" ng-model="newe.longitud">
+							</div>
+						</div>
+                	</div>
+                </div>
+            </modal-body>
+            <modal-footer btn-close="Cerrar">
+                <button class="btn btn-danger" ng-click="saveModal()">
+					{{'APP.Base.boton.guardar' | translate}}
+				</button>
+            </modal-footer>
+        </modal>
+
+	</section>
+</body>
+</html>

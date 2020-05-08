@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+</head>
+
+<body>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="box">
+				<div class="text-center">
+					<!-- 					<h3 class="box-title">Origen y Destino</h3> -->
+					<ul class="nav nav-tabs nav-justified">
+						<li ng-class="{'active' : tabSelected === 't1'}"><a
+							ng-click="goTab('t1')">Origen y Destino</a></li>
+						<li ng-class="{'active' : tabSelected === 't2'}"><a
+							ng-click="goTab('t2')">Detalles de Envío</a></li>
+						<li ng-class="{'active' : tabSelected === 't3'}"><a
+							ng-click="goTab('t3')">Información de Contacto</a></li>
+					</ul>
+				</div>
+				<div class="box-body">
+					<div class="form-group" ng-if="tabSelected === 't1'">
+						<div class="row">
+							<div class="col-md-6">
+								<fieldset class="fieldset">
+									<legend class="legendStyle">
+										<a data-toggle="collapse" href="" style="color: black">Origen</a>
+									</legend>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Estado:</label>
+												<div class="input-group">
+													<i class="fa fa-university"></i>&nbsp;&nbsp;
+													{{vo.selectEstadoRemitente.nb_estado}}
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Ciudad:</label>
+												<div class="input-group">
+													<i class="fa fa-building"></i>&nbsp;&nbsp;
+													{{vo.selectCiudadRemitnte.nb_ciudad}}
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Sucursal Origen:</label>
+												<div class="input-group">
+													<i class="fa fa-university"></i>&nbsp;&nbsp;
+													{{vo.SucursalRemitente.nbSucursal}}
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Código Postal:</label>
+												<div class="input-group">
+													<i class="fa fa-address-card-o"></i>&nbsp;&nbsp;
+													{{vo.cdPostalRemitente}}
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+							<div class="col-md-6">
+								<fieldset class="fieldset">
+									<legend class="legendStyle">
+										<a data-toggle="collapse" href="" style="color: black">Destino</a>
+									</legend>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Estado:</label>
+												<div class="input-group">
+													<i class="fa fa-university"></i>&nbsp;&nbsp;
+													{{vo.selectEstadoDest.nb_estado}}
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Ciudad:</label>
+												<div class="input-group">
+													<i class="fa fa-building"></i>&nbsp;&nbsp;
+													{{vo.selectCiudadDest.nb_ciudad}}
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Sucursal Origen:</label>
+												<div class="input-group">
+													<i class="fa fa-university"></i>&nbsp;&nbsp;
+													{{vo.SucursalDest.nbSucursal}}
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Código Postal:</label>
+												<div class="input-group">
+													<i class="fa fa-address-card-o"></i>&nbsp;&nbsp;
+													{{vo.cdPostalDest}}
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group" ng-if="tabSelected === 't2'">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="box box-danger">
+									<div class="box-header text-center">
+										<ul class="nav nav-tabs nav-justified">
+											<li ng-repeat="tab in tabList"
+												ng-class="{'active' : resumeSelected === '{{tab.code}}'}">
+												<a ng-click="goResume(tab.code)">Envío {{$index + 1}}</a>
+											</li>
+										</ul>
+									</div>
+									<div class="box-body">
+										<div class="col-md-12" ng-if="resumeSelected === taba.code"
+											ng-repeat="taba in tabList">
+											
+											<div class="row">
+												<div class="col-md-4">
+													<div class="form-group">
+														<label>Categoría: </label>
+														<div class="input-group">
+															<i class="fa fa-list-ul"></i>&nbsp;&nbsp;
+															{{taba.categories.nbCategoria}}
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4">
+													<div class="form-group">
+														<label>Subcategoría: </label>
+														<div class="input-group">
+															<i class="fa fa-list-ul"></i>&nbsp;&nbsp;
+															{{taba.subcategories.nbSubCategoria}}
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4">
+													<div class="form-group">
+														<label>Empaquetado: </label>
+														<div class="input-group">
+															<i class="fa fa-list-ul"></i>&nbsp;&nbsp;
+															{{taba.empaquetado}}
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Largo:</label>
+														<div class="input-group">
+															<i class="fa fa-list-ol"></i>&nbsp;&nbsp; {{taba.largo}}
+														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Ancho:</label>
+														<div class="input-group">
+															<i class="fa fa-list-ol"></i>&nbsp;&nbsp; {{taba.ancho}}
+														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Alto:</label>
+														<div class="input-group">
+															<i class="fa fa-list-ol"></i>&nbsp;&nbsp; {{taba.alto}}
+														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Unidad de Medida:</label>
+														<div class="input-group">
+															<i class="fa fa-list-ol"></i>&nbsp;&nbsp;
+															{{taba.unidadMedida}}
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-4">
+													<div class="form-group">
+														<label>Peso por Artículo:</label>
+														<div class="input-group">
+															<i class="fa fa-list-ol"></i>&nbsp;&nbsp;
+															{{taba.peso}}
+														</div>
+													</div>
+												</div>
+<!-- 												<div class="col-md-4"> -->
+<!-- 													<div class="form-group"> -->
+<!-- 														<label>Valor:</label> -->
+<!-- 														<div class="input-group"> -->
+<!-- 															<i class="fa fa-list-ol"></i>&nbsp;&nbsp; {{vo.nuValor}} -->
+<!-- 														</div> -->
+<!-- 													</div> -->
+<!-- 												</div> -->
+												<div class="col-md-4">
+													<div class="form-group">
+														<label>Unidad de Peso:</label>
+														<div class="input-group">
+															<i class="fa fa-list-ol"></i>&nbsp;&nbsp;
+															{{taba.unidadPeso}}
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label>Valor Declarado:</label>
+														<div class="input-group">
+															<i class="fa fa-list-ol"></i>&nbsp;&nbsp;
+															{{taba.valorDeclarado}}
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label>Descripción de Contenido:</label>
+														<div class="input-group">
+															<i class="fa fa-list-ol"></i>&nbsp;&nbsp;
+															{{taba.observaciones}}
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- 							</fieldset> -->
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group" ng-if="tabSelected === 't3'">
+						<div class="row">
+							<div class="col-md-6">
+								<fieldset class="fieldset">
+									<legend class="legendStyle">
+										<a data-toggle="collapse" href="" style="color: black">Remitente</a>
+									</legend>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Nombre(s): </label>
+												<div class="input-group">
+													<i class="fa fa-suitcase"></i>&nbsp;&nbsp;
+													{{informationContactVO.remitente.nombres}}
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Apellido Paterno:</label>
+												<div class="input-group">
+													<i class="fa fa-user-circle"></i>&nbsp;&nbsp;
+													{{informationContactVO.remitente.apePaterno}}
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Apellido Materno:</label>
+												<div class="input-group">
+													<i class="fa fa-user-circle"></i>&nbsp;&nbsp;
+													{{informationContactVO.remitente.apeMaterno}}
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Compañia:</label>
+												<div class="input-group">
+													<i class="fa fa-suitcase"></i>&nbsp;&nbsp;
+													{{informationContactVO.remitente.company}}
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Teléfono:</label>
+												<div class="input-group">
+													<i class="fa fa-phone"></i>&nbsp;&nbsp;
+													{{informationContactVO.remitente.telefono}}
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Correo:</label>
+												<div class="input-group">
+													<i class="fa fa-at"></i>&nbsp;&nbsp;
+													{{informationContactVO.remitente.email}}
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-group">
+												<label>Dirección:</label>
+												<div class="input-group">
+													<i class="fa fa-street-view"></i>&nbsp;&nbsp;
+													{{informationContactVO.remitente.direccion}}
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+
+							<div class="col-md-6">
+								<fieldset class="fieldset">
+									<legend class="legendStyle">
+										<a data-toggle="collapse" href="" style="color: black">Destinatario</a>
+									</legend>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Nombre(s): </label>
+												<div class="input-group">
+													<i class="fa fa-suitcase"></i>&nbsp;&nbsp;
+													{{informationContactVO.destinatario.nombres}}
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Apellido Paterno:</label>
+												<div class="input-group">
+													<i class="fa fa-user-circle"></i>&nbsp;&nbsp;
+													{{informationContactVO.destinatario.apePaterno}}
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Apellido Materno:</label>
+												<div class="input-group">
+													<i class="fa fa-user-circle"></i>&nbsp;&nbsp;
+													{{informationContactVO.destinatario.apeMaterno}}
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Compañia:</label>
+												<div class="input-group">
+													<i class="fa fa-suitcase"></i></i>&nbsp;&nbsp;
+													{{informationContactVO.destinatario.company}}
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Teléfono:</label>
+												<div class="input-group">
+													<i class="fa fa-phone"></i>&nbsp;&nbsp;
+													{{informationContactVO.destinatario.telefono}}
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Correo:</label>
+												<div class="input-group">
+													<i class="fa fa-at"></i>&nbsp;&nbsp;
+													{{informationContactVO.destinatario.email}}
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-group">
+												<label>Dirección:</label>
+												<div class="input-group">
+													<i class="fa fa-street-view"></i>&nbsp;&nbsp;
+													{{informationContactVO.destinatario.direccion}}
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</fieldset>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+
+
+				<!--<div class="row">
+				<section class="col-md-12 connectedSortable">
+					<div class="box box-danger">
+						<div class="box-header with-border text-center">
+							<h3 class="box-title">Información de Pago y Envío</h3>
+							<div class="box-tools pull-right">
+								<button type="button" class="btn btn-box-tool"
+									data-widget="collapse">
+									<i class="fa fa-minus"></i>
+								</button>
+							</div>
+						</div>
+						<div class="box-body">
+							<div class="form-group">
+								<div class="row">
+									<div class="row centerCol">
+										<div class="col-md-11">
+											<form role="form" name="formPago" novalidate>
+												<div class="row">
+													<div class="col-md-4">
+														<div class="form-group">
+															<label> Fecha de Envío: </label>
+															<div class="input-group">
+																<div class="input-group-addon">
+																	<i class="fa fa-calendar"></i>
+																</div>
+																<input class="form-control inputFecha"
+																	id="fhEnvioPaquete" name="fhEnvioPaquete" date-picker
+																	idioma-dp="{{currentLanguage}}" mindate="'29/01/2018'"
+																	maxdate="'09/02/2018'" elemento="'fechaPicker'"
+																	ng-model="vo.fhEnvioPaquete" readonly />
+															</div>
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label>Lugar de Recolección:</label>
+															<div class="input-group">
+																<i class="fa fa-street-view"></i>&nbsp;&nbsp;
+																{{vo.selectEstadoRemitente.nb_estado}} -
+																{{vo.selectCiudadRemitnte.nb_ciudad}} -
+																{{vo.SucursalRemitente.nbSucursal}} - C.P.
+																{{vo.cdPostalRemitente}}-{{vo.SucursalDest.nbSucursal}}
+															</div>
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label>Horario de Atención:</label>
+															<div class="input-group">
+																<i class="fa fa-clock-o"></i>&nbsp;&nbsp; 5:00 AM -
+																11:59 PM
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div></div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-4"
+														ng-show="vo.selectEstadoRemitente != null && vo.selectEstadoDest != null">
+														<div class="form-group">
+															<label>Costo de Envío: </label>
+															<div class="input-group">
+																<div class="input-group-addon">
+																	<i class="fa fa-money"></i>
+																</div>
+																<input class="form-control" id="nuPrecioRuta"
+																	name="nuPrecioRuta"
+																	ng-init="vo.nuPrecioRuta = '$ 6,897.98 MXN'"
+																	ng-model="vo.nuPrecioRuta" readonly />
+															</div>
+														</div>
+													</div>
+													<div class="col-md-4"
+														ng-show="vo.selectEstadoRemitente != null && vo.selectEstadoDest != null">
+														<div class="form-group">
+															<label>*Fecha de Entrega: </label>
+															<div class="input-group">
+																<div class="input-group-addon">
+																	<i class="fa fa-calendar"></i>
+																</div>
+																<input class="form-control" id="fhEntrega"
+																	name="fhEntrega"
+																	ng-init="vo.fhEntrega = nuFechaEntrega"
+																	ng-model="vo.fhEntrega" readonly />
+															</div>
+														</div>
+													</div>
+													<div class="col-md-4"
+														ng-show="vo.selectEstadoRemitente != null && vo.selectEstadoDest != null">
+														<div class="form-group">
+															<label>*Tipo de Pago: </label>
+															<div class="input-group">
+																<div class="input-group-addon">
+																	<i class="fa fa-calendar"></i>
+																</div>
+																<select class="form-control" ng-model="vo.selectTpPago"
+																	select2 data-minimum-results-for-search="Infinity"
+																	name="tpPago" id="tpPago"
+																	ng-options="scr as scr.nbTpPago for scr in vo.tipoPago | orderBy: 'nbTpPago'">
+																	<option value="">Seleccione una opción</option>
+																</select>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<fieldset class="fieldset"
+													ng-if="vo.selectTpPago != undefined && (vo.selectTpPago.id == 2 || vo.selectTpPago.id == 3)">
+													<legend class="legendStyle">
+														<a data-toggle="collapse" data-target="#tpPagos" href=""
+															style="color: black">Datos de la Tarjeta</a>
+													</legend>
+													<div class="row" id="tpPagos">
+														<div class="row">
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label>*Nombre del Titular: </label>
+																	<div class="input-group">
+																		<div class="input-group-addon">
+																			<i class="fa fa-user-circle"></i>
+																		</div>
+																		<input class="form-control" id="nbUsuarioTarjeta"
+																			name="nbUsuarioTarjeta"
+																			ng-model="vo.nbUsuarioTarjeta" />
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label>*Número de Tarjeta: </label>
+																	<div class="input-group">
+																		<div class="input-group-addon">
+																			<i class="fa fa-credit-card-alt"></i>
+																		</div>
+																		<input class="form-control" id="nuTarjeta" type="text"
+																			name="nuTarjeta" integer-number
+																			ng-model="vo.nuTarjeta" />
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-md-5">
+																<div class="form-group">
+																	<label>*Fecha de Expiración: </label>
+																	<div class="input-group">
+
+																		<div class="col-md-4">
+																			<input class="form-control" id="nuTarjeta"
+																				type="text" name="nuMes" placeholder="Mes"
+																				ng-model="vo.nuMes" />
+																		</div>
+																		<div class="col-md-3">
+																			<input class="form-control" id="nuTarjeta"
+																				type="text" name="nuAnio" placeholder="Año"
+																				ng-model="vo.anio" />
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-4">
+																<div class="form-group">
+																	<label>*Codigo de Seguridad: </label>
+																	<div class="input-group">
+																		<div class="input-group-addon">
+																			<i class="fa fa-credit-card-alt"></i>
+																		</div>
+																		<input class="form-control" id="nuTarjeta"
+																			type="password" name="nuMes" placeholder="3 Digitos"
+																			ng-model="vo.nuMes" />
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-3"></div>
+														</div>
+												</fieldset>
+												<div class="row"
+													ng-show="vo.selectTpPago != undefined && vo.selectTpPago.id==1">
+													<div class="col-md-8 col-md-offset-2">
+														<div class="alert alert-info">
+															<strong>Aviso!</strong> El cobro se realizará en sucursal
+															{{vo.SucursalRemitente.nbSucursal}}
+														</div>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row centerCol">
+						<div class="col-md-12">
+							<div class="box box-danger">
+								<div class="box-header with-border center">
+									<h2 class="box-title">Datos del Pago</h2>
+								</div>
+								<div class="box-body">
+									<div class="row centerCol">
+										<div class="col-md-11">
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</section>
+			</div>-->
+
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<section class="content-header">
+	<h1>{{breadCrumbs.servicio}}</h1>
+	<ol class="breadcrumb">
+		<li><a> <i class="{{breadCrumbs.icono}}"></i>{{breadCrumbs.modulo}}
+		</a></li>
+		<li class="active">{{breadCrumbs.servicio}}</li>
+	</ol>
+</section>
+
+<section class="content">
+	<div class="row">
+		<!-- ./col -->
+		<div class="col-md-4" ng-repeat="ctrl in ctrls">
+			<!-- small box -->
+			<div class="small-box {{ctrl.bgPanel}}">
+				<div class="inner">
+					<div class="icon">
+						<i class="fa {{ctrl.icon}}"></i>
+					</div>
+
+					<div class="counter" value="ctrl.myValue"
+						to="ctrl.myTarget" duration="ctrl.myDuration"
+						effect="ctrl.myEffect">
+						<h3>{{ctrl.myValue | number:0 }}</h3>
+					</div>
+
+					<h4>{{ctrl.nbPanel}}</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row">
+
+		<div class="col-md-6">
+			<div class="box box-danger">
+				<div class="box-header with-border">
+					<div class="row">
+						<div class="col-md-6" style="line-height:2.5;">
+							<h3 class="box-title ng-binding">Operaciones por Proveedor</h3>								
+						</div>
+						<div class="col-md-3 text-center">
+							<select class="form-control " id="zanio"
+								name="zanio">
+								<option value="2018" selected>2018</option>
+								<option value="2017">2017</option>
+								<option value="2016">2016</option>
+								<option value="2015">2015</option>
+							</select>
+						</div>
+						<div class="col-md-3 text-center">
+							<select class="form-control " id="zanio"
+								name="zanio">
+								<option value="Enero" selected>Enero</option>
+								<option value="Febrero">Febrero</option>
+								<option value="Marzo">Marzo</option>
+								<option value="Abril">Abril</option>
+								<option value="Mayo">Mayo</option>
+								<option value="Junio">Junio</option>
+								<option value="Julio">Julio</option>
+								<option value="Agosto">Agosto</option>
+								<option value="Septiembre">Septiembre</option>
+								<option value="Octubre">Octubre</option>
+								<option value="Noviembre">Noviembre</option>
+								<option value="Diciembre">Diciembre</option>
+							</select>
+						</div>
+					</div>
+					<div class="box-tools pull-right">
+						<button class="btn btn-box-tool" type="button"
+							data-widget="collapse">
+							<i class="fa fa-minus"></i>
+						</button>
+					</div>
+				</div>
+				<div class="box-body">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="amCharts" id="unidadesMantenimiento"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="box box-danger">
+				<div class="box-header with-border">
+					<div class="row">
+						<div class="col-md-4" style="line-height:2.5;">
+							<h3 class="box-title ng-binding">Transportes más Utilizados</h3>								
+						</div>
+						<div class="col-md-2 text-center">
+							<select class="form-control " id="zanio"
+								name="zanio">
+								<option value="2018" selected>2018</option>
+								<option value="2017">2017</option>
+								<option value="2016">2016</option>
+								<option value="2015">2015</option>
+							</select>
+						</div>
+						<div class="col-md-3 text-center">
+							<select class="form-control " id="zanio"
+								name="zanio">
+								<option value="Enero" selected>Enero</option>
+								<option value="Febrero">Febrero</option>
+								<option value="Marzo">Marzo</option>
+								<option value="Abril">Abril</option>
+								<option value="Mayo">Mayo</option>
+								<option value="Junio">Junio</option>
+								<option value="Julio">Julio</option>
+								<option value="Agosto">Agosto</option>
+								<option value="Septiembre">Septiembre</option>
+								<option value="Octubre">Octubre</option>
+								<option value="Noviembre">Noviembre</option>
+								<option value="Diciembre">Diciembre</option>
+							</select>
+						</div>
+						<div class="col-md-3 text-center">
+							<select class="form-control " id="zanio"
+								name="zanio">
+								<option value="Enero" selected>Tampiqueños S.A de C.V</option>
+								<option value="Febrero">CFI Drive</option>
+								<option value="Marzo">Laguna de la palma</option>
+								<option value="Abril">Solutions Cargo</option>
+								<option value="Mayo">SE Global Logistics SA de CV</option>
+							</select>
+						</div>
+					</div>
+					<div class="box-tools pull-right">
+						<button class="btn btn-box-tool" type="button"
+							data-widget="collapse">
+							<i class="fa fa-minus"></i>
+						</button>
+					</div>
+				</div>
+				<div class="box-body">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<div class="amCharts" id="unidadesMasMantenimiento"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="box box-danger">
+				<div class="box-header with-border">
+					<div class="row">
+						<div class="col-md-6" style="line-height:2.5;">
+							<h3 class="box-title ng-binding">Rutas más Solicitadas</h3>								
+						</div>
+						<div class="col-md-2 text-center">
+							<select class="form-control " id="zanio"
+								name="zanio">
+								<option value="2018" selected>2018</option>
+								<option value="2017">2017</option>
+								<option value="2016">2016</option>
+								<option value="2015">2015</option>
+							</select>
+						</div>
+						<div class="col-md-2 text-center">
+							<select class="form-control " id="zanio"
+								name="zanio">
+								<option value="Enero" selected>Enero</option>
+								<option value="Febrero">Febrero</option>
+								<option value="Marzo">Marzo</option>
+								<option value="Abril">Abril</option>
+								<option value="Mayo">Mayo</option>
+								<option value="Junio">Junio</option>
+								<option value="Julio">Julio</option>
+								<option value="Agosto">Agosto</option>
+								<option value="Septiembre">Septiembre</option>
+								<option value="Octubre">Octubre</option>
+								<option value="Noviembre">Noviembre</option>
+								<option value="Diciembre">Diciembre</option>
+							</select>
+						</div>
+						<div class="col-md-2 text-center">
+							<select class="form-control " id="zanio"
+								name="zanio">
+								<option value="Enero" selected>Tampiqueños S.A de C.V</option>
+								<option value="Febrero">CFI Drive</option>
+								<option value="Marzo">Laguna de la palma</option>
+								<option value="Abril">Solutions Cargo</option>
+								<option value="Mayo">SE Global Logistics SA de CV</option>
+							</select>
+						</div>
+					</div>
+					<div class="box-tools pull-right">
+						<button class="btn btn-box-tool" type="button"
+							data-widget="collapse">
+							<i class="fa fa-minus"></i>
+						</button>
+					</div>
+				</div>
+				<div class="box-body">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="amCharts" id="refaccionesUtilizadas"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

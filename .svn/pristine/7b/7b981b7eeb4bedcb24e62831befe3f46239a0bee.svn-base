@@ -1,0 +1,64 @@
+{
+	"cotizadores":[
+		{
+			"cotizadorId":1,
+			"validoHasta": "31/08/2018 11:00",
+			"fechaPartida": "31/08/2018 13:00",
+			"fechaArribo": "01/09/2018 13:00",
+			"cotizadorNombre":"Fedex",
+			"cotizadorCostoSubtotal": "$13,500.00",
+			"impuestos": "$2,160.00",
+			"cotizadorCostoTotal": "$15,660.00",
+			"cotizadorClass": "bs-callout-success",
+			"predeterminado": "si"
+		},
+		{
+			"cotizadorId":2,
+			"validoHasta": "30/08/2018 09:00",
+			"fechaPartida": "30/08/2018 23:59",
+			"fechaArribo": "31/08/2018 13:00",
+			"cotizadorNombre":"Shipping Company",
+			"cotizadorCostoSubtotal": "$13,650.00",
+			"impuestos": "$2,184.00",
+			"cotizadorCostoTotal": "$15,834.00",
+			"cotizadorClass": "bs-callout-success",
+			"predeterminado": "si"
+		},
+		{
+			"cotizadorId":3,
+			"validoHasta": "29/08/2018 10:00",
+			"fechaPartida": "29/08/2018 15:00",
+			"fechaArribo": "30/08/2018 12:00",
+			"cotizadorNombre":"TMS International",
+			"cotizadorCostoSubtotal": "$13,705.00",
+			"impuestos": "$2,192.00",
+			"cotizadorCostoTotal": "$15,897.8",
+			"cotizadorClass": "bs-callout-info",
+			"predeterminado": "si"
+		},
+		{
+			"cotizadorId":4,
+			"validoHasta": "29/08/2018 10:00",
+			"fechaPartida": "29/08/2018 15:00",
+			"fechaArribo": "29/08/2018 15:00",
+			"cotizadorNombre":"Products Supplier",
+			"cotizadorCostoSubtotal": "$13,804.00",
+			"impuestos": "$2,208.64",
+			"cotizadorCostoTotal": "$16,012.64",
+			"cotizadorClass": "bs-callout-primary",
+			"predeterminado": "si"
+		},
+		{
+			"cotizadorId":5,
+			"validoHasta": "28/08/2018 10:00",
+			"fechaPartida": "28/08/2018 17:00",
+			"fechaArribo": "29/08/2018 10:00",
+			"cotizadorNombre":"Shipping Company",
+			"cotizadorCostoSubtotal": "$14,800.00",
+			"impuestos": "$2,368.00",
+			"cotizadorCostoTotal": "$17,168.00",
+			"cotizadorClass": "bs-callout-warning",
+			"predeterminado": "si"
+		}
+	]
+}

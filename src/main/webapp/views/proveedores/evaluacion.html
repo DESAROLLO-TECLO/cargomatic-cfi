@@ -1,0 +1,337 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+	<section class="content-header">
+		<h1>Encuesta CFI</h1>
+		<ol class="breadcrumb">
+			<li><a> <i class="{{breadCrumbs.icono}}"></i>{{breadCrumbs.modulo}}
+			</a></li>
+			<li class="active">Encuesta CFI</li>
+		</ol>
+	</section>
+
+	<!-- Contenido -->
+	<section class="content">
+		<form role="form" name="evaluation">
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					<div class="box box-danger">
+<!-- 						<div class="box-header text-center"> -->
+<!-- 							<h3 class="box-title"> -->
+<!-- 								{{'PROVEEDORES.Registro.evaluacionProveedores.tituloBox' | -->
+<!-- 								translate}}</h3> -->
+<!-- 						</div> -->
+
+						<div class="box-body">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Folio de Operación:</label>
+										<div class="input-group">
+											<span class="input-group-addon"> <i class="fa fa-list"></i></span>
+											<input type="text" name="folio" class="form-control" ng-model="filter.folio" ng-disabled="true">
+												
+<!-- 											<select name="supplier" select2 -->
+<!-- 												idioma-s2="{{currentLanguage}}" -->
+<!-- 												ng-options="c.id as c.nbProveedor for c in suppliers" -->
+<!-- 												ng-model="filter.supplier" class="form-control"> -->
+<!-- 												<option value="">{{'APP.Base.mensaje.seleccioneOpcion'|translate}}</option> -->
+<!-- 											</select> -->
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="box box-danger">
+						<div class="box-header with-border text-center">
+							<h3 class="box-title">
+								{{'PROVEEDORES.Registro.evaluacionProveedores.wizardTitle'
+											| translate}}
+							</h3>
+						</div>
+						<div class="box-body">
+							<wizard name="wizardEvaluacion"
+									indicators-position="top"
+									on-finish="saveWizard()">
+									
+							    <wz-step wz-title="{{'PROVEEDORES.Registro.evaluacionProveedores.wizardTitleCotRes'
+											| translate}}" wz-icon="fa-file-text-o">
+							        
+							       <div class="row">
+										<form name="formStepOne" novalidate>
+											<div class="col-md-12">
+												<div class="container col-md-12">
+													<label class="col-md-4"></label>
+													<label class="col-md-2 center">Malo</label> 
+													<label class="col-md-2 center">Regular</label> 
+													<label class="col-md-2 center">Bueno</label>
+													<label class="col-md-2 center">Excelente</label>   
+												</div>
+											</div>
+											<div class="col-md-12">
+												<label class="col-md-4">¿La tarifa fue la esperada?</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Malo" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Regular" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Bueno" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Excelente" /> 
+												</label>
+											</div>
+											<div class="col-md-12">
+												<label class="col-md-4">¿El tiempo de respuesta fue el esperado?</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Malo" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Regular" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Bueno" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Excelente" /> 
+												</label>
+											</div>
+											<div class="col-md-12">
+												<label class="col-md-4">¿Cómo considera la calidad de los servicios ofrecidos?</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Malo" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Regular" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Bueno" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Excelente" /> 
+												</label>
+											</div>
+											<div class="col-md-12">
+												<label class="col-md-4">¿Considera que la información brindada fue clara?</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Malo" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Regular" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Bueno" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Excelente" /> 
+												</label>
+											</div>
+										</form>
+									</div>
+							        
+							    </wz-step>
+							    
+							    <wz-step wz-title="{{'PROVEEDORES.Registro.evaluacionProveedores.wizardTitleCarTran'
+											| translate}}" wz-icon="fa-truck">
+							        <div class="row">
+										<form name="formStepTwo" novalidate>
+											<div class="col-md-12">
+												<div class="container col-md-12">
+													<label class="col-md-4"></label>
+													<label class="col-md-2 center">Malo</label> 
+													<label class="col-md-2 center">Regular</label> 
+													<label class="col-md-2 center">Bueno</label>
+													<label class="col-md-2 center">Excelente</label>   
+												</div>
+											</div>
+											<div class="col-md-12">
+												<label class="col-md-4">¿Cómo considera los tiempos de logística?</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Malo" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Regular" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Bueno" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Excelente" /> 
+												</label>
+											</div>
+											<div class="col-md-12">
+												<label class="col-md-4">¿Cómo considera el tiempo en tránsito?</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Malo" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Regular" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Bueno" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Excelente" /> 
+												</label>
+											</div>
+											<div class="col-md-12">
+												<label class="col-md-4">¿Las condiciones de la unidad fueron?</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Malo" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Regular" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Bueno" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Excelente" /> 
+												</label>
+											</div>
+											<div class="col-md-12">
+												<label class="col-md-4">¿Cómo califica el cuidado del material de envío?</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Malo" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Regular" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Bueno" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Excelente" /> 
+												</label>
+											</div>
+										</form>
+									</div>
+							    </wz-step>
+							    
+							    <wz-step wz-title="{{'PROVEEDORES.Registro.evaluacionProveedores.wizardTitleDescarga'
+											| translate}}" wz-icon="fa-archive">
+							       <form name="formStepThree" novalidate>
+											<div class="col-md-12">
+												<div class="container col-md-12">
+													<label class="col-md-4"></label>
+													<label class="col-md-2 center">Malo</label> 
+													<label class="col-md-2 center">Regular</label> 
+													<label class="col-md-2 center">Bueno</label>
+													<label class="col-md-2 center">Excelente</label>   
+												</div>
+											</div>
+											<div class="col-md-12">
+												<label class="col-md-4">¿La mercancía llegó en buen estado?</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Malo" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Regular" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Bueno" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Excelente" /> 
+												</label>
+											</div>
+											<div class="col-md-12">
+												<label class="col-md-4">¿La entrega fue puntual?</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Malo" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Regular" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Bueno" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Excelente" /> 
+												</label>
+											</div>
+											<div class="col-md-12">
+												<label class="col-md-4">¿La descarga se realizo adecuadamente?</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Malo" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Regular" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Bueno" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Excelente" /> 
+												</label>
+											</div>
+											<div class="col-md-12">
+												<label class="col-md-4">¿Cómo califica el servicio prestado?</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Malo" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Regular" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Bueno" /> 
+												</label>
+												<label class="col-md-2 center"> 
+													<input type="radio" value="Excelente" /> 
+												</label>
+											</div>
+										</form> 
+							    </wz-step>
+							</wizard>
+						</div>
+						
+						<div class="box-footer">
+							<div class="row centerCol">
+								<div class="flags.clas">
+									<div class="flags.clas2">
+										<button class="btn btn-danger" ng-click="saveStepOne()" ng-show="flags.stepOne">
+											<i class="fa fa-arrow-right"></i>
+										</button>
+										
+										<button class="btn btn-danger" ng-click="previous()" ng-show="flags.stepTwo || flags.stepThree">
+						        			<i class="fa fa-arrow-left"></i>
+						        		</button>
+										
+										<button class="btn btn-danger" ng-click="saveStepTwo()" ng-show="flags.stepTwo">
+											<i class="fa fa-arrow-right"></i>
+										</button>
+										
+										<button class="btn btn-danger" ng-click="saveStepThree()" ng-show="flags.stepThree">
+							        		Guardar
+							        	</button>
+							        	
+							        	<a type="button" class="btn btn-danger" a href="#/operacionesConsulta" ng-if="flags.back">
+											<i class="fa fa-arrow-circle-left"></i>
+											Regresar
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>					
+				</div>
+			</div>
+
+			
+		</form>
+	</section>
+</body>
+</html>

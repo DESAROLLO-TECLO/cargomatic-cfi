@@ -1,0 +1,42 @@
+[
+	{
+		"solicitudId": 1,
+		"folioSolicitud": "001ABC100",
+		"estatusSolicitudId": 1,
+		"clienteNombre": "Walmart S.A de C.V",
+		"fechaSolicitud": "27/08/2018",
+		"cantidadPedidos": 7,
+		"pedidosAtendidos": 0,
+		"pedidosPendientes": 7
+	},
+	{
+		"solicitudId": 2,
+		"folioSolicitud": "001ABC200",
+		"estatusSolicitudId": 2,
+		"clienteNombre": "Liverpool S.A de C.V",
+		"fechaSolicitud": "27/08/2018",
+		"cantidadPedidos": 6,
+		"pedidosAtendidos": 1,
+		"pedidosPendientes": 5
+	},
+	{
+		"solicitudId": 3,
+		"folioSolicitud": "001ABC300",
+		"estatusSolicitudId": 2,
+		"clienteNombre": "HEB S.A de C.V",
+		"fechaSolicitud": "27/08/2018",
+		"cantidadPedidos": 6,
+		"pedidosAtendidos": 0,
+		"pedidosPendientes": 6
+	},
+	{
+		"solicitudId": 4,
+		"folioSolicitud": "001ABC400",
+		"estatusSolicitudId": 3,
+		"clienteNombre": "SAMS S.A de C.V",
+		"fechaSolicitud": "27/08/2018",
+		"cantidadPedidos": 7,
+		"pedidosAtendidos": 7,
+		"pedidosPendientes": 0
+	}
+]

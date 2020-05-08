@@ -1,0 +1,87 @@
+{
+	"solicitudes": [
+		{
+			"solicitudId": 1,
+			"folioSolicitud": "001ABC101",
+			"estatusSolicitudId": 2,
+			"clienteNombre": "Walmart S.A de C.V",
+			"fechaSolicitud": "15/01/2018",
+			"cantidadPedidos": 2,
+			"pedidosAtendidos": 1,
+			"pedidosPendientes": 1,
+			"lugarOrigen": "Tampico, Tamaulipas",
+			"lugarDestino": "Veracruz, Veracruz"
+		},
+		{
+			"solicitudId": 2,
+			"folioSolicitud": "001ABC102",
+			"estatusSolicitudId": 2,
+			"clienteNombre": "Walmart S.A de C.V",
+			"fechaSolicitud": "22/02/2018",
+			"cantidadPedidos": 2,
+			"pedidosAtendidos": 0,
+			"pedidosPendientes": 2,
+			"lugarOrigen": "Pachuca de Soto, Hidalgo",
+			"lugarDestino": "Ojinaga, Chihuahua"
+		},
+		{
+			"solicitudId": 3,
+			"folioSolicitud": "001ABC103",
+			"estatusSolicitudId": 2,
+			"clienteNombre": "Walmart S.A de C.V",
+			"fechaSolicitud": "10/03/2018",
+			"cantidadPedidos": 1,
+			"pedidosAtendidos": 0,
+			"pedidosPendientes": 1,
+			"lugarOrigen": "Victoria de Durango, Durango",
+			"lugarDestino": "Culiacán Rosales, Sinaloa"
+		},
+		{
+			"solicitudId": 5,
+			"folioSolicitud": "001ABC102",
+			"estatusSolicitudId": 2,
+			"clienteNombre": "Walmart S.A de C.V",
+			"fechaSolicitud": "24/08/2018",
+			"cantidadPedidos": 1,
+			"pedidosAtendidos": 0,
+			"pedidosPendientes": 1,
+			"lugarOrigen": "Chilpancingo de los Bravo, Guerrero",
+			"lugarDestino": "Tijuana, Baja California"
+		},
+		{
+			"solicitudId": 4,
+			"folioSolicitud": "001ABC102",
+			"estatusSolicitudId": 3,
+			"clienteNombre": "Walmart S.A de C.V",
+			"fechaSolicitud": "18/04/2018",
+			"cantidadPedidos": 1,
+			"pedidosAtendidos": 1,
+			"pedidosPendientes": 0,
+			"lugarOrigen": "Tlalpan, Ciudad de M\u00e9xico",
+			"lugarDestino": "R\u00EDo Bravo, Tamaulipas"
+		}
+	],
+	"estatus": [
+		{
+			"estatusId": 1,
+			"estatusCod": "S_A",
+			"estatusDesc": "Env\u00EDos por atender",
+			"estatusExplicacion": "Algunos procesos pendientes por atender.",
+			"classCode": "label-default"
+		},
+		{
+			"estatusId": 2,
+			"estatusCod": "E_P",
+			"estatusDesc": "En Proceso",
+			"estatusExplicacion": "Todos los env\u00EDos han sido procesados.",
+			"classCode": "label-info"
+		},
+		{
+			"estatusId": 3,
+			"estatusCod": "S_C",
+			"estatusDesc": "Completado",
+			"estatusExplicacion": "Todos los env\u00EDos han sido atendidos.",
+			"classCode": "label-success"
+		}
+	]
+}

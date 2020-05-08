@@ -1,0 +1,28 @@
+{
+  "legalStructure": [
+    {
+      "name": "Sociedad anónima",
+      "cod": "01"
+    },
+    {
+      "name": "Sociedad",
+      "cod": "02"
+    },
+    {
+      "name": "Unipersonal",
+      "cod": "03"
+    },
+    {
+     "name": "Empresa conjunta",
+      "cod": "04"
+    },
+    {
+      "name": "Franquicia",
+      "cod": "05"
+    },
+    {
+      "name": "Sin ánimo de lucro",
+      "cod": "06"
+    }
+  ]
+}

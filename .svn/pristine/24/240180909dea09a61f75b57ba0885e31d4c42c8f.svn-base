@@ -1,0 +1,435 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+	<section class="content-header">
+		<h1>Seguimiento de Solicitudes</h1>
+		<ol class="breadcrumb">
+			<li><a> <i class="{{breadCrumbs.icono}}"></i>{{breadCrumbs.modulo}}
+			</a></li>
+			<li class="active">{{breadCrumbs.servicio}}</li>
+		</ol>
+	</section>
+<section class="content">
+
+	<div class="row centerCol">
+		<div class="col-md-12">
+			<div class="box box-danger collapsed-box">
+				<div class="box-header with-border center">
+					<h2 class="box-title">Parámetros de Búsqueda</h2>
+					<div class="box-tools pull-right">
+						<button type="button" class="btn btn-box-tool"
+							data-widget="collapse">
+							<i class="fa fa-plus"></i>
+						</button>
+					</div>
+				</div>
+
+				<div class="box-body">
+					<div class="row centerCol">
+						<div class="col-md-12">
+							<form role="form" name="rutas" novalidate>
+								<div class="row">
+									<br>
+
+									<div class="col-md-12">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<div class="form-group">
+														<label for="tipoComportamiento">Proveedor: </label>
+														<div class="input-group">
+															<span class="input-group-addon"> <i
+																class="fa fa-list"></i></span> <select class="form-control"
+																select-picker multiple idioma-sp="{{currentLanguage}}"
+																data-actions-box="true"
+																data-selected-text-format="count > 2"
+																ng-model="formRoute.provedor"
+																ng-options="o.id as o.nbProveedor for o in vo.proveedor">
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-md-3">
+												<div class="form-group">
+													<div class="form-group">
+														<label for="tipoComportamiento">Folio de
+															Operación: </label>
+														<div class="input-group">
+															<span class="input-group-addon"> <i
+																class="fa fa-file-text-o"></i></span> <input type="text"
+																class="form-control" ng-model="formRoute.folio">
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group">
+													<div class="form-group">
+														<label for="tipoComportamiento">Número de Guía: </label>
+														<div class="input-group">
+															<span class="input-group-addon"> <i
+																class="fa fa-file-text-o"></i></span> <input type="text"
+																class="form-control" ng-model="formRoute.numerGuia">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<div class="form-group">
+														<label for="tipoComportamiento">Origen: </label>
+														<div class="input-group">
+															<span class="input-group-addon"> <i
+																class="fa fa-map-marker"></i></span>
+															<div class="padded-row">
+																<select id="origin" ng-model="x" class="form-control"
+																	select2 data-minimum-results-for-search="Infinity"
+																	name="estadoRemi" id="estadoRemi"
+																	ng-options="org as org.nbUbicacion for org in vo.orgien | orderBy: 'nbUbicacion'">
+																	<option value="">Seleccione</option>
+																</select>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<div class="form-group">
+														<label for="tipoComportamiento">Destino: </label>
+														<div class="input-group">
+															<span class="input-group-addon"> <i
+																class="fa fa-map-marker"></i></span>
+															<div class="padded-row">
+																<select id="origin" ng-model="y" class="form-control"
+																	select2 data-minimum-results-for-search="Infinity"
+																	name="estadoRemi" id="estadoRemi"
+																	ng-options="org as org.nbUbicacion for org in vo.destino | orderBy: 'nbUbicacion'">
+																	<option value="">Seleccione</option>
+																</select>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- 												{{formRoute}} -->
+										</div>
+										<fieldset class="scheduler-border">
+											<legend class="scheduler-border legendStyle">
+												<a data-toggle="collapse"
+													data-target="#divBusquedaAvanzada" style="color: black">
+													Búsqueda Avanzada </a>
+											</legend>
+											<div class="row collapse" id="divBusquedaAvanzada">
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<div class="form-group">
+																<label for="tipoComportamiento">Categoria: </label>
+																<div class="input-group">
+																	<span class="input-group-addon"> <i
+																		class="fa fa-list"></i></span> <select
+																		name="category{{$index}}" id="category{{$index}}"
+																		class="form-control" select-picker multiple
+																		idioma-sp="{{currentLanguage}}"
+																		data-actions-box="true"
+																		data-selected-text-format="count > 2"
+																		ng-model="formRoute.categorias"
+																		ng-options="c as c.nbCategoria for c in vo.categoria"
+																		ng-change="filtraSubcategoria(formRoute.categorias)">
+																	</select>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<div class="form-group">
+																<label for="tipoComportamiento">Subcategoría: </label>
+																<div class="input-group">
+																	<span class="input-group-addon"> <i
+																		class="fa fa-list"></i></span> <select class="form-control"
+																		select2 name="subcategory{{$index}}"
+																		id="subcategory{{$index}}" multiple="multiple"
+																		data-allow-clear="true"
+																		idioma-s2="{{currentLanguage}}"
+																		ng-model="formRoute.subCategorias"
+																		ng-options="sm.nbOpcion group by sm.nbGroup for sm in subcategoriasFiltro">
+																	</select>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<div class="form-group">
+																<label for="tipoComportamiento">Periodo: </label>
+																<div class="input-group">
+																	<span class="input-group-addon"> <i
+																		class="fa fa-list"></i></span> <select class="form-control"
+																		ng-model="periodo">
+																		<option value="s">Seleccione</option>
+																		<option value="d">Día actual</option>
+																		<option value="d">Últimos 7 días</option>
+																		<option value="d">Últimos 15 días</option>
+																		<option value="d">Último Mes</option>
+																		<option value="r">Rango de días</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<div class="form-group">
+																<label for="tipoComportamiento">Estatus: </label>
+																<div class="input-group">
+																	<span class="input-group-addon"> <i
+																		class="fa fa-list"></i></span> <select
+																		name="category{{$index}}" id="category{{$index}}"
+																		class="form-control" select-picker multiple
+																		idioma-sp="{{currentLanguage}}"
+																		data-actions-box="true"
+																		data-selected-text-format="count > 2"
+																		ng-model="formRoute.categorias"
+																		ng-options="c.estatus as c.estatus for c in vo.estatusOperaciones">
+																	</select>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row" ng-show="periodo=='r'">
+													<div class="col-md-6">
+														<div class="form-group"
+															ng-class="{'has-error': rutasForm.fechaCoordenadas.$invalid && rutasForm.fechaCoordenadas.$dirty}">
+															<label for="fechaCoordenadas">Fecha inicial:</label>
+															<div class="input-group date ">
+																<div class="input-group-addon">
+																	<i class="fa fa-calendar"></i>
+																</div>
+																<input type="text" class="form-control pointer"
+																	id="datepicker" data-date-format="dd/mm/yyyy"
+																	ng-model="fecha" ng-required="true"
+																	name="fechaCoordenadas" id="fechaCoordenadas"
+																	ng-change="updateFIFecha()" show-button-bar="true"
+																	readonly style="background-color: white;">
+															</div>
+															<div
+																ng-show="rutasForm.fechaCoordenadas.$invalid && rutasForm.fechaCoordenadas.$dirty"
+																ng-style="{color:'red'}">La fecha es requerida</div>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group"
+															ng-class="{'has-error': rutasForm.fechaCoordenadas.$invalid && rutasForm.fechaCoordenadas.$dirty}">
+															<label for="fechaCoordenadas">Fecha final:</label>
+															<div class="input-group date ">
+																<div class="input-group-addon">
+																	<i class="fa fa-calendar"></i>
+																</div>
+																<input type="text" class="form-control pointer"
+																	id="datepicker1" data-date-format="dd/mm/yyyy"
+																	ng-model="fecha1" ng-required="true"
+																	name="fechaCoordenadas" id="fechaCoordenadas"
+																	ng-change="updateFIFecha()" show-button-bar="true"
+																	readonly style="background-color: white;">
+															</div>
+															<div
+																ng-show="rutasForm.fechaCoordenadas.$invalid && rutasForm.fechaCoordenadas.$dirty"
+																ng-style="{color:'red'}">La fecha es requerida</div>
+														</div>
+													</div>
+												</div>
+												<br>
+											</div>
+										</fieldset>
+										<div class="row">
+											<div class="col-md-12 text-center">
+												<button class="btn btn-md btn-danger" ng-click="searchRoutes()">Buscar</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<br>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- 	{{solicitudes}} -->
+	<div class="row" ng-if="solicitudes.length > 0">
+		<div class="col-md-12">
+			<div class="box box-danger">
+<!-- 				<div class="box-header with-border center"> -->
+<!-- 					<h3>Seguimiento de Solicitudes</h3> -->
+<!-- 				</div> -->
+				<div class="box-body">
+
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="box-header">
+								<div class="col-md-6 col-xs-12">
+									<h3 class="box-title">
+										Solicitudes Encontradas: <span>{{ (solicitudes | filter:fBus).length }}</span>
+									</h3>
+								</div>
+								<div class="col-md-6 form-group">
+									<div class="row">
+										<div class="col-md-offset-6 col-md-6 col-xs-8">
+											<div class="input-group">
+												<input id="searchsomething" type="text" class="form-control"
+													placeholder="Buscar por filtro" ng-model="fBus"> <span
+													class="input-group-addon"><i class="fa fa-search"></i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="box-body table-responsive no-padding">
+									<table id="garantiasTable"
+										class="table table-hover header-fixed table-striped">
+										<thead>
+											<tr>
+												<th sort order="'folio'" by="order" reverse="reverse">FOLIO DE SOLICITUD</th>
+												<th sort order="'folio'" by="order" reverse="reverse">CLIENTE</th>
+												<th sort order="'txEmpresa'" by="order" reverse="reverse">FECHA DE SOLICITUD</th>
+												<th class="wrap-text center" sort order="'txTipoInspec'" by="order" reverse="reverse">CANT. PEDIDOS</th>
+												<th class="center" sort order="'txDireccion'" by="order" reverse="reverse">PEDIDOS ATENDIDOS</th>
+												<th class="center" sort order="'txDireccion'" by="order" reverse="reverse">PEDIDOS PENDIENTES</th>
+												<th class="center" sort order="'txDireccion'" by="order" reverse="reverse">ESTATUS</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr dir-paginate="obj in solicitudes | filter:fBus  | orderBy:order:reverse | itemsPerPage: view.rowsPerPage ">
+												<td class="center"><a target="_self">{{obj.folioSolicitud}}</a></td>
+												<td>{{obj.clienteNombre}}</td>
+												<td class="center">{{obj.fechaSolicitud}}</td>
+												<td class="center">{{obj.cantidadPedidos}}</td>
+												<td class="center">{{obj.pedidosAtendidos}}</td>
+												<td class="center">{{obj.pedidosPendientes}}</td>
+												<td><a href="#/seguimientoEnvios{{obj.jsonFile}}"><span class="label {{obj.estatusObject.classCode}}" style="color: black;">{{obj.estatusObject.estatusDesc}}</span></a></td>
+											</tr>
+											<tr ng-if="(tipoSeguimiento | filter:fBus).length < 1">
+												<td colspan="5" class="text-center">
+													<h4>No se encontraron coincidencias</h4>
+												</td>
+											</tr>
+
+										</tbody>
+									</table>
+								</div>
+								<div class="container-fluid">
+									<div class="fixed-table-pagination" style="display: block;">
+										<rows-per-page rows="view.rowsPerPage" filtro="fBus"
+											array="tipoSeguimiento"></rows-per-page>
+										<div class="pull-right pagination">
+											<dir-pagination-controls class="pagination"></dir-pagination-controls>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<modal visible="view.showModalRating" size-modal="md" noescape modalstatic>
+	<modal-header title="{{'COTIZACION.NuevaOrden.sugerencia' |translate}}"></modal-header>
+	<modal-body>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col" class="center">Asociar</th>
+							<th scope="col" class="center">{{'COTIZACION.NuevaOrden.nbProveddor'
+								|translate}}</th>
+							<th scope="col" class="center">{{'COTIZACION.NuevaOrden.eficiencia'
+								|translate}}</th>
+							<th scope="col" class="center">{{'COTIZACION.NuevaOrden.calificacion'
+								|translate}}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="text-center" scope="row"><label class="col-md-2">
+									<input type="radio" name="nbProvedorSugerido"
+									ng-model="envio.nbProvedorSugerido" value="1"
+									ng-change="asignarProvSegerido(envio.nbProvedorSugerido)">
+							</label></th>
+							<td class="text-center">CFI Drive</td>
+							<td class="text-center">98 %</td>
+							<td class="text-center"><input id="input-1" name="input-1"
+								class="rating rating-loading" data-min="0" data-max="5"
+								value="5"></td>
+						</tr>
+						<tr>
+							<th class="text-center" scope="row"><label class="col-md-2">
+									<input type="radio" name="nbProvedorSugerido"
+									ng-model="envio.nbProvedorSugerido" value="2"
+									ng-change="asignarProvSegerido(envio.nbProvedorSugerido)">
+							</label></th>
+							<td class="text-center">Tampiqueños S.A de C.V</td>
+							<td class="text-center">97 %</td>
+							<td class="text-center"><input id="input-2" name="input-2"
+								class="rating rating-loading" data-min="0" data-max="5"
+								data-step="0.1" value="4.5"></td>
+						</tr>
+						<tr>
+							<th class="text-center" scope="row"><label class="col-md-2">
+									<input type="radio" name="nbProvedorSugerido"
+									ng-model="envio.nbProvedorSugerido" value="3"
+									ng-change="asignarProvSegerido(envio.nbProvedorSugerido)">
+							</label></th>
+							<td class="text-center">Fletes Mylsa</td>
+							<td class="text-center">96 %</td>
+							<td class="text-center"><input id="input-3" name="input-3"
+								class="rating rating-loading" data-min="0" data-max="5"
+								data-step="0.1" value="4"></td>
+						</tr>
+						<tr>
+							<th class="text-center" scope="row"><label class="col-md-2">
+									<input type="radio" name="nbProvedorSugerido"
+									ng-model="envio.nbProvedorSugerido" value="4"
+									ng-change="asignarProvSegerido(envio.nbProvedorSugerido)">
+							</label></th>
+							<td class="text-center">Solutions Cargo</td>
+							<td class="text-center">95 %</td>
+							<td class="text-center"><input id="input-4" name="input-4"
+								class="rating rating-loading" data-min="0" data-max="5"
+								data-step="0.1" value="3.6"></td>
+						</tr>
+						<tr>
+							<th class="text-center" scope="row"><label class="col-md-2">
+									<input type="radio" name="nbProvedorSugerido"
+									ng-model="envio.nbProvedorSugerido" value="5"
+									ng-change="asignarProvSegerido(envio.nbProvedorSugerido)">
+							</label></th>
+							<td class="text-center">SE Global Logistics SA de CV</td>
+							<td class="text-center">94 %</td>
+							<td class="text-center"><input id="input-5" name="input-5"
+								class="rating rating-loading" data-min="0" data-max="5"
+								data-step="0.1" value="3.5"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	</modal-body> <modal-footer btn-close="Cerrar"> </modal-footer> </modal>
+
+</section>

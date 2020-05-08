@@ -1,0 +1,208 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Control de Combustible</title>
+</head>
+
+<body>
+
+	<section class="content-header">
+		<h1>{{breadCrumbs.servicio}}</h1>
+		<ol class="breadcrumb">
+			<li><a> <i class="{{breadCrumbs.icono}}"></i>{{breadCrumbs.modulo}}
+			</a></li>
+			<li class="active">{{breadCrumbs.servicio}}</li>
+		</ol>
+	</section>
+
+	<section class="content">
+		<div class="row">
+			<div class="col-md-3 col-xs-6" ng-repeat="ctrl in ctrls">
+				<!-- small box -->
+				<div class="small-box {{ctrl.bgPanel}}">
+					<div class="inner">
+
+						<div class="counter" value="ctrl.myValue" to="ctrl.myTarget"
+							duration="ctrl.myDuration" effect="ctrl.myEffect">
+							<h3>{{ctrl.myValue | number:0 }} Envíos</h3>
+						</div>
+						
+						<p>{{ctrl.nbPanel}}</p>
+					</div>
+					<div class="icon">
+						<i class="fa {{ctrl.icon}}"></i>
+					</div>
+<!-- 					<a href="#" class="small-box-footer">Más Información <i -->
+<!-- 						class="fa fa-arrow-circle-right"></i> -->
+<!-- 					</a> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="box box-danger">
+					<div class="box-header with-border">
+						<div class="row">
+							<div class="col-md-6" style="line-height: 2.6;">
+								<h3 class="box-title">Entrega de paquetes Mensuales</h3>
+							</div>
+							<div class="col-md-4 text-center">
+								<select id="zproveedor" name="zproveedor"
+									data-minimum-results-for-search="Infinity"
+									idioma-s2="{{currentLanguage}}"
+									class="form-control" style="width: 100%;"
+									idioma-sp="{{currentLanguage}}" select2
+									ng-model="filter.supplierMonth"
+									ng-options="o as o.nbProveedor for o in suppliers">
+									
+									<option value="">{{'APP.Base.mensaje.seleccioneOpcion' | translate}}</option>
+								</select>
+							</div>
+							
+							<div class="col-md-2 text-center">
+								<select class="form-control" id="zanio" name="zanio">
+									<option value="2018" selected>2018</option>
+									<option value="2017">2017</option>
+									<option value="2016">2016</option>
+									<option value="2015">2015</option>
+								</select>
+							</div>
+						</div>
+						
+						<div class="box-tools pull-right">
+							<button class="btn btn-box-tool" type="button"
+								data-widget="collapse">
+								<i class="fa fa-minus"></i>
+							</button>
+						</div>
+					</div>
+
+					<div class="box-body">
+						<div class="row text-center">
+							<div class="col-md-12">
+								<div class="amCharts" id="entregaPaquetes"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="box box-danger">
+					<div class="box-header with-border">
+						<div class="row">
+							<div class="col-md-6" style="line-height: 2.6;">
+								<h3 class="box-title">Gasto Mensual por Proveedor </h3>								
+							</div>
+							<div class="col-md-4 text-center">
+								<select id="zproveedor" name="zproveedor"
+									data-minimum-results-for-search="Infinity"
+									idioma-s2="{{currentLanguage}}"
+									class="form-control" style="width: 100%;"
+									idioma-sp="{{currentLanguage}}" select2
+									ng-model="filter.supplier"
+									ng-options="o as o.nbProveedor for o in suppliers">
+									
+									<option value="">{{'APP.Base.mensaje.seleccioneOpcion' | translate}}</option>
+								</select>
+							</div>
+							<div class="col-md-2 text-center">
+								<select class="form-control " id="zanio" name="zanio">
+									<option value="2018" select='true'>2018</option>
+									<option value="2017">2017</option>
+									<option value="2016">2016</option>
+									<option value="2015">2015</option>
+								</select>
+							</div>
+						</div>
+						<div class="box-tools pull-right">
+							<button class="btn btn-box-tool" type="button"
+								data-widget="collapse">
+								<i class="fa fa-minus"></i>
+							</button>
+						</div>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<div class="row text-center">
+							<div class="col-md-12">
+								<div class="amCharts" id="gastoAcumuladoMensual"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="box box-danger">
+					<div class="box-header with-border" align="center">
+						<h3 class="box-title">Información de Proveedores</h3>
+						<div class="box-tools pull-right">
+							<button class="btn btn-box-tool" type="button"
+								data-widget="collapse">
+								<i class="fa fa-minus"></i>
+							</button>
+						</div>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<div class="row">
+							<div class="col-md-12">
+								<ul class="nav nav-tabs">
+									<li ng-repeat="tab in tabs"
+										ng-class="{'active': tab.isActive}"
+										ng-click="changeGraph(tab.nbTab)">
+										<a>{{tab.nbTab}}</a>
+									</li>
+								</ul>
+								
+								<div ng-if="tabCombustible" class="amCharts" id="rendimientoVehiculosCombustible"></div>
+<!-- 								<div ng-if="tabGastos" class="amCharts" id="rendimientoVehiculosGastos"></div> -->
+								<div class="row">
+									<div class="col-md-6">
+										<span class="badge" style="background-color:#0097a7;font-size:1rem;">Viajes Realizados</span>
+									</div>
+									<div class="col-md-6">
+										<span class="badge" style="background-color:#cf0a2c;font-size:1rem;">Cálculo de Viajes</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="box box-danger">
+					<div class="box-header with-border" align="center">
+						<h3 class="box-title">Aprobación de Proveedor</h3>
+						<div class="box-tools pull-right">
+							<button class="btn btn-box-tool" type="button"
+								data-widget="collapse">
+								<i class="fa fa-minus"></i>
+							</button>
+						</div>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div  class="amCharts" id="reatingProveedores"></div>								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</section>
+</body>
+
+</html>

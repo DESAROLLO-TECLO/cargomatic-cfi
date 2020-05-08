@@ -1,0 +1,331 @@
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+#map1 {
+	height: 70vh;
+	margin-top: 0px;
+	border-radius: 2px;
+	border: 1px solid silver;
+}
+
+.ssearchbar {
+	z-index: 100;
+	position: absolute;
+	margin-top: 1px;
+	right: 4px;
+}
+
+.ssearchbar>.box>.box-header {
+	cursor: pointer !important;
+}
+
+.noFa {
+	display: none;
+}
+
+.pac-container {
+	z-index: 1051 !important;
+}
+</style>
+</head>
+<body>
+	<section class="content-header">
+		<h1>{{breadCrumbs.servicio}}</h1>
+		<ol class="breadcrumb">
+			<li><a href="#"><i class="{{breadCrumbs.icono}}"></i>{{breadCrumbs.modulo}}</a></li>
+			<li class="active">{{breadCrumbs.servicio}}</li>
+		</ol>
+	</section>
+
+	<section class="content">
+
+		<div class="row centerCol">
+			<div class="col-md-12">
+				<div class="box box-danger">
+					<div class="box-header with-border center">
+						<h2 class="box-title">Rutas de Proveedores</h2>
+					</div>
+
+					<div class="box-body">
+						<div class="row">
+							<form role="form" name="rutas" novalidate>
+								<div class="{{viewForm.colForm}}">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-group">
+												<div class="form-group">
+													<label for="tipoComportamiento">Proveedor: </label>
+													<div class="input-group">
+														<span class="input-group-addon"> <i
+															class="fa fa-list"></i></span> <select class="form-control"
+															select-picker multiple idioma-sp="{{currentLanguage}}"
+															data-actions-box="true"
+															data-selected-text-format="count > 2"
+															ng-model="formRoute.provedor"
+															ng-options="o.id as o.nbProveedor for o in vo.proveedor">
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group"
+												ng-class="{'has-error': rutasForm.fechaCoordenadas.$invalid && rutasForm.fechaCoordenadas.$dirty}">
+												<label for="fechaCoordenadas">Tipo de Vehículo:</label>
+												<div class="input-group">
+													<span class="input-group-addon"> <i
+														class="fa fa-list"></i></span> <select class="form-control"
+														select-picker multiple idioma-sp="{{currentLanguage}}"
+														data-actions-box="true"
+														data-selected-text-format="count > 2"
+														ng-model="formRoute.tiposTransporte"
+														ng-options="t.id as t.nbTipoCamion for t in vo.camion">
+													</select>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-md-12">
+											<div class="form-group">
+												<div class="form-group">
+													<label for="tipoComportamiento">Origen: </label>
+													<div class="input-group">
+														<span class="input-group-addon"> <i
+															class="fa fa-map-marker"></i></span>
+														<div class="padded-row">
+															<select ng-model="formRoute.origen" class="form-control"
+																select2 data-minimum-results-for-search="Infinity"
+																name="estadoRemi" id="estadoRemi"
+																ng-options="org as org.nbUbicacion for org in vo.orgien | orderBy: 'nbUbicacion'"
+																ng-change="changeOrigen(formRoute.origen)">
+																<option value="">Seleccione</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-md-12">
+											<div class="form-group">
+												<div class="form-group">
+													<label for="tipoComportamiento">Destino: </label>
+													<div class="input-group">
+														<span class="input-group-addon"> <i
+															class="fa fa-map-marker"></i></span>
+														<div class="padded-row">
+															<select ng-model="formRoute.destino" class="form-control"
+																select2 data-minimum-results-for-search="Infinity"
+																name="detinoConsul" id="detinoConsul"
+																ng-options="dest as dest.nbUbicacion for dest in vo.destino | orderBy: 'nbUbicacion'"
+																ng-change="changeDestino(formRoute.destino)">
+																<option value="">Seleccione</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-md-12">
+											<div class="form-group">
+												<div class="form-group">
+													<label for="tipoComportamiento">Categoria: </label>
+													<div class="input-group">
+														<span class="input-group-addon"> <i
+															class="fa fa-list"></i></span> <select name="category{{$index}}"
+															id="category{{$index}}" class="form-control"
+															select-picker multiple idioma-sp="{{currentLanguage}}"
+															data-actions-box="true"
+															data-selected-text-format="count > 2"
+															ng-model="formRoute.categorias"
+															ng-options="c as c.nbCategoria for c in vo.categoria"
+															ng-change="filtraSubcategoria(formRoute.categorias)">
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-md-12">
+											<div class="form-group">
+												<label for="tipoComportamiento">Subcategoría: </label>
+												<div class="input-group">
+													<span class="input-group-addon"> <i
+														class="fa fa-list"></i></span> <select class="form-control"
+														select2 name="subcategory{{$index}}"
+														id="subcategory{{$index}}" multiple="multiple"
+														data-allow-clear="true" idioma-s2="{{currentLanguage}}"
+														ng-model="formRoute.subCategorias"
+														ng-options="sm.nbOpcion group by sm.nbGroup for sm in subcategoriasFiltro">
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12 text-center">
+											<button class="btn btn-md btn-danger"
+												ng-click="searchRoutes()">Buscar</button>
+										</div>
+									</div>
+								</div>
+							</form>
+
+							<div class="{{viewForm.colMapa}}">
+								<div class="box box-danger" id="mapDiv">
+									<div class="box-header with-border center">
+										<h3 class="box-title">Mapa de Rutas</h3>
+										<div class="pull-left">
+											<a target="_self" ng-click="collapsar()"><span>
+												<i class="{{viewForm.icon}}"></i></span>
+											</a>											
+										</div>
+									</div>
+									<div class="box-body">
+										<div id='map1'></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row" ng-if="rutasSet.length > 0">
+							<div class="col-xs-12">
+								<div class="box box-danger">
+									<div class="box-header row">
+										<div class="col-md-6 col-xs-12">
+											<h3 class="box-title">Registros encontrados: {{(rutasSet |
+												filter : view.searchSomething).length}}</h3>
+										</div>
+										<div class="col-md-offset-3 col-md-3 col-xs-10">
+											<div class="input-group pull-right">
+												<input type="text" id="searchsomething"
+													class="form-control input-sm"
+													placeholder="Buscar por filtro"
+													ng-model="view.searchSomething">
+												<div class="input-group-addon">
+													<i class="fa fa-search"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="box-body table-responsive">
+										<table class="table table-striped table-hover header-fixed">
+											<thead>
+												<tr>
+													<th class="center">Indicador</th>
+													<th class="center">Origen</th>
+													<th class="center">Destino</th>
+													<th class="center">Proveedores</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr
+													dir-paginate="ruta in rutasSet | filter:view.searchSomething | itemsPerPage: view.rowsPerPage">
+													<td>
+														<div
+															style="width: 1rem; height: 1rem; border-radius: 50%; margin: auto;"
+															ng-style="{'background-color':ruta.eventos[0].strokeColor}"></div>
+													</td>
+													<td>{{ruta.eventos[0].descripcionOrigen}}</td>
+													<td>{{ruta.eventos[0].descripcionLocalidad}}</td>
+
+													<td class="center">
+														<button ng-click="viewModal(ruta)" class="btn btn-danger"
+															tooltip="">
+															<i class="fa fa-truck" aria-hidden="true"></i>
+														</button>
+													</td>
+												</tr>
+												<tr
+													ng-if="(rutasSet | filter:view.searchSomething).length < 1">
+													<td colspan="4" class="text-center"><h4>No se
+															encontraron coincidencias</h4></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="container-fluid">
+							<div class="fixed-table-pagination" style="display: block;">
+								<rows-per-page rows="view.rowsPerPage"
+									filtro="view.searchSomething" array="rutasSet"></rows-per-page>
+
+								<div class="pull-right pagination">
+									<dir-pagination-controls class="pagination"></dir-pagination-controls>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<modal visible="showModal" size-modal="md" noescape modalstatic>
+	<modal-header title="Proveedores"></modal-header> <modal-body>
+	<div class="row">
+	<div class="col-md-12">
+		<div class="panel-group" id="accordion" role="tablist"
+			aria-multiselectable="true" ng-repeat="prov in proveedores">
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title">
+						<a role="button" data-toggle="collapse" data-parent="#accordion"
+							data-target="#collapseOne{{$index}}" aria-expanded="true"
+							aria-controls="collapseOne"> {{prov.nbProveedor}} </a>
+					</h4>
+				</div>
+				<div id="collapseOne{{$index}}" class="panel-collapse collapse"
+					role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-12">
+								<table
+									class="table table-striped table-hover table-condensed header-fixed">
+									<thead>
+										<tr>
+											<th class="center">Tipo de Vehículo:</th>
+											<th class="center">Tarifa</th>
+											<th>Frecuencia de Salida</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr
+											dir-paginate="vehiculo in prov.vehiculos | filter:view.searchSomething | itemsPerPage: view.rowsPerPage">
+											<td class="center">{{vehiculo.nbTipoCamion}}</td>
+											<td class="center">{{vehiculo.tarifa}}</td>
+											<td class="center">{{vehiculo.frecuenciaPartida}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	</modal-body> <modal-footer btn-close="Cerrar"> </modal-footer> </modal>
+
+
+
+</body>
+<script type="text/javascript">
+	$('#datepicker').datepicker({
+		autoclose : true,
+		endDate : '+0d',
+		todayHighlight : true
+	})
+
+</script>
+</html>

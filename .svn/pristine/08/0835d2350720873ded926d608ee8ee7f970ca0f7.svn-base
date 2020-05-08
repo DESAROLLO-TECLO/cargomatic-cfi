@@ -1,0 +1,364 @@
+{
+	"solicitudes" : [
+	{
+		"id":5,
+		"folio" : "001ABC500",
+		"nombre": "Liverpool S.A de C.V",
+		"fhcreacion" : "03/08/2018",
+		"fhentrega"  : "05/08/2018",
+		"correo" : "liverpool@company.com",
+		"origen" : {
+			"id":7,
+			"nbUbicacion": "Apodaca, Nuevo León",
+			"lat": "25.776468",
+			"lng": "-100.18587430000002"
+		},
+		"destino" : {
+			"id": 7,
+			"nbUbicacion": "Cozumel, Quintana Roo",
+			"lat": "20.4229839",
+			"lng": "-86.9223432"
+		},
+		
+		"statusCod" : "05",
+		"statusCodLetra" : "RNC",
+		"status" : "Ruta no contratada",
+		"label" : "label-danger",
+		"entrega" : "Jorge Bautista",
+		"recibe" : "Francisco Martinez",
+		"apilable" : "true",
+		"montacargas" : "false",
+		"largo": 10,
+		"ancho": 5,
+		"alto": 5,
+		"uni1" : "Mts",
+		"uni2" : "Kgs", 
+		"pesoArt" : 300,
+		"valorArt" : "$1,000.00",
+		"contratada":true,
+		"nbRuta": "Apodaca, Nuevo León - Cozumel, Quintana Roo",
+		"nuPrecio":"$ 9,897:90 MXN",
+		"categoria" : [
+			{
+				"id": "2",
+				"nbCategoria": "Art\u00EDculos de tecnolog\u00EDa"
+			},
+			{
+				"id": "3",
+				"nbCategoria": "Art\u00EDculos fr\u00E1giles"
+			}
+		],
+		"subcategoria" : [{
+			"idPadre": "2",
+			"id": "4",
+			"nbSubCategoria": "Accesorios"
+		},
+		{
+			"idPadre": "3",
+			"id": "7",
+			"nbSubCategoria": "Antig\u00FCedad"
+		}],
+		"empaquetado" : 
+			{
+				"id": "4",
+				"nbEmpaquetado": "Rejas de madera"
+			},
+		"camion" : [
+			{
+				"id": "2",
+				"nbTipoCamion": "Rabon (1 eje)"
+			},
+			{
+				"id": "3",
+				"nbTipoCamion": "Torton (2 ejes)"
+			}
+		]
+	},
+	{
+		"id":3,
+		"folio" : "001ABC300",
+		"nombre": "HEB S.A de C.V",
+		"fhcreacion" : "03/08/2018",
+		"fhentrega"  : "05/08/2018",
+		"correo" : "heb@company.com",
+		"origen" : {
+			"id":4,
+			"nbUbicacion": "Tlalpan, Ciudad de Mexico",
+			"lat": "19.2790911",
+			"lng": "-99.2114234"
+		},
+		"destino": {
+			"id": 4,
+			"nbUbicacion": "Ahualulco, San Luis Potosi",
+			"lat": "22.3997407",
+			"lng": "-101.16659930000003"
+		},
+		"statusCod" : "03",
+		"statusCodLetra" : "EE",
+		"label" : "label-info",
+		"status" : "En Espera",
+		"entrega" : "Jorge Bautista",
+		"recibe" : "Francisco Martinez",
+		"contratada":true,
+		"nbRuta": "Tlalpan, Ciudad de Mexico - Ahualulco, San Luis Potosi",
+		"nuPrecio":"$ 8,897:90 MXN",
+		"categoria" : [
+		{
+			"id": "3",
+			"nbCategoria": "Art\u00EDculos fr\u00E1giles"
+		},
+		{
+			"id": "5",
+			"nbCategoria": "Carga Consolidada"
+		}],
+		"subcategoria": [
+		{
+			"idPadre": "1",
+			"id": "3",
+			"nbSubCategoria": "Aves"
+		},
+		{
+			"idPadre": "2",
+			"id": "5",
+			"nbSubCategoria": "Celulares"
+		}
+		],
+		"empaquetado": 
+		{
+			"id": "1",
+			"nbEmpaquetado": "Anti-corrosi\u00F3n"
+		},
+		"camion": [
+		{
+			"id": "1",
+			"nbTipoCamion": "Cami\u00F3n de plataforma abierta"
+		},
+		{
+			"id": "2",
+			"nbTipoCamion": "Rabon (1 eje)"
+		}]
+	},
+	{
+		"id":2,
+		"folio" : "001ABC200",
+		"nombre": "SAMS S.A de C.V",
+		"fhcreacion" : "03/08/2018",
+		"fhentrega"  : "05/08/2018",
+		"correo" : "sams@company.com",
+		"origen" : {
+			"id": 3,
+			"nbUbicacion": "Tampico, Tamaulipas",
+			"lat": "22.2331041",
+			"lng": "-97.86109899999997"
+		},
+		"nbRuta": "Tampico, Tamaulipas - Coatzacoalcos, Veracruz",
+		"destino" : {
+			"id": 3,
+			"nbUbicacion": "Coatzacoalcos, Veracruz",
+			"lat": "18.1344779",
+			"lng": "-94.4589858"
+		},
+		"statusCodLetra" : "EC",
+		"statusCod" : "07",
+		"label" : "label-warning",
+		"status" : "Cotizaciones listas",
+		"entrega" : "Jorge Bautista",
+		"recibe" : "Francisco Martinez",
+		"contratada":true,
+		"nuPrecio":"$ 3,897:90 MXN",
+		"categoria" : [
+			{
+				"id": "2",
+			"nbCategoria": "Art\u00EDculos de tecnolog\u00EDa"
+			}
+		],
+		"subcategoria" : [{
+			"idPadre": "1",
+			"id": "1",
+			"nbSubCategoria": "Animales acu\u00E1ticos"
+		},
+		{
+			"idPadre": "1",
+			"id": "2",
+			"nbSubCategoria": "Animales de cr\u00EDa"
+		}],
+		"empaquetado": 
+		{
+			"id": "1",
+			"nbEmpaquetado": "Anti-corrosi\u00F3n"
+		},
+		"camion" : [
+			{
+				"id": "2",
+				"nbTipoCamion": "Rabon (1 eje)"
+			}]
+	},
+	{
+		"id":1,
+		"folio" : "001ABC100",
+		"nombre": "Walmart S.A de C.V",
+		"fhcreacion" : "04/08/2018",
+		"fhentrega"  :"04/08/2018",
+		"correo" : "walmart@company.com",
+		"origen" : {
+			"id": 1,
+			"nbUbicacion": "Camotl\u00E1n de Miraflores, Col.",
+			"lat": "19.2223273",
+			"lng": "-104.23562600000002"
+		},
+		"destino" :{
+			"id": 1,
+			"nbUbicacion": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+			"lat": "31.6316099",
+			"lng": "-106.38906179999998"
+		},
+		"nbRuta": "Camotl\u00E1n de Miraflores, Col. - Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+		"statusCod" : "01",
+		"statusCodLetra" : "REV",
+		"label" : "label-default",
+		"status" : "Revisado",
+		"entrega" : "Damian Perez",
+		"recibe" : "Jesus Gutierrez",
+		"nuPrecio":"$ 8,897:90 MXN",
+		"contratada":false,
+		"categoria" : [
+			{
+				"id": "1",
+				"nbCategoria": "Animales"
+			}
+		],
+		"subcategoria" : [{
+			"idPadre": "1",
+			"id": "1",
+			"nbSubCategoria": "Animales acu\u00E1ticos"
+		},
+		{
+			"idPadre": "1",
+			"id": "2",
+			"nbSubCategoria": "Animales de cr\u00EDa"
+		}],
+		"empaquetado" : 
+			{
+				"id": "8",
+				"nbEmpaquetado": "Tanques"
+			}
+		,
+		"camion" : [
+			{
+				"id": "3",
+				"nbTipoCamion": "Torton (2 ejes)"
+			}
+		]
+	},
+	{
+		"id":4,
+		"folio" : "001ABC400",
+		"nombre": "Soriana S.A de C.V",
+		"fhcreacion" : "03/08/2018",
+		"fhentrega"  : "05/08/2018",
+		"correo" : "soriana@company.com",
+		"contratada":true,
+		"nbRuta": "Nuevo Laredo, Tamaulipas - Pachuca, Hidalgo",
+		"nuPrecio":"$ 7,897:90 MXN",
+		"origen" : 
+			{
+				"id":5,
+				"nbUbicacion": "Nuevo Laredo, Tamaulipas",
+				"lat": "27.4779362",
+				"lng": "-99.54957300000001"
+			},
+		"destino" :
+			 {
+				"id": 5,
+				"nbUbicacion": "Pachuca, Hidalgo",
+				"lat": "20.1010608",
+				"lng": "-98.75913109999999"
+			},
+		"categoria" : [
+		{
+			"id": "1",
+			"nbCategoria": "Animales"
+		}]
+		,
+		"subcategoria": [
+		{
+			"idPadre": "1",
+			"id": "1",
+			"nbSubCategoria": "Animales acu\u00E1ticos"
+		}
+	],"empaquetado": [
+		{
+			"id": "1",
+			"nbEmpaquetado": "Anti-corrosi\u00F3n"
+		}
+	],
+	"camion": [
+		{
+			"id": "13",
+			"nbTipoCamion": "Madrina/porta veh\u00EDculos"
+		}
+	],
+		"statusCod" : "04",
+		"label" : "label-success",
+		"statusCodLetra" : "Cont",
+		"status" : "Contratada",
+		"entrega" : "Jorge Bautista",
+		"recibe" : "Francisco Martinez"
+	},
+	{
+		"id":6,
+		"folio" : "001ABC600",
+		"nombre": "Palacio de Hierro S.A de C.V",
+		"fhcreacion" : "03/08/2018",
+		"fhentrega"  : "05/08/2018",
+		"correo" : "palaciodehierro@company.com",		
+		"origen" : {
+			"id":6,
+			"nbUbicacion": "Zapopan, Jalisco",
+			"lat": "20.6719563",
+			"lng": "-103.41650099999998"
+		},
+		"destino" : {
+			"id": 6,
+			"nbUbicacion": "Mexicali, Baja California",
+			"lat": "32.6245389",
+			"lng": "-115.45226230000003"
+		},
+		"statusCod" : "04",
+		"label" : "label-success",
+		"statusCodLetra" : "Cont",
+		"status" : "Contratado",
+		"entrega" : "Jorge Bautista",
+		"recibe" : "Francisco Martinez",
+		"contratada":true,
+		"nbRuta": "Zapopan, Jalisco - Mexicali, Baja California",
+		"nuPrecio":"$ 1,897:90 MXN"
+	}],
+	
+	"rutasContratadas" : [
+		{
+			"id":1,
+			"origen": "Camotl\u00E1n de Miraflores, Col.",
+			"destino": "Intermex, 32575 Cd Ju\u00E1rez, Chih."
+		},
+		{
+			"id":2,
+			"origen": "Altamira, Tamaulipas",
+			"destino": "Coatzacoalcos, Veracruz"
+		},
+		{
+			"id":3,
+			"origen": "Tlalpan, Ciudad de Mexico",
+			"destino": "Ahualulco, San Luis Pososi"
+		}, 
+		{
+			"id":4,
+			"origen": "Nuevo Laredo, Tamaulipas",
+			"destino": "Pachuca, Hidalgo"
+		},
+		{
+			"id":5,
+			"origen": "Zapopan, Jalisco",
+			"destino": "Mexicali, Baja California"
+		}]
+}

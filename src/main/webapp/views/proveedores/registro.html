@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<section class="content-header">
+	<h1>{{titleModule}}</h1>
+	<ol class="breadcrumb">
+		<li>
+			<a>
+				<i class="{{breadCrumbs.icono}}"></i>{{breadCrumbs.modulo}}
+			</a>
+		</li>
+		<li class="active">{{titleModule}}</li>
+	</ol>
+</section>
+
+<!-- Contenido -->
+<section  class="content">
+	<form role="form" name="registry">
+		<div class="row">
+			<div class="col-md-12"> 
+				<div class="box box-danger">
+					<div class="box-header text-center">
+						<div class="col-md-12">
+							<h3 class="box-title">
+								{{titleBox}}
+							</h3>
+							<ul class="nav nav-tabs nav-justified">
+							  	<li ng-class="{'active' : configuracionSelected === 't1'}"><a ng-click="goTab('t1')">{{'PROVEEDORES.Registro.registroProveedores.tabElement.oneTab' | translate}}</a></li>
+							  	<li ng-class="{'active' : configuracionSelected === 't2'}"><a ng-click="goTab('t2')">{{'PROVEEDORES.Registro.registroProveedores.tabElement.secondTab' | translate}}</a></li>
+							</ul>
+						</div>	
+					</div>
+					
+					<div class="box-body">
+						<div ng-if="configuracionSelected === 't1'"  informacion-general></div>
+						<div ng-if="configuracionSelected === 't2'"  servicios-ruta></div>
+						
+						<div class="row centerRow">	
+							<a type="button" class="btn btn-danger" a href="#/consultaProveedores">
+								<i class="fa fa-arrow-circle-left"></i>
+								Regresar
+							</a>
+							
+							<button class="btn btn-danger" ng-click="guardar()">Guardar</button>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>		
+		
+	
+		
+	</form>
+	</section>
+</body>
+</html>

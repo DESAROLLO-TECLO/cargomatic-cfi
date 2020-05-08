@@ -1,0 +1,503 @@
+[
+  {
+    "rutaId":"1",
+    "folio":"001ABC35478",
+    "estatusId":"01",
+    "estatus":"Retrasado",
+    "estatusColor" : "label-danger",
+    "provedor":"CFI Drive",
+    "origen":"Victoria de Durango, Durango",
+    "destino":"Culiacán Rosales, Sinaloa",
+    "cargaDisponible":"30",
+    "volumenDisponible":"0",
+    "fechaPartida":"10/08/2018 01:30",
+    "fechaLLegada":"10/08/2018 01:30",
+    "datosFacturacionProvedor":{
+      "tarifa":"13,000.00",
+      "recoleccion":"0.00",
+      "entrega":"0.00",
+      "maniobra":"1,200.00",
+      "subtotal":"14,200.00",
+      "iva":"16",
+      "total":"16,472.00"
+    },
+    "datosFacturacionCliente":{
+      "costoProveedor":"1647164722",
+      "porcentajeComision":"15",
+      "subTotal":"18,942.80",
+      "impuestos por operacion":"0.00",
+      "total":"18,942.80"
+    },
+    "carga":[
+      {
+        "cargaId":"1",
+        "clienteNombre":"Walmart",
+        "clienteNumGuia":"002GTYUI123",
+        "categoria":"Art\u00EDculos fr\u00E1giles",
+        "subcategoria":"Antig\u00FCedad",
+        "peso":"500Kg",
+        "dimension":"5m3",
+        "porcentajeOcupacionCarga":"25",
+        "porcentajeOcupacionVolumen":"40"
+      },{
+        "cargaId":"2",
+        "clienteNombre":"The Home Depot",
+        "clienteNumGuia":"002HYOTP456",
+        "categoria":"Art\u00EDculos de tecnolog\u00EDa",
+        "subcategoria":"Accesorios",
+        "peso":"500Kg",
+        "dimension":"5m3",
+        "porcentajeOcupacionCarga":"15",
+        "porcentajeOcupacionVolumen":"10"
+      },{
+        "cargaId":"3",
+        "clienteNombre":"La Casa del Reloj",
+        "clienteNumGuia":"002LKJDB789",
+        "categoria":"Art\u00EDculos fr\u00E1giles",
+        "subcategoria":"Antig\u00FCedad",
+        "peso":"10Kg",
+        "dimension":"2m3",
+        "porcentajeOcupacionCarga":"10",
+        "porcentajeOcupacionVolumen":"20"
+      },
+      {
+        "cargaId":"4",
+        "clienteNombre":"Soriana S.A de C.V",
+        "clienteNumGuia":"003YOLHJ907",
+        "categoria":"Art\u00EDculos de tecnolog\u00EDa",
+        "subcategoria":"Accesorios",
+        "peso":"2000Kg",
+        "dimension":"20m3",
+        "porcentajeOcupacionCarga":"20",
+        "porcentajeOcupacionVolumen":"30"
+      }
+    ]
+  },{
+    "rutaId":"2",
+    "folio":"001DEF37896",
+    "estatusId":"02",
+    "estatus":"En tránsito",
+    "estatusColor" : "label-info",
+    "provedor":"Tampiqueños S.A de C.V",
+    "origen":"Tampico, Tamaulipas",
+    "destino":"Veracruz",
+    "cargaDisponible":"0",
+    "volumenDisponible":"0",
+    "fechaPartida":"17/08/2018 01:30",
+    "fechaLLegada":"18/08/2018 01:30",
+    "datosFacturacionProvedor":{
+      "tarifa":"14,000.00",
+      "recoleccion":"0.00",
+      "entrega":"0.00",
+      "maniobra":"1,200.00",
+      "subtotal":"15,200.00",
+      "iva":"16",
+      "total":"17,632.00"
+    },
+    "datosFacturacionCliente":{
+      "costoProveedor":"17,632.00",
+      "porcentajeComision":"15",
+      "subTotal":"20,276.80",
+      "impuestos por operacion":"0.00",
+      "total":"20,276.80"
+    },
+    "carga":[
+      {
+        "cargaId":"4",
+        "clienteNombre":"Soriana S.A de C.V",
+        "clienteNumGuia":"003YOLHJ907",
+        "categoria":"Carga completa",
+        "subcategoria":"Carga llena",
+        "peso":"2000Kg",
+        "dimension":"20m3",
+        "porcentajeOcupacionCarga":"100",
+        "porcentajeOcupacionVolumen":"100"
+      }
+    ]
+  },
+  {
+    "rutaId":"3",
+     "estatusId":"03",
+    "estatus":"En tránsito",
+    "estatusColor" : "label-info",
+    "folio":"001GHI87640",
+    "provedor":"Solutions Cargo ",
+    "origen":"Camotl\u00E1n de Miraflores, Col.",
+    "destino":"Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+    "cargaDisponible":"50",
+    "volumenDisponible":"40",
+    "fechaPartida":"15/08/2018 01:30",
+    "fechaLLegada":"15/08/2018 01:30",
+    "datosFacturacionProvedor":{
+      "tarifa":"11,200.00",
+      "recoleccion":"0.00",
+      "entrega":"0.00",
+      "maniobra":"1,200.00",
+      "subtotal":"12,400.00",
+      "iva":"16",
+      "total":"14,384.00"
+    },
+    "datosFacturacionCliente":{
+      "costoProveedor":"14,384",
+      "porcentajeComision":"15",
+      "subTotal":"16,541.60",
+      "impuestos por operacion":"0.00",
+      "total":"16,541.6"
+    },
+    "carga":[
+      {
+        "cargaId":"5",
+        "clienteNombre":"Grupo de Artesanos de M\u00e9xico",
+        "clienteNumGuia":"003YSTNC367",
+        "categoria":"Art\u00EDculos fr\u00E1giles",
+        "subcategoria":"Cer\u00E1mica",
+        "peso":"500Kg",
+        "dimension":"8m3",
+        "porcentajeOcupacionCarga":"25",
+        "porcentajeOcupacionVolumen":"20"
+      },{
+        "cargaId":"6",
+        "clienteNombre":"Vidrieras del Sur",
+        "clienteNumGuia":"003DBCNO061",
+        "categoria":"Art\u00EDculos fr\u00E1giles",
+        "subcategoria":"Cristales",
+        "peso":"500Kg",
+        "dimension":"8m3",
+        "porcentajeOcupacionCarga":"25",
+        "porcentajeOcupacionVolumen":"20"
+      }
+    ]
+  },
+  {
+    "rutaId":"5",
+    "folio":"001LMQ86402",
+    "estatusId":"01",
+    "estatus":"Carga en proceso",
+    "estatusColor" : "label-default",
+    "provedor":"SE Global Logistics S.A de C.V",
+    "origen":"Camotl\u00E1n de Miraflores, Col.",
+    "destino":"Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+    "cargaDisponible":"30",
+    "volumenDisponible":"40",
+    "fechaPartida":"18/08/2018 01:30",
+    "fechaLLegada":"19/08/2018 01:30",
+    "datosFacturacionProvedor":{
+      "tarifa":"14,500.00",
+      "recoleccion":"0.00",
+      "entrega":"0.00",
+      "maniobra":"1,200.00",
+      "subtotal":"15,700.00",
+      "iva":"16",
+      "total":"18,212.00"
+    },
+    "datosFacturacionCliente":{
+      "costoProveedor":"18,212.00",
+      "porcentajeComision":"15",
+      "subTotal":"20,943.80",
+      "impuestos por operacion":"0.00",
+      "total":"20,943.80"
+    },
+    "carga":[
+      {
+        "cargaId":"8",
+        "clienteNombre":"Telcel S.A de C.V",
+        "clienteNumGuia":"008GTUPO638",
+        "categoria":"Art\u00EDculos de tecnolog\u00EDa",
+        "subcategoria":"Celulares",
+        "peso":"200Kg",
+        "dimension":"3m3",
+        "porcentajeOcupacionCarga":"10",
+        "porcentajeOcupacionVolumen":"15"
+      },{
+        "cargaId":"9",
+        "clienteNombre":"Joyer\u00EDa Casa Moran",
+        "clienteNumGuia":"008RWETS783",
+        "categoria":"Art\u00EDculos fr\u00E1giles",
+        "subcategoria":"Antig\u00FCedad",
+        "peso":"200Kg",
+        "dimension":"3m3",
+        "porcentajeOcupacionCarga":"10",
+        "porcentajeOcupacionVolumen":"15"
+      },{
+        "cargaId":"10",
+        "clienteNombre":"Artesan\u00EDas Robles",
+        "clienteNumGuia":"010HTOWP712",
+        "categoria":"Art\u00EDculos fr\u00E1giles",
+        "subcategoria":"Cer\u00E1mica",
+        "peso":"200Kg",
+        "dimension":"3m3",
+        "porcentajeOcupacionCarga":"10",
+        "porcentajeOcupacionVolumen":"10"
+      }
+    ]
+  },
+  {
+    "rutaId":"4",
+     "folio":"001JKL89600",
+      "estatusId":"04",
+    "estatus":"Entregado",
+    "estatusColor" : "label-success",
+    "provedor":"Fletes Mylsa",
+    "origen":"Pachuca de Soto, Hgo.",
+    "destino":"San FELIPE, Consuelo Ruiz, 68",
+    "cargaDisponible":"0",
+    "volumenDisponible":"0",
+    "fechaPartida":"20/08/2018 01:30",
+    "fechaLLegada":"20/08/2018 01:30",
+    "datosFacturacionProvedor":{
+      "tarifa":"14,500",
+      "recoleccion":"0.00",
+      "entrega":"0.00",
+      "maniobra":"1,200.00",
+      "subtotal":"13,500.00",
+      "iva":"16",
+      "total":"15,600.00"
+    },
+    "datosFacturacionCliente":{
+      "costoProveedor":"15,600.00",
+      "porcentajeComision":"15",
+      "subTotal":"17,940.00",
+      "impuestos por operacion":"0.00",
+      "total":"17,940.00"
+    },
+    "carga":[
+      {
+        "cargaId":"7",
+        "clienteNombre":"Muebles Troncoso",
+        "clienteNumGuia":"006HIYAT630",
+        "categoria":"Carga completa",
+        "subcategoria":"Carga intermodal",
+        "peso":"2000Kg",
+        "dimension":"20m3",
+        "porcentajeOcupacionCarga":"100",
+        "porcentajeOcupacionVolumen":"100"
+      }
+    ]
+  },
+  {
+    "rutaId":"6",
+    "folio":"001ZRT70861",
+    "estatusId":"01",
+    "estatus":"Carga en proceso",
+    "estatusColor" : "label-info",
+    "provedor":"CFI Drive",
+    "origen":"Pachuca de Soto, Hgo.",
+    "destino":"Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+    "cargaDisponible":"40",
+    "volumenDisponible":"30",
+    "fechaPartida":"21/08/2018 01:30",
+    "fechaLLegada":"21/08/2018 01:30",
+    "datosFacturacionProvedor":{
+      "tarifa":"14,300.00",
+      "recoleccion":"0.00",
+      "entrega":"0.00",
+      "maniobra":"1,200.00",
+      "subtotal":"15,500.00",
+      "iva":"16",
+      "total":"17,980.00"
+    },
+    "datosFacturacionCliente":{
+      "costoProveedor":"17,980.00",
+      "porcentajeComision":"15",
+      "subTotal":"20,677.00",
+      "impuestos por operacion":"0.00",
+      "total":"20,677.00"
+    },
+    "carga":[
+      {
+        "cargaId":"11",
+        "clienteNombre":"H.E.B Tampico",
+        "clienteNumGuia":"011FRTYU971",
+        "categoria":"Animales",
+        "subcategoria":"Animales acu\u00E1ticos",
+        "peso":"400Kg",
+        "dimension":"3m3",
+        "porcentajeOcupacionCarga":"15",
+        "porcentajeOcupacionVolumen":"15"
+      },{
+        "cargaId":"12",
+        "clienteNombre":"PC DOMINIO S.A",
+        "clienteNumGuia":"012HYTRO386",
+        "categoria":"Art\u00EDculos de tecnolog\u00EDa",
+        "subcategoria":"Computadoras",
+        "peso":"500Kg",
+        "dimension":"3m3",
+        "porcentajeOcupacionCarga":"25",
+        "porcentajeOcupacionVolumen":"15"
+      }
+    ]
+  },
+  {
+    "rutaId":"7",
+    "folio":"001FBH12367",
+    "estatusId":"01",
+    "estatus":"Carga en proceso",
+    "estatusColor" : "label-info",
+    "provedor":"Tampiqueños S.A de C.V",
+    "origen":"Camotl\u00E1n de Miraflores, Col.",
+    "destino":"San FELIPE, Consuelo Ruiz, 68",
+    "cargaDisponible":"80",
+    "volumenDisponible":"80",
+    "fechaPartida":"09/08/2018 01:30",
+    "fechaLLegada":"11/08/2018 01:30",
+    "datosFacturacionProvedor":{
+      "tarifa":"12,500.00",
+      "recoleccion":"0.00",
+      "entrega":"0.00",
+      "maniobra":"1,200.00",
+      "subtotal":"13,700.00",
+      "iva":"16",
+      "total":"15,892.00"
+    },
+    "datosFacturacionCliente":{
+      "costoProveedor":"15,892.00",
+      "porcentajeComision":"15",
+      "subTotal":"18,275.80",
+      "impuestos por operacion":"0.00",
+      "total":"18,275.80"
+    },
+    "carga":[
+      {
+        "cargaId":"13",
+        "clienteNombre":"Inmuebles Garc\u00EDa",
+        "clienteNumGuia":"013KTLIO309",
+        "categoria":"Carga Consolidada",
+        "subcategoria":"Art\u00EDculos de segunda mano",
+        "peso":"50Kg",
+        "dimension":"3m3",
+        "porcentajeOcupacionCarga":"20",
+        "porcentajeOcupacionVolumen":"20"
+      }
+    ]
+  },
+  {
+    "rutaId":"8",
+    "folio":"001JUA67453",
+    "estatusId":"02",
+    "estatus":"Reservado",
+    "estatusColor" : "label-primary",
+    "provedor":"Solutions Cargo ",
+    "origen":"Camotl\u00E1n de Miraflores, Col.",
+    "destino":"Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+    "cargaDisponible":"80",
+    "volumenDisponible":"80",
+    "fechaPartida":"28/07/2018 01:30",
+    "fechaLLegada":"29/07/2018 01:30",
+    "datosFacturacionProvedor":{
+      "tarifa":"14,800.00",
+      "recoleccion":"0.00",
+      "entrega":"0.00",
+      "maniobra":"1,200.00",
+      "subtotal":"16,000",
+      "iva":"16",
+      "total":"18,560.00"
+    },
+    "datosFacturacionCliente":{
+      "costoProveedor":"18,560.00",
+      "porcentajeComision":"15",
+      "subTotal":"21,344.00",
+      "impuestos por operacion":"0.00",
+      "total":"21,344.00"
+    },
+    "carga":[
+      {
+        "cargaId":"14",
+        "clienteNombre":"+Kota",
+        "clienteNumGuia":"0",
+        "categoria":"Animales",
+        "subcategoria":"Animales de cr\u00EDa",
+        "peso":"200Kg",
+        "dimension":"4m3",
+        "porcentajeOcupacionCarga":"20",
+        "porcentajeOcupacionVolumen":"20"
+      }
+    ]
+  },
+  {
+    "rutaId":"9",
+    "folio":"001RUA89302",
+     "estatusId":"02",
+    "estatus":"Reservado",
+    "estatusColor" : "label-primary",
+    "provedor":"Fletes Mylsa",
+    "origen":"Pachuca de Soto, Hgo.",
+    "destino":"Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+    "cargaDisponible":"20",
+    "volumenDisponible":"20",
+    "fechaPartida":"19/07/2018 01:30",
+    "fechaLLegada":"20/07/2018 01:30",
+    "datosFacturacionProvedor":{
+      "tarifa":"12,300.00",
+      "recoleccion":"0.00",
+      "entrega":"0.00",
+      "maniobra":"1,200.00",
+      "subtotal":"13,500.00",
+      "iva":"16",
+      "total":"15,660.00"
+    },
+    "datosFacturacionCliente":{
+      "costoProveedor":"15,660.00",
+      "porcentajeComision":"15",
+      "subTotal":"18,009.00",
+      "impuestos por operacion":"0.00",
+      "total":"18,009.00"
+    },
+    "carga":[
+      {
+        "cargaId":"15",
+        "clienteNombre":"Sam's",
+        "clienteNumGuia":"015UYEPO678",
+        "categoria":"Art\u00EDculos fr\u00E1giles",
+        "subcategoria":"Cristales",
+        "peso":"1800Kg",
+        "dimension":"16m3",
+        "porcentajeOcupacionCarga":"80",
+        "porcentajeOcupacionVolumen":"80"
+      }
+    ]
+  },{
+    "rutaId":"10",
+    "folio":"001PWQINRTY",
+    "estatusId":"04",
+    "estatus":"Entregado",
+    "estatusColor" : "label-success",
+    "provedor":"SE Global Logistics S.A de C.V",
+    "origen":"Camotl\u00E1n de Miraflores, Col.",
+    "destino":"Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+    "cargaDisponible":"50",
+    "volumenDisponible":"50",
+    "fechaPartida":"08/07/2018 01:30",
+    "fechaLLegada":"09/07/2018 01:30",
+    "datosFacturacionProvedor":{
+      "tarifa":"17,800.00",
+      "recoleccion":"0.00",
+      "entrega":"0.00",
+      "maniobra":"1,200.00",
+      "subtotal":"19,000.00",
+      "iva":"16",
+      "total":"22,040.00"
+    },
+    "datosFacturacionCliente":{
+      "costoProveedor":"22,040.00",
+      "porcentajeComision":"15",
+      "subTotal":"25,346.00",
+      "impuestos por operacion":"0.00",
+      "total":"25,346.00"
+    },
+    "carga":[
+      {
+        "cargaId":"16",
+        "clienteNombre":"LG Electronics",
+        "clienteNumGuia":"016NBKOP391",
+        "categoria":"Art\u00EDculos fr\u00E1giles",
+        "subcategoria":"Cristales",
+        "peso":"1000Kg",
+        "dimension":"1000m3",
+        "porcentajeOcupacionCarga":"50",
+        "porcentajeOcupacionVolumen":"50"
+      }
+    ]
+  }
+]
+
+

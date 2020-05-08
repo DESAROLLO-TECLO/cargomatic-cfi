@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+#mapLocation {
+	height: 70vh;
+	margin-top: 0px;
+	border-radius: 2px;
+	border: 1px solid silver;
+}
+</style>
+
+</head>
+<body>
+	<section class="content-header">
+		<h1>Detalle de Solicitud: {{view.titleFolio}}</h1>
+		<ol class="breadcrumb">
+			<li><a> <i class="{{breadCrumbs.icono}}"></i>{{breadCrumbs.modulo}}
+			</a></li>
+			<li class="active">Detalle</li>
+		</ol>
+	</section>
+	<section class="content">
+		<div class="row">
+			<div class="col-md-12"></div>
+		</div>
+
+		<div class="row" ng-if="envios.length > 0">
+			<div class="col-xs-12">
+				<div class="box box-danger">
+					<div class="box-header row">
+						<div class="col-md-6 col-xs-12">
+							<h3 class="box-title">Envíos Encontrados: {{ (envios |
+								filter:view.searchSomething).length }}</h3>
+						</div>
+
+						<div class="col-md-offset-3 col-md-3 col-xs-10">
+							<div class="input-group">
+								<input id="searchsomething" type="text" class="form-control"
+									placeholder="Buscar por filtro" ng-model="view.searchSomething">
+								<span class="input-group-addon"><i class="fa fa-search"></i></span>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="box-body table-responsive">
+						<table id="tabla_documentos"
+							class="table table-striped table-hover header-fixed">
+							<thead>
+								<tr>
+									<th class="center">NUM. GUÍA</th>
+									<th class="center">CATEGORÍA</th>
+									<th class="center">SUBCATEGORÍA</th>
+									<!-- 									<th class="center">ORIGEN</th> -->
+									<!-- 									<th class="center">DESTINO</th> -->
+									<th class="center">ESTATUS</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr
+									dir-paginate="envio in envios | filter:view.searchSomething | itemsPerPage: view.rowsPerPage">
+									<td class="center"><a target="_self"
+										ng-click="viewDetalle(envio, $index)">{{envio.envioFolio}}</a></td>
+									<td class="center">{{envio.categoria}}</td>
+									<td class="center">{{envio.subcategoria}}</td>
+									<!-- 									<td class="center">{{envio.lugarOrigen}}</td> -->
+									<!-- 									<td class="center">{{envio.lugarDestino}}</td> -->
+									<td class="center"><a
+										ng-if="envio.estatusObject.estatusCod === 'ENTR'"
+										target="_self" ng-click="viewMap(envio)"> <span
+											class="label {{envio.estatusObject.classCode}}">{{envio.estatusObject.estatusDesc}}</span>
+									</a> <a ng-if="envio.estatusObject.estatusCod === 'C'"
+										target="_self" ng-click="viewQuotes(envio, $index)"> <span
+											class="label {{envio.estatusObject.classCode}}">{{envio.estatusObject.estatusDesc}}
+												<span class="badge">2</span>
+										</span>
+									</a> 
+									
+									<a
+										ng-if="envio.estatusObject.estatusCod === 'DC'"
+										target="_self" ng-click="viewDeclineQuotes(envio, $index)"> <span
+											class="label {{envio.estatusObject.classCode}}">{{envio.estatusObject.estatusDesc}}</span>
+									</a>
+									
+									<span
+										ng-if="envio.estatusObject.estatusCod != 'DC' && envio.estatusObject.estatusCod != 'ENTR' && envio.estatusObject.estatusCod != 'C'"
+										class="label {{envio.estatusObject.classCode}}">{{envio.estatusObject.estatusDesc}}
+									</span></td>
+
+								</tr>
+								<tr ng-if="(envios | filter:view.searchSomething).length < 1">
+									<td colspan="5" class="text-center"><h4>No se
+											encontraron coincidencias</h4></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="container-fluid">
+						<div class="fixed-table-pagination" style="display: block;">
+							<rows-per-page rows="view.rowsPerPage"
+								filtro="view.searchSomething" array="envios"></rows-per-page>
+
+							<div class="pull-right pagination">
+								<dir-pagination-controls class="pagination"></dir-pagination-controls>
+							</div>
+						</div>
+					</div>
+
+					<div class="box-footer">
+						<div class="row centerCol">
+							<a type="button" class="btn btn-danger" a
+								href="#/consultaSolicitudes"> <i
+								class="fa fa-arrow-circle-left"></i> Regresar
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<modal visible="view.showModalQuotes"
+			on-hide="view.showModalQuotes = false" size-modal="lg" noescape
+			modalstatic> <modal-header title="Selección de cotización">
+		</modal-header> <modal-body>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box">
+					<div class="box-body table-responsive">
+						<table id="tabla_quotes"
+							class="table table-striped table-hover header-fixed">
+							<thead>
+								<tr>
+									<th class="center">Seleccionar</th>
+									<th class="center">Fecha Partida</th>
+									<th class="center">Fecha Arribo</th>
+									<th class="center">Subtotal</th>
+									<th class="center">Impuestos</th>
+									<th class="center">Total</th>
+									<th class="center">Válido Hasta</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="quote in envios[view.indexEnvios].quotes">
+									<td class="center"><input type="radio" name="supplier"
+										ng-model="view.supplier" value="{{quote}}">
+									</td>
+									<td class="center">{{quote.fechaPartida}}</td>
+									<td class="center">{{quote.fechaArribo}}</td>
+									<td class="center">{{quote.cotizadorCostoSubtotal}}</td>
+									<td class="center">{{quote.impuestos}}</td>
+									<td class="center">{{quote.cotizadorCostoTotal}}</td>
+									<td class="center">{{quote.validoHasta}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		</modal-body> <modal-footer>
+		<button class="btn btn-danger" ng-click="quoteConfirm(1)">Confirmar</button>
+		<button class="btn btn-danger" ng-click="quoteDecline()">Declinar</button>
+		</modal-footer> </modal>
+
+		<modal on-hide="hideMapModal()" visible="view.showModalMap"
+			size-modal="lg" noescape modalstatic> <modal-header
+			title="Ubicación de Envío {{view.titleGuia}}"> </modal-header> <modal-body>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box">
+					<div class="box-body">
+						<div id='mapLocation'></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</modal-body> <modal-footer btn-close="Cerrar"> </modal-footer> </modal>
+
+		<modal on-hide="view.showModalDetalle = false"
+			visible="view.showModalDetalle" size-modal="lg" noescape modalstatic>
+		<modal-header title="Detalle del Envío {{view.titleGuia}}">
+		</modal-header> <modal-body>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box">
+					<div class="box-body">
+						<div class="col-md-12">
+							<div class="row centerCol">
+								<div class="col-md-12 table-responsive">
+									<table class="table table-hover header-fixed table-striped">
+										<tr>
+											<td width="20%"><strong>Origen: </strong>
+											<td>
+											<td width="30%">{{parent.lugarOrigen}}
+											<td>
+											<td width="20%"><strong>Destino: </strong>
+											<td>
+											<td width="30%">{{parent.lugarDestino}}
+											<td>
+										</tr>
+										<tr>
+											<td width="20%"><strong>Categoría:</strong>
+											<td>
+											<td width="30%">{{detail.categoria}}
+											<td>
+											<td width="20%"><strong>Subcategoría:</strong>
+											<td>
+											<td width="30%">{{detail.subcategoria}}
+											<td>
+										</tr>
+										<tr>
+											<td width="20%"><strong>Empaquetado:</strong>
+											<td>
+											<td width="20%">{{detail.nbEmpaquetado}}
+											<td>
+											<td width="30%"><strong>Tipo de Vehículo:</strong>
+											<td>
+											<td width="30%">{{detail.tipoVehiculo}}
+											<td>
+										</tr>
+										<tr>
+											<td width="20%"><strong>Apilable:</strong>
+											<td>
+											<td>{{detail.apilable}}
+											<td>
+											<td width="20%"><strong>Montacargas:</strong>
+											<td>
+											<td>{{detail.montacargas}}
+											<td>
+											<td width="30%"><strong>Peso del contenido:</strong>
+											<td>
+											<td>{{detail.pesoArt}}{{detail.uni2}}
+											<td>
+										</tr>
+										<tr>
+											<td width="27%"><strong>Largo total del
+													contenido:</strong>
+											<td>
+											<td width="6%">{{detail.largo}}{{detail.uni1}}
+											<td>
+											<td width="27%"><strong>Ancho total del
+													contenido:</strong>
+											<td>
+											<td width="6%">{{detail.ancho}}{{detail.uni1}}
+											<td>
+											<td width="27%"><strong>Alto total del
+													contenido:</strong>
+											<td>
+											<td width="6%">{{detail.alto}}{{detail.uni1}}
+											<td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" ng-if="detail.estatusObject.estatusCod === 'PE' 
+							|| detail.estatusObject.estatusCod === 'ENT'
+							|| detail.estatusObject.estatusCod === 'ENTR'">
+			<div class="col-md-12">
+				<div class="box">
+					<div class="box-body table-responsive">
+						<table id="tabla_quotes"
+							class="table table-striped table-hover header-fixed">
+							<thead>
+								<tr>
+									<th><strong>PROVEEDOR</strong></th>
+									<th><strong>FECHA DE PARTIDA</strong></th>
+									<th><strong>FECHA DE ARRIBO</strong></th>
+									<th><strong>SUBTOTAL</strong></th>
+									<th><strong>IMPUESTO</strong></th>
+									<th><strong>TOTAL</strong></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="center">{{view.supplier.cotizadorNombre}}</td>
+									<td class="center">{{view.supplier.fechaPartida}}</td>
+									<td class="center">{{view.supplier.fechaArribo}}</td>
+									<td class="center">{{view.supplier.cotizadorCostoSubtotal}}</td>
+									<td class="center">{{view.supplier.impuestos}}</td>
+									<td class="center">{{view.supplier.cotizadorCostoTotal}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		</modal-body> <modal-footer btn-close="Cerrar"> </modal-footer> </modal>
+	
+		<modal visible="view.showModalDeclineQuotes"
+			on-hide="view.showModalDeclineQuotes = false" size-modal="lg" noescape
+			modalstatic> <modal-header title="Cotizaciones Declinadas">
+		</modal-header> <modal-body>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box">
+					<div class="box-body table-responsive">
+						<table id="tabla_quotes"
+							class="table table-striped table-hover header-fixed">
+							<thead>
+								<tr>
+									<th class="center">Seleccionar</th>
+									<th class="center">Fecha Partida</th>
+									<th class="center">Fecha Arribo</th>
+									<th class="center">Subtotal</th>
+									<th class="center">Impuestos</th>
+									<th class="center">Total</th>
+									<th class="center">Válido Hasta</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="quote in envios[view.indexEnvios].quotes">
+									<td class="center"><input type="radio" name="supplier_{{$index}}"
+										ng-model="view.supplier" value="{{quote}}">
+									</td>
+									<td class="center">{{quote.fechaPartida}}</td>
+									<td class="center">{{quote.fechaArribo}}</td>
+									<td class="center">{{quote.cotizadorCostoSubtotal}}</td>
+									<td class="center">{{quote.impuestos}}</td>
+									<td class="center">{{quote.cotizadorCostoTotal}}</td>
+									<td class="center">{{quote.validoHasta}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		</modal-body> <modal-footer>
+		<button class="btn btn-danger" ng-click="quoteConfirm(2)">Confirmar</button>
+		</modal-footer> </modal>
+	</section>
+</body>
+</html>

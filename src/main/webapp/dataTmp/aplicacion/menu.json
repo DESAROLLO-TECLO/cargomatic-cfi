@@ -1,0 +1,192 @@
+[
+	{
+		"id": 1000,
+		"menuTexto": "Seguimiento",
+		"menuTextoEn": "Operation",
+		"menuSuperior": 0,
+		"menuUri": "",
+		"menuIcono": "fa fa-crosshairs"
+	},
+	{
+		"id": 1001,
+		"menuTexto": "Solicitudes",
+		"menuTextoEn": "Consult",
+		"menuSuperior": 1000,
+		"menuUri": "/seguimientoSolicitudes",
+		"menuIcono": "fa fa-cog"
+	},
+	{
+		"id": 1002,
+		"menuTexto": "Operaciones",
+		"menuTextoEn": "Consult",
+		"menuSuperior": 1000,
+		"menuUri": "/operacionesConsulta",
+		"menuIcono": "fa fa-cog"
+	},
+	{
+		"id": 1100,
+		"menuTexto": "Proveedores",
+		"menuTextoEn": "Proveedores",
+		"menuSuperior": 0,
+		"menuUri": "",
+		"menuIcono": "fa fa-address-book-o"
+	},
+	{
+		"id": 1101,
+		"menuTexto": "Catálogo de Rutas",
+		"menuTextoEn": "Contracted Routes",
+		"menuSuperior": 1100,
+		"menuUri": "/rutas",
+		"menuIcono": "fa fa-book"
+	},
+	{
+		"id": 1102,
+		"menuTexto": "Contratación",
+		"menuTextoEn": "Booking",
+		"menuSuperior": 1100,
+		"menuUri": "/contratacion",
+		"menuIcono": null
+	},
+	{
+		"id": 1200,
+		"menuTexto": "Clientes",
+		"menuTextoEn": "Clientes",
+		"menuSuperior": 0,
+		"menuUri": "",
+		"menuIcono": "fa fa-user"
+	},
+	{
+		"id": 1201,
+		"menuTexto": "Solicitud de Servicio",
+		"menuTextoEn": "Price",
+		"menuSuperior": 1200,
+		"menuUri": "/proveedores",
+		"menuIcono": null
+	},
+	{
+		"id": 1300,
+		"menuTexto": "Tableros de Control",
+		"menuTextoEn": "Tableros de Control",
+		"menuSuperior": 0,
+		"menuUri": "",
+		"menuIcono": "fa fa-tachometer"
+	},
+	{
+		"id": 1301,
+		"menuTexto": "Proveedores",
+		"menuTextoEn": "Suppliers",
+		"menuSuperior": 1300,
+		"menuUri": "/dashboardProveedores",
+		"menuIcono": null
+	},
+	{
+		"id": 1302,
+		"menuTexto": "Operaciones",
+		"menuTextoEn": "Operations",
+		"menuSuperior": 1300,
+		"menuUri": "/dashboardVentas",
+		"menuIcono": null
+	},
+	
+	
+	{
+		"id": 2000,
+		"menuTexto": "Solicitudes",
+		"menuTextoEn": "Solicitudes",
+		"menuSuperior": 0,
+		"menuUri": "",
+		"menuIcono": "fa fa-file-text"
+	},
+	{
+		"id": 2001,
+		"menuTexto": "Nueva",
+		"menuTextoEn": "Nueva",
+		"menuSuperior": 2000,
+		"menuUri": "/nuevaSolicitud",
+		"menuIcono": null
+	},
+	{
+		"id": 2002,
+		"menuTexto": "Consulta",
+		"menuTextoEn": "Consulta",
+		"menuSuperior": 2000,
+		"menuUri": "/consultaSolicitudes",
+		"menuIcono": null
+	},
+	{
+		"id": 2100,
+		"menuTexto": "Tableros de Control",
+		"menuTextoEn": "Tableros de Control",
+		"menuSuperior": 0,
+		"menuUri": "",
+		"menuIcono": "fa fa-tachometer"
+	},
+	{
+		"id": 2101,
+		"menuTexto": "Actividades",
+		"menuTextoEn": "Actividades",
+		"menuSuperior": 2100,
+		"menuUri": "/actividades",
+		"menuIcono": null
+	},
+	
+	
+	{
+		"id": 3000,
+		"menuTexto": "Cotizaciones",
+		"menuTextoEn": "Estimate",
+		"menuSuperior": 0,
+		"menuUri": "",
+		"menuIcono": "fa fa-crosshairs"
+	},
+	{
+		"id": 3001,
+		"menuTexto": "Seguimiento",
+		"menuTextoEn": "Track",
+		"menuSuperior": 3000,
+		"menuUri": "/seguimiento",
+		"menuIcono": null
+	},
+	{
+		"id": 3100,
+		"menuTexto": "Tableros de Control",
+		"menuTextoEn": "Dashboard",
+		"menuSuperior": 0,
+		"menuUri": "",
+		"menuIcono": "fa fa-tachometer"
+	},
+	{
+		"id": 3101,
+		"menuTexto": "Actividades",
+		"menuTextoEn": "Actividades",
+		"menuSuperior": 3100,
+		"menuUri": "/cotizaciones",
+		"menuIcono": null
+	},
+	
+	
+	{
+		"id": 9000,
+		"menuTexto": "Administración",
+		"menuTextoEn": "Administration",
+		"menuSuperior": 0,
+		"menuUri": "",
+		"menuIcono": "fa fa-gear"
+	},
+	{
+		"id": 9001,
+		"menuTexto": "Configurar aplicación",
+		"menuTextoEn": "Configure application",
+		"menuSuperior": 9000,
+		"menuUri": "/configuracion",
+		"menuIcono": null
+	},
+	{
+		"id": 9002,
+		"menuTexto": "Cambiar Contrase\u00F1a",
+		"menuTextoEn": "Password Change",
+		"menuSuperior": 9000,
+		"menuUri": "/adminUsuariosModificaClave",
+		"menuIcono": null
+	}
+]

@@ -1,0 +1,280 @@
+{
+	"proveedores": [
+		{
+			"id": "1",
+			"name": "Tampiqueños S.A de C.V",
+			"address": "Calle 10, Colonia Las Flores",
+			"phone": "8332778691",
+			"country": "M\u00e9xico",
+			"state": "Tamaulipas",
+			"city": "Altamira",
+			"zipcode": "89910",
+			"ncontacto": "Alberto Juárez",
+			"tcontacto": "8331907645",
+			"ccontacto": "alberto.juarez@company.com",
+			"legalCod": "02",
+			"legal": "Sociedad",
+			"transporta": "Animales->Animales Acuáticos",
+			"rutas": [
+				{
+					"id" : 1,
+					"origen": "Pachuca de Soto, Hgo.",
+					"origenId": {
+						"id": 2,
+						"nbUbicacion": "Pachuca de Soto, Hgo.",
+						"lat": "23.2494148",
+						"lng": "-106.41114249999998"
+					},
+					"destino": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+					"destinoId": {
+						"id": 1,
+						"nbUbicacion": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+						"lat": "14.9055599",
+						"lng": "-92.26342060000002"
+					},
+					"categoria": {
+						"id": "1",
+						"nbCategoria": "Animales"
+					},
+					"subcategoria": {
+						"idPadre": "1",
+						"id": "1",
+						"nbSubCategoria": "Animales acu\u00E1ticos"
+					},
+					"moneda": "Peso",
+					"precio": "1000.00"
+				}
+			]
+		},
+		{
+			"id": "2",
+			"name": "CFI Drive",
+			"address": "Av. Fuentes Brotantes",
+			"phone": "7626409191",
+			"country": "M\u00e9xico",
+			"state": "Ciudad de Mexico",
+			"city": "Tlalpan",
+			"zipcode": "14410",
+			"ncontacto": "Sail Ponce",
+			"tcontacto": "5555555555",
+			"ccontacto": "sail.ponce@company.com",
+			"legalCod": "01",
+			"legal": "Sociedad anónima",
+			"transporta": "Animales->Animales Acuáticos",
+			"rutas": [
+				{
+					"id" : 1,
+					"origen": "Camotl\u00E1n de Miraflores, Col.",
+					"origenId": {
+						"id": 1,
+						"nbUbicacion": "Camotl\u00E1n de Miraflores, Col.",
+						"lat": "17.0731842",
+						"lng": "-96.72658890000002"
+					},
+					"destino": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+					"destinoId": {
+						"id": 1,
+						"nbUbicacion": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+						"lat": "14.9055599",
+						"lng": "-92.26342060000002"
+					},
+					"categoria": {
+						"id": "1",
+						"nbCategoria": "Animales"
+					},
+					"subcategoria": {
+						"idPadre": "1",
+						"id": "1",
+						"nbSubCategoria": "Animales acu\u00E1ticos"
+					},
+					"moneda": "Peso",
+					"precio": "2000.00"
+				}
+			]
+		},
+		{
+			"id": "3",
+			"name": "Fletes Mylsa",
+			"address": "Laguna de la palma",
+			"phone": "7195752510",
+			"country": "M\u00e9xico",
+			"state": "Oaxaca",
+			"city": "Huatulco",
+			"zipcode": "16789",
+			"ncontacto": "Juan Fernández",
+			"tcontacto": "6666666666",
+			"ccontacto": "juan.fernandez@company.com",
+			"legalCod": "03",
+			"legal": "Unipersonal",
+			"transporta": "Animales->Animales Acuáticos",
+			"rutas": [
+				{
+					"id" : 1,
+					"origen": "Camotl\u00E1n de Miraflores, Col.",
+					"origenId": {
+						"id": 1,
+						"nbUbicacion": "Camotl\u00E1n de Miraflores, Col.",
+						"lat": "17.0731842",
+						"lng": "-96.72658890000002"
+					},
+					"destino": "San FELIPE, Consuelo Ruiz, 68",
+					"destinoId": {
+						"id": 2,
+						"nbUbicacion": "San FELIPE, Consuelo Ruiz, 68",
+						"lat": "25.1721091",
+						"lng": "-107.4795173"
+					},
+					"categoria": {
+						"id": "1",
+						"nbCategoria": "Animales"
+					},
+					"subcategoria": {
+						"idPadre": "1",
+						"id": "1",
+						"nbSubCategoria": "Animales acu\u00E1ticos"
+					},
+					"moneda": "Peso",
+					"precio": "3000.00"
+				}
+			]
+		},
+		{
+			"id": "4",
+			"name": "Solutions Cargo",
+			"address": "Las flores M34",
+			"phone": "7314340706",
+			"country": "M\u00e9xico",
+			"state": "Veracruz",
+			"city": "Xalapa",
+			"zipcode": "34672",
+			"ncontacto": "Roberto Flores",
+			"tcontacto": "77777777777",
+			"ccontacto": "roberto.flores@company.com",
+			"legalCod": "04",
+			"legal": "Empresa conjunta",
+			"transporta": "Animales->Animales Acuáticos",
+			"rutas": [
+				{
+					"id" : 1,
+					"origen": "Pachuca de Soto, Hgo.",
+					"origenId": {
+						"id": 2,
+						"nbUbicacion": "Pachuca de Soto, Hgo.",
+						"lat": "23.2494148",
+						"lng": "-106.41114249999998"
+					},
+					"destino": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+					"destinoId": {
+						"id": 1,
+						"nbUbicacion": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+						"lat": "14.9055599",
+						"lng": "-92.26342060000002"
+					},
+					"categoria": {
+						"id": "1",
+						"nbCategoria": "Animales"
+					},
+					"subcategoria": {
+						"idPadre": "1",
+						"id": "1",
+						"nbSubCategoria": "Animales acu\u00E1ticos"
+					},
+					"moneda": "Peso",
+					"precio": "4000.00"
+				}
+			]
+		},
+		{
+			"id": "5",
+			"name": "SE Global Logistics SA de CV",
+			"address": "Calle 10, Colonia Las Flores",
+			"phone": "6339441192",
+			"country": "M\u00e9xico",
+			"state": "Nuevo León",
+			"city": "Apodaca",
+			"zipcode": "65789",
+			"ncontacto": "Rodrigo López",
+			"tcontacto": "1111111111",
+			"ccontacto": "rodrigo.lopez@tampiqueños.com",
+			"legalCod": "05",
+			"legal": "Franquicia",
+			"transporta": "Animales->Animales Acuáticos",
+			"rutas": [
+				{
+					"id" : 1,
+					"origen": "Pachuca de Soto, Hgo.",
+					"origenId": {
+						"id": 2,
+						"nbUbicacion": "Pachuca de Soto, Hgo.",
+						"lat": "23.2494148",
+						"lng": "-106.41114249999998"
+					},
+					"destino": "San FELIPE, Consuelo Ruiz, 68",
+					"destinoId": {
+						"id": 2,
+						"nbUbicacion": "San FELIPE, Consuelo Ruiz, 68",
+						"lat": "25.1721091",
+						"lng": "-107.4795173"
+					},
+					"categoria": {
+						"id": "1",
+						"nbCategoria": "Animales"
+					},
+					"subcategoria": {
+						"idPadre": "1",
+						"id": "1",
+						"nbSubCategoria": "Animales acu\u00E1ticos"
+					},
+					"moneda": "Peso",
+					"precio": "5000.00"
+				}
+			]
+		},
+		{
+			"id": "6",
+			"name": "CICARGA S.A de C.V",
+			"address": "Calle 10, Colonia Las Flores",
+			"phone": "8307936882",
+			"country": "M\u00e9xico",
+			"state": "Baja California Norte",
+			"city": "Mexicali",
+			"zipcode": "97806",
+			"ncontacto": "Ernesto Medina",
+			"tcontacto": "8331907645",
+			"ccontacto": "ernesto.medina@company.com",
+			"legalCod": "06",
+			"legal": "Sin ánimo de lucro",
+			"transporta": "Animales->Animales Acuáticos",
+			"rutas": [
+				{
+					"id" : 1,
+					"origen": "Camotl\u00E1n de Miraflores, Col.",
+					"origenId": {
+						"id": 1,
+						"nbUbicacion": "Camotl\u00E1n de Miraflores, Col.",
+						"lat": "17.0731842",
+						"lng": "-96.72658890000002"
+					},
+					"destino": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+					"destinoId": {
+						"id": 1,
+						"nbUbicacion": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+						"lat": "14.9055599",
+						"lng": "-92.26342060000002"
+					},
+					"categoria": {
+						"id": "1",
+						"nbCategoria": "Animales"
+					},
+					"subcategoria": {
+						"idPadre": "1",
+						"id": "1",
+						"nbSubCategoria": "Animales acu\u00E1ticos"
+					},
+					"moneda": "Peso",
+					"precio": "6000.00"
+				}
+			]
+		}
+	]
+}

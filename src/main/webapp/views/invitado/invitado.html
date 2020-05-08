@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body ng-controller="invitadoController">
+	<div class="cont-formuarioCliente">
+		<div class="contLogoExpo">
+			<img src="static/dist/img/logoTeclo.png" class="logoRegistro">
+		</div>
+		<form  class="formularioCliente row" name="formRegistro" role="form">
+			<h1 class="tituloRegistro">
+				Solicitud de Servicio
+				<span ng-model="exposicionActiva"> {{exposicionActiva}}</span>
+			</h1>
+			<div class="fullScreen-icon hidden-xs ngFullScreenAnimate"
+				tooltip="{{'APP.Base.mensaje.pantallaCompleta' | translate}}"
+				tooltip-placement="bottom"
+				ng-show="!fullScreenActive">
+				<i class="fa fa-arrows-alt" ng-click="goFullscreen()"></i>
+			</div>
+			<div class="fullScreen-icon hidden-xs ngFullScreenAnimate"
+				tooltip="{{'APP.Base.mensaje.salirPantallaCompleta' | translate}}"
+				tooltip-placement="bottom"
+				ng-show="fullScreenActive">
+				<i class="fa fa-close" ng-click="goFullscreen()"></i>
+			</div>
+			
+			<!-- phone mask -->
+			<div class="form-group inputForm">
+				
+			<div class="row">
+				<div class="col-md-12">
+					<!-- EMPIEZA ASISTENTE DE PASOS ANGULAR-WIZARD -->
+					<div class="box">
+						<div class="box-header with-border text-center">
+							<h3 class="box-title">
+								Información del Envio
+							</h3>
+						</div>
+						<div class="box-body">
+							<wizard name="wizardExample" edit-mode="true"
+									indicators-position="top"
+									on-finish="saveWizard()"
+									on-cancel="cancelWizard()">
+									
+							    <wz-step wz-title="Origen y Destino" wz-icon="fa-user">
+							        
+							        <div ng-include="'views/invitado/pasoUno.html'">
+							        	<!-- Contenido del paso 1 -->
+							        </div>
+							        
+							    </wz-step>
+							    
+							    <wz-step wz-title="Detalles de Envío" wz-icon="fa-info">
+							        
+							        <div ng-include="'views/invitado/pasoDos.html'">
+							        	<!-- Contenido del paso 2 -->
+							        </div>
+							        
+							    </wz-step>
+							    
+							    <wz-step wz-title="Información de contacto" wz-icon="fa-phone">
+							        
+							        <div ng-include="'views/invitado/pasoTres.html'">
+							        	<!-- Contenido del paso 3 -->
+							        </div>
+							       	
+							    </wz-step>
+							    
+							     <wz-step wz-title="Resumen" wz-icon="fa-money">
+							        
+							        <div ng-include="'views/invitado/pasoCuatro.html'">
+							        	<!-- Contenido del paso 3 -->
+							        </div>
+							       	
+							    </wz-step>
+							    
+							    
+							</wizard>
+						</div>
+					</div>
+					<!-- TERMINA ASISTENTE DE PASOS ANGULAR-WIZARD-->
+				</div>
+			</div> <!-- TERMINA ROW 4 -->
+				
+				<div class="btnCenter">
+					<button type="button" class="btn btn-danger margen" 
+						ng-click="guardarSoicitud()">{{'APP.Base.boton.guardar' | translate}}</button>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-4">
+						<a type="button" href="#/" class="btn pull-left">
+							<i class="fa fa-arrow-circle-left"></i> {{'APP.Base.boton.iniciarSesion' | translate}}
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- /.form group -->
+									
+			
+		</form>	
+		<div class="copyright text-center">
+			<strong>{{'APP.Footer.derechosAutor' | translate}} &copy; 2017 
+				<a href="http://teclomexicana.mx/" target="_blank">{{'APP.Footer.tecloMexicana' | translate}}</a>
+			</strong> {{'APP.Footer.derechosReservados' | translate}}.
+		</div>
+	</div>
+</body>
+</html>

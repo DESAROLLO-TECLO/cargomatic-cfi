@@ -1,0 +1,93 @@
+{
+	"estatusSeguimiento": 
+	[
+		{
+			"estatusId": 1,
+			"estatusCod": "E_SP",
+			"estatusDesc": "Selección de Proveedor",
+			"estatusExplicacion": "Asignar proveedores recomendados y enviar respuesta al cliente.",
+			"classCode": "label-danger",
+			"operatorRedirecTo": "seleccionProveedor"
+		},
+		{
+			"estatusId": 2,
+			"estatusCod": "ERT",
+			"estatusDesc": "En espera de respuesta del cliente",
+			"estatusExplicacion": "En tiempo: No hay nada que hacer.",
+			"classCode": "label-warning",
+			"operatorRedirecTo":"-1"
+		},
+		{
+			"estatusId": 3,
+			"estatusCod": "ERA",
+			"estatusDesc": "Espera de respuesta agotada",
+			"estatusExplicacion": "Vencido: Actualizar tarifas de comisión, si es posible añadir más opciones. si cambió algo reenviar nueva respuesta, si no, actualizar tiempo de vencimiento y recordar al usuario (ciclo definido por n veces).",
+			"classCode": "label-danger",
+			"operatorRedirecTo":""
+		},
+		{
+			"estatusId": 4,
+			"estatusCod": "CRA",
+			"estatusDesc": "Cliente respondió, aceptó",
+			"estatusExplicacion": "Aceptó: No hay nada que hacer, el sistema lo debe enviar a operaciones, la solicitud no aparece mós en bósqueda instantónea del modulo de seguimiento de solicitudes.",
+			"classCode": "label-success",
+			"operatorRedirecTo":""
+		},
+		{
+			"estatusId": 5,
+			"estatusCod": "CRD",
+			"estatusDesc": "Cliente respondió, declinó",
+			"estatusExplicacion": "Declinó: El operador decide si ajusta tarifas de comisión  o aóade mas opciones de proveedor y reenvóa, o si desecha la solicitud. El sistema debe recomendar que hacer, en base a la calificación del usuario. No siempre se podrón ajustar tarifas. ",
+			"classCode": "label-danger",
+			"operatorRedirecTo":"seleccionProvDeclinado"
+		},
+		{
+			"estatusId": 6,
+			"estatusCod": "EC",
+			"estatusDesc": "En espera de cotización",
+			"estatusExplicacion": "Se trata de una solicitud con la que no se cuenta en catalogo, el sistema automaticamente hizo broadcast de la cotización pero nadie ha respondido.",
+			"classCode": "label-warning",
+			"operatorRedirecTo":"sinCotizaciones"
+		},
+		{
+			"estatusId": 7,
+			"estatusCod": "CA",
+			"estatusDesc": "Cotización atendida",
+			"estatusExplicacion": "Uno o mós cotizadores han atendido la solicitud. Selecciónar las mejores opciones, ajustar tarifas de comisión y enviar respuesta al cliente.",
+			"classCode": "label-danger",
+			"operatorRedirecTo":"listadoCotizaciones"
+		},
+		{
+			"estatusId": 8,
+			"estatusCod": "ERCT",
+			"estatusDesc": "En espera de respuesta del cliente a la cotización enviada",
+			"estatusExplicacion": "En tiempo: No hay nada que hacer.",
+			"classCode": "label-warning",
+			"operatorRedirecTo":"esperaClienteCotizaciones"
+		},
+		{
+			"estatusId": 9,
+			"estatusCod": "ERCA",
+			"estatusDesc": "Espera de respuesta del cliente a la cotización agotada",
+			"estatusExplicacion": "Vencido: Actualizar costos y tarifas de comisión, si es posible solicitar cotizaciones de otros proveedores. si cambió algo reenviar nueva respuesta, si no, actualizar tiempo de vencimiento y recordar al usuario (ciclo definido por n veces).",
+			"classCode": "label-danger",
+			"operatorRedirecTo":"cotizacionAgotada"
+		},
+		{
+			"estatusId": 10,
+			"estatusCod": "CRCA",
+			"estatusDesc": "Cliente respondió cotización, aceptó",
+			"estatusExplicacion": "Aceptó: No hay nada que hacer, el sistema debe aceptar cotizacion del proveedor y enviar a operaciones, la solicitud no aparece mós en bósqueda instantónea del modulo de seguimiento de solicitudes.",
+			"classCode": "label-success",
+			"operatorRedirecTo":""
+		},
+		{
+			"estatusId": 11,
+			"estatusCod": "CRCD",
+			"estatusDesc": "Cliente respondió cotización, declinó",
+			"estatusExplicacion": "No aceptó: El operador decide si ajusta tarifas de comisión, cotiza mas opciones de proveedores y reenvóa, o si desecha la solicitud. El sistema debe recomendar que hacer, en base a la calificación del usuario. No siempre se podrón ajustar tarifas o crear mas cotizaciones ",
+			"classCode": "label-danger",
+			"operatorRedirecTo":"cotizacionDeclinada"
+		}
+	]
+}

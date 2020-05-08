@@ -1,0 +1,1379 @@
+{
+	"nbRemitente":null,
+	"categoria": [{
+		"id": "1",
+		"nbCategoria": "Animales"
+	},
+	{
+		"id": "2",
+		"nbCategoria": "Art\u00EDculos de tecnolog\u00EDa"
+	},
+	{
+		"id": "3",
+		"nbCategoria": "Art\u00EDculos fr\u00E1giles"
+	},
+	{
+		"id": "4",
+		"nbCategoria": "Carga completa"
+	},
+	{
+		"id": "5",
+		"nbCategoria": "Carga Consolidada"
+	}],
+	"subcategoria": [{
+		"idPadre": "1",
+		"id": "1",
+		"nbSubCategoria": "Animales acu\u00E1ticos"
+	},
+	{
+		"idPadre": "1",
+		"id": "2",
+		"nbSubCategoria": "Animales de cr\u00EDa"
+	},
+	{
+		"idPadre": "1",
+		"id": "3",
+		"nbSubCategoria": "Aves"
+	},
+	{
+		"idPadre": "2",
+		"id": "4",
+		"nbSubCategoria": "Accesorios"
+	},
+	{
+		"idPadre": "2",
+		"id": "5",
+		"nbSubCategoria": "Celulares"
+	},
+	{
+		"idPadre": "2",
+		"id": "6",
+		"nbSubCategoria": "Computadoras"
+	},
+	{
+		"idPadre": "3",
+		"id": "7",
+		"nbSubCategoria": "Antig\u00FCedad"
+	},
+	{
+		"idPadre": "3",
+		"id": "8",
+		"nbSubCategoria": "Cer\u00E1mica"
+	},
+	{
+		"idPadre": "3",
+		"id": "9",
+		"nbSubCategoria": "Cristales"
+	},
+	{
+		"idPadre": "4",
+		"id": "10",
+		"nbSubCategoria": "Carga llena"
+	},
+	{
+		"idPadre": "4",
+		"id": "11",
+		"nbSubCategoria": "Carga intermodal"
+	},
+	{
+		"idPadre": "5",
+		"id": "12",
+		"nbSubCategoria": "Art\u00EDculos de segunda mano"
+	},
+	{
+		"idPadre": "5",
+		"id": "13",
+		"nbSubCategoria": "Art\u00EDculos nuevos"
+	},
+	{
+		"idPadre": "5",
+		"id": "14",
+		"nbSubCategoria": "Bebidas Alcoh\u00F3licas"
+	},
+	{
+		"idPadre": "5",
+		"id": "15",
+		"nbSubCategoria": "L\u00EDquidos"
+	},
+	{
+		"idPadre": "5",
+		"id": "16",
+		"nbSubCategoria": "Materia prima"
+	}],
+	"empaquetado": [{
+		"id": "1",
+		"nbEmpaquetado": "Anti-corrosi\u00F3n"
+	},
+	{
+		"id": "2",
+		"nbEmpaquetado": "Cajas de cart\u00F3n"
+	},
+	{
+		"id": "3",
+		"nbEmpaquetado": "Cajas de madera"
+	},
+	{
+		"id": "4",
+		"nbEmpaquetado": "Rejas de madera"
+	},
+	{
+		"id": "5",
+		"nbEmpaquetado": "Saco"
+	},
+	{
+		"id": "6",
+		"nbEmpaquetado": "Sin empaquetar"
+	},
+	{
+		"id": "7",
+		"nbEmpaquetado": "Palets (en tarimas)"
+	},
+	{
+		"id": "8",
+		"nbEmpaquetado": "Tanques"
+	}],
+	"estados": [{
+		"id_estado": 2,
+		"nb_estado": "Aguascalientes",
+		"cd_clave": "AS",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 3,
+		"nb_estado": "Baja California",
+		"cd_clave": "BC",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 4,
+		"nb_estado": "Baja California Sur",
+		"cd_clave": "BS",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 5,
+		"nb_estado": "Campeche",
+		"cd_clave": "CC",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 6,
+		"nb_estado": "Chiapas",
+		"cd_clave": "CS",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 7,
+		"nb_estado": "Chihuahua",
+		"cd_clave": "CH",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 10,
+		"nb_estado": "Ciudad de México",
+		"cd_clave": "CDMX",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 8,
+		"nb_estado": "Coahuila",
+		"cd_clave": "CL",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 9,
+		"nb_estado": "Colima",
+		"cd_clave": "CM",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 11,
+		"nb_estado": "Durango",
+		"cd_clave": "DG",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 12,
+		"nb_estado": "Guanajuato",
+		"cd_clave": "GT",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 13,
+		"nb_estado": "Guerrero",
+		"cd_clave": "GR",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 14,
+		"nb_estado": "Hidalgo",
+		"cd_clave": "HG",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 15,
+		"nb_estado": "Jalisco",
+		"cd_clave": "JC",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 16,
+		"nb_estado": "México",
+		"cd_clave": "MC",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 17,
+		"nb_estado": "Michoacán",
+		"cd_clave": "MN",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 18,
+		"nb_estado": "Morelos",
+		"cd_clave": "MS",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 19,
+		"nb_estado": "Nayarit",
+		"cd_clave": "NT",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 20,
+		"nb_estado": "Nuevo León",
+		"cd_clave": "NL",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 21,
+		"nb_estado": "Oaxaca",
+		"cd_clave": "OC",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 1,
+		"nb_estado": "Otro Estado",
+		"cd_clave": "otre",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 22,
+		"nb_estado": "Puebla",
+		"cd_clave": "PL",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 23,
+		"nb_estado": "Querétaro",
+		"cd_clave": "QT",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 24,
+		"nb_estado": "Quintana Roo",
+		"cd_clave": "QR",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 25,
+		"nb_estado": "San Luis Potosí",
+		"cd_clave": "SP",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 99,
+		"nb_estado": "Sin estado",
+		"cd_clave": "sinE",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 26,
+		"nb_estado": "Sinaloa",
+		"cd_clave": "SL",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 27,
+		"nb_estado": "Sonora",
+		"cd_clave": "SR",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 28,
+		"nb_estado": "Tabasco",
+		"cd_clave": "TC",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 29,
+		"nb_estado": "Tamaulipas",
+		"cd_clave": "TS",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 30,
+		"nb_estado": "Tlaxcala",
+		"cd_clave": "TL",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 31,
+		"nb_estado": "Veracruz",
+		"cd_clave": "VZ",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 32,
+		"nb_estado": "Yucatán",
+		"cd_clave": "YN",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_estado": 33,
+		"nb_estado": "Zacatecas",
+		"cd_clave": "ZS",
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modifica": 200,
+		"fh_modificacion": "31/07/17"
+	}],
+	"listCiudades": [{
+		"id_ciudad": 2,
+		"nb_ciudad": "Aguascalientes",
+		"cd_clave": "AS",
+		"id_estado": 2,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 3,
+		"nb_ciudad": "Ensenada",
+		"cd_clave": "BC",
+		"id_estado": 3,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 4,
+		"nb_ciudad": "Mexicali",
+		"cd_clave": "BC",
+		"id_estado": 3,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 5,
+		"nb_ciudad": "Tijuana",
+		"cd_clave": "BC",
+		"id_estado": 3,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 6,
+		"nb_ciudad": "La Paz",
+		"cd_clave": "BS",
+		"id_estado": 4,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 7,
+		"nb_ciudad": "Los Cabos",
+		"cd_clave": "BS",
+		"id_estado": 4,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 8,
+		"nb_ciudad": "Campeche",
+		"cd_clave": "CC",
+		"id_estado": 5,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 9,
+		"nb_ciudad": "Ciudad del Carmen",
+		"cd_clave": "CC",
+		"id_estado": 5,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 10,
+		"nb_ciudad": "Tuxtla Gutiérrez",
+		"cd_clave": "CS",
+		"id_estado": 6,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 11,
+		"nb_ciudad": "Tapachula",
+		"cd_clave": "CS",
+		"id_estado": 6,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 12,
+		"nb_ciudad": "Chihuahua",
+		"cd_clave": "CH",
+		"id_estado": 7,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 13,
+		"nb_ciudad": "JuÃ¡rez",
+		"cd_clave": "CH",
+		"id_estado": 7,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 14,
+		"nb_ciudad": "Saltillo",
+		"cd_clave": "CL",
+		"id_estado": 8,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 15,
+		"nb_ciudad": "Monclova-Frontera",
+		"cd_clave": "CL",
+		"id_estado": 8,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 16,
+		"nb_ciudad": "La Laguna",
+		"cd_clave": "CL",
+		"id_estado": 8,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 17,
+		"nb_ciudad": "Piedras Negras",
+		"cd_clave": "CL",
+		"id_estado": 8,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 18,
+		"nb_ciudad": "Tecomán",
+		"cd_clave": "CM",
+		"id_estado": 9,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 19,
+		"nb_ciudad": "Colima-Villa de Ã?lvarez",
+		"cd_clave": "CM",
+		"id_estado": 9,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 20,
+		"nb_ciudad": "Manzanillo",
+		"cd_clave": "CM",
+		"id_estado": 9,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 21,
+		"nb_ciudad": "Valle de México",
+		"cd_clave": "DF",
+		"id_estado": 10,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 22,
+		"nb_ciudad": "Durango",
+		"cd_clave": "DG",
+		"id_estado": 11,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 1,
+		"nb_ciudad": "Otra ciudad",
+		"cd_clave": "OTC",
+		"id_estado": 1,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 99,
+		"nb_ciudad": "Sin Ciudad",
+		"cd_clave": "sinCi",
+		"id_estado": 99,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 23,
+		"nb_ciudad": "Celaya",
+		"cd_clave": "GT",
+		"id_estado": 12,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 24,
+		"nb_ciudad": "Guanajuato",
+		"cd_clave": "GT",
+		"id_estado": 12,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 25,
+		"nb_ciudad": "Irapuato",
+		"cd_clave": "GT",
+		"id_estado": 12,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 26,
+		"nb_ciudad": "León",
+		"cd_clave": "GT",
+		"id_estado": 12,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 27,
+		"nb_ciudad": "La Piedad-Pénjamo",
+		"cd_clave": "GT",
+		"id_estado": 12,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 28,
+		"nb_ciudad": "San Francisco del Rincón",
+		"cd_clave": "GT",
+		"id_estado": 12,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 29,
+		"nb_ciudad": "Salamanca",
+		"cd_clave": "GT",
+		"id_estado": 12,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 30,
+		"nb_ciudad": "Acapulco",
+		"cd_clave": "GR",
+		"id_estado": 13,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 31,
+		"nb_ciudad": "Chilpancingo",
+		"cd_clave": "GR",
+		"id_estado": 13,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 32,
+		"nb_ciudad": "Tula",
+		"cd_clave": "HG",
+		"id_estado": 14,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 33,
+		"nb_ciudad": "Tulancingo",
+		"cd_clave": "HG",
+		"id_estado": 14,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 34,
+		"nb_ciudad": "Pachuca",
+		"cd_clave": "HG",
+		"id_estado": 14,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 35,
+		"nb_ciudad": "Guadalajara",
+		"cd_clave": "JC",
+		"id_estado": 15,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 36,
+		"nb_ciudad": "Ocotlán",
+		"cd_clave": "JC",
+		"id_estado": 15,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 37,
+		"nb_ciudad": "Puerto Vallarta",
+		"cd_clave": "JC",
+		"id_estado": 15,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 38,
+		"nb_ciudad": "Toluca",
+		"cd_clave": "MC",
+		"id_estado": 16,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 39,
+		"nb_ciudad": "Zamora-Jacona",
+		"cd_clave": "MN",
+		"id_estado": 17,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 40,
+		"nb_ciudad": "Morelia",
+		"cd_clave": "MN",
+		"id_estado": 17,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 41,
+		"nb_ciudad": "Uruapan",
+		"cd_clave": "MN",
+		"id_estado": 17,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 42,
+		"nb_ciudad": "Cuautla",
+		"cd_clave": "MS",
+		"id_estado": 18,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 43,
+		"nb_ciudad": "Cuernavaca",
+		"cd_clave": "MS",
+		"id_estado": 18,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 44,
+		"nb_ciudad": "Tepic",
+		"cd_clave": "NT",
+		"id_estado": 19,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 45,
+		"nb_ciudad": "Monterrey",
+		"cd_clave": "NL",
+		"id_estado": 20,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 46,
+		"nb_ciudad": "Oaxaca",
+		"cd_clave": "OC",
+		"id_estado": 21,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 47,
+		"nb_ciudad": "Tehuantepec-Salina Cruz",
+		"cd_clave": "OC",
+		"id_estado": 21,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 48,
+		"nb_ciudad": "Puebla-Tlaxcala",
+		"cd_clave": "PL",
+		"id_estado": 22,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 49,
+		"nb_ciudad": "Tehuacán",
+		"cd_clave": "PL",
+		"id_estado": 22,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 50,
+		"nb_ciudad": "Querétaro",
+		"cd_clave": "QT",
+		"id_estado": 23,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 51,
+		"nb_ciudad": "San Juan del Río",
+		"cd_clave": "QT",
+		"id_estado": 23,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 52,
+		"nb_ciudad": "Cancún",
+		"cd_clave": "QR",
+		"id_estado": 24,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 53,
+		"nb_ciudad": "Chetumal",
+		"cd_clave": "QR",
+		"id_estado": 24,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 54,
+		"nb_ciudad": "Rioverde-Ciudad Fernández",
+		"cd_clave": "SP",
+		"id_estado": 25,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 55,
+		"nb_ciudad": "San Luis Potosí-Soledad",
+		"cd_clave": "SP",
+		"id_estado": 25,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 56,
+		"nb_ciudad": "Los Mochis",
+		"cd_clave": "SL",
+		"id_estado": 26,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 57,
+		"nb_ciudad": "Culiacán",
+		"cd_clave": "SL",
+		"id_estado": 26,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 58,
+		"nb_ciudad": "Mazatlán",
+		"cd_clave": "SL",
+		"id_estado": 26,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 59,
+		"nb_ciudad": "Ciudad Obregón",
+		"cd_clave": "SR",
+		"id_estado": 27,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 60,
+		"nb_ciudad": "Guaymas",
+		"cd_clave": "SR",
+		"id_estado": 27,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 61,
+		"nb_ciudad": "Hermosillo",
+		"cd_clave": "SR",
+		"id_estado": 27,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 62,
+		"nb_ciudad": "Cárdenas",
+		"cd_clave": "TC",
+		"id_estado": 28,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 63,
+		"nb_ciudad": "Villahermosa",
+		"cd_clave": "TC",
+		"id_estado": 28,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 64,
+		"nb_ciudad": "Tampico-Pánuco",
+		"cd_clave": "TS",
+		"id_estado": 29,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 65,
+		"nb_ciudad": "Nuevo Laredo",
+		"cd_clave": "TS",
+		"id_estado": 29,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 66,
+		"nb_ciudad": "Matamoros",
+		"cd_clave": "TS",
+		"id_estado": 29,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 67,
+		"nb_ciudad": "Reynosa-Río Bravo",
+		"cd_clave": "TS",
+		"id_estado": 29,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 68,
+		"nb_ciudad": "Ciudad Victoria",
+		"cd_clave": "TS",
+		"id_estado": 29,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 69,
+		"nb_ciudad": "Tlaxcala-Apizaco",
+		"cd_clave": "TL",
+		"id_estado": 30,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 70,
+		"nb_ciudad": "Veracruz",
+		"cd_clave": "VZ",
+		"id_estado": 31,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 72,
+		"nb_ciudad": "Orizaba",
+		"cd_clave": "VZ",
+		"id_estado": 31,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 73,
+		"nb_ciudad": "Minatitlán",
+		"cd_clave": "VZ",
+		"id_estado": 31,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 74,
+		"nb_ciudad": "Xalapa",
+		"cd_clave": "VZ",
+		"id_estado": 31,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 75,
+		"nb_ciudad": "Poza Rica",
+		"cd_clave": "VZ",
+		"id_estado": 31,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 76,
+		"nb_ciudad": "Coatzacoalcos",
+		"cd_clave": "VZ",
+		"id_estado": 31,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 77,
+		"nb_ciudad": "Córdoba",
+		"cd_clave": "VZ",
+		"id_estado": 31,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 78,
+		"nb_ciudad": "Mérida",
+		"cd_clave": "YN",
+		"id_estado": 32,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	},
+	{
+		"id_ciudad": 79,
+		"nb_ciudad": "Zacatecas-Guadalupe",
+		"cd_clave": "ZS",
+		"id_estado": 33,
+		"st_activo": 1,
+		"id_usr_creacion": 200,
+		"fh_creacion": "31/07/17",
+		"id_usr_modfica": 200,
+		"fh_modificacion": "31/07/17"
+	}],
+	"listSucursales":[{
+		"id":1,
+		"nbSucursal":"Acueducto",
+		"ndCalle":"Emiliano Zapata no.24",
+		"cdPostal":"92567"
+	},{
+		"id":2,
+		"nbSucursal":"La Joya",
+		"ndCalle":"Ninños Heroes no.6",
+		"cdPostal":"89023"
+	},{
+		"id":3,
+		"nbSucursal":"Americas",
+		"ndCalle":"20 de Noviembre no.2",
+		"cdPostal":"76290"},
+	{
+		"id":4,
+		"nbSucursal":"El Salto",
+		"ndCalle":"Av. Principal tlahuat",
+		"cdPostal":"76210"
+	}],
+	"tipoPago": [
+		{
+			"id": "1",
+			"nbTpPago": "Efectivo"
+		},
+		{
+			"id": "2",
+			"nbTpPago": "Tarjeta de D\u00E9bito"
+		},
+		{
+			"id": "3",
+			"nbTpPago": "Tarjeta de Cr\u00E9dito"
+		}
+	]
+}

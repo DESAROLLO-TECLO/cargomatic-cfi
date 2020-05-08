@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+	<section class="content-header">
+		<h1>{{breadCrumbs.servicio}}</h1>
+		<ol class="breadcrumb">
+			<li><a> <i class="{{breadCrumbs.icono}}"></i>{{breadCrumbs.modulo}}
+			</a></li>
+			<li class="active">{{breadCrumbs.servicio}}</li>
+		</ol>
+	</section>
+	<section class="content">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- EMPIEZA ASISTENTE DE PASOS ANGULAR-WIZARD -->
+				<div class="box box-danger">
+					<div class="box-header with-border text-center">
+						<h3 class="box-title">Solicitud de Servicio</h3>
+					</div>
+					<div class="box-body">
+						<wizard name="wizardExample" edit-mode="true"
+							indicators-position="top" on-finish="saveWizard()"
+							on-cancel="cancelWizard()"> <wz-step
+							wz-title="Origen y Destino" wz-icon="fa-user">
+
+						<div ng-include="'views/invitado/pasoUno.html'">
+							<!-- Contenido del paso 1 -->
+						</div>
+
+						</wz-step> <wz-step wz-title="Detalles de Envío" wz-icon="fa-info">
+
+						<div ng-include="'views/invitado/pasoDos.html'">
+							<!-- Contenido del paso 2 -->
+						</div>
+
+						</wz-step> <wz-step wz-title="Información de contacto" wz-icon="fa-phone">
+
+						<div ng-include="'views/invitado/pasoTres.html'">
+							<!-- Contenido del paso 3 -->
+						</div>
+
+						</wz-step> <wz-step wz-title="Resumen" wz-icon="fa-money">
+
+						<div ng-include="'views/invitado/pasoCuatro.html'">
+							<!-- Contenido del paso 3 -->
+						</div>
+
+						</wz-step> </wizard>
+					</div>
+
+					<div class="box-footer">
+						<div class="btnCenter">
+							<button type="button" class="btn btn-danger margen"
+								ng-click="guardarSoicitud()">{{'APP.Base.boton.guardar'
+								| translate}}</button>
+						</div>
+					</div>
+				</div>
+				<!-- TERMINA ASISTENTE DE PASOS ANGULAR-WIZARD-->
+			</div>
+		</div>
+		<!-- TERMINA ROW 4 -->
+
+
+	</section>
+
+</body>
+</html>

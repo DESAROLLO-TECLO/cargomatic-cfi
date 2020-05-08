@@ -1,0 +1,630 @@
+{
+	"rutasMapa":[
+		{
+			"orgDesc":"Camotlán de Miraflores, Col.",
+			"orgLat": 19.220377,
+			"orgLng": -104.234605,
+			"dstDesc":"San FELIPE, Consuelo Ruiz, 68",
+			"dstLat": 17.097652, 
+			"dstLng":  -96.711433,
+			"eventos":[
+				{
+					"fillCollor":"",
+					"strokeColor":"",
+					"routeColor":"",
+					"descripcionOrigen":"Camotlán de Miraflores, Col.",
+					"descripcionLocalidad":"San FELIPE, Consuelo Ruiz, 68",
+					"puntoActual":0,
+					"puntoInicial":1,
+					"puntoFinal":0,
+					"paradaCompletada":1,
+					"latitudGps": 19.220377, 
+					"longitudGps": -104.234605,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Partida de ruta"
+				},
+				{
+					"fillCollor":"",
+					"strokeColor":"",
+					"routeColor":"",
+					"descripcionOrigen":"Camotlán de Miraflores, Col.",
+					"descripcionLocalidad":"San FELIPE, Consuelo Ruiz, 68",
+					"puntoActual":0,
+					"puntoInicial":0,
+					"puntoFinal":1,
+					"paradaCompletada":1,
+					"latitudGps": 17.097652,
+					"longitudGps":  -96.711433,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Parada de ruta"
+				}
+			],
+			"proveedores":
+			[
+				{
+					"nbProveedor":"CFI Drive",
+					"camiones":[
+							{"nbCamion":"Rabon (1 eje)"},
+							{"nbCamion":"Caja Regfrigerada"}
+					]
+				},
+				{
+					"nbProveedor":"Tampiqueños S.A de C.v",
+					"camiones":[
+							{"nbCamion":"Tolva"},
+							{"nbCamion":"Jaula Ganadera"}
+					]
+				}
+			]
+		},
+		{
+			"orgDesc":"Pachuca de Soto, Hgo.",
+			"orgLat": 20.101285, 
+			"orgLng": -98.756909,
+			"dstDesc":"Intermex, 32575 Cd Juárez, Chih.",
+			"dstLat": 24.769976,
+			"dstLng": -107.419557,
+			"eventos":[
+				{
+					"fillCollor":"",
+					"strokeColor":"",
+					"routeColor":"",
+					"descripcionOrigen":"Pachuca de Soto, Hgo.",
+					"descripcionLocalidad":"Intermex, 32575 Cd Juárez, Chih.",
+					"puntoActual":0,
+					"puntoInicial":1,
+					"puntoFinal":0,
+					"paradaCompletada":1,
+					"latitudGps": 20.101285, 
+					"longitudGps": -98.756909,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Partida de ruta"
+				},
+				{
+					"fillCollor":"",
+					"strokeColor":"",
+					"routeColor":"",
+					"descripcionOrigen":"Pachuca de Soto, Hgo.",
+					"descripcionLocalidad":"Intermex, 32575 Cd Juárez, Chih.",
+					"puntoActual":0,
+					"puntoInicial":0,
+					"puntoFinal":1,
+					"paradaCompletada":1,
+					"latitudGps": 31.633084, 
+					"longitudGps":  -106.387121,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Parada de ruta"
+				}
+			],
+			"proveedores":
+			[
+				{
+					"nbProveedor":"Solutions Cargo",
+					"camiones":[
+							{"nbCamion":"Autotanque/pipa"},
+							{"nbCamion":"Jaula Ganadera"}
+					]
+				},
+				{
+					"nbProveedor":"Se Global Logistics SA de CV",
+					"camiones":[
+							{"nbCamion":"Rabon (1 eje)"},
+							{"nbCamion":"Jaula Ganadera"}
+					]
+				}
+			]
+		},
+		{
+			"orgDesc":"Camotlán de Miraflores, Col.",
+			"orgLat": 19.22080,
+			"orgLng": -104.233683,
+			"dstDesc":"Intermex, 32575 Cd Juárez, Chih.",
+			"dstLat": 31.629419,
+			"dstLng": -106.39236,
+			"eventos":[
+				{
+					"fillCollor":"",
+					"strokeColor":"",
+					"routeColor":"",
+					"descripcionOrigen":"Tampico, Tamaulipas",
+					"descripcionLocalidad":"Naranjos, Veracruz",
+					"puntoActual":0,
+					"puntoInicial":1,
+					"puntoFinal":0,
+					"paradaCompletada":1,
+					"latitudGps": 20.101285, 
+					"longitudGps": -98.756909,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Partida de ruta"
+				},
+				{
+					"fillCollor":"",
+					"strokeColor":"",
+					"routeColor":"",
+					"descripcionOrigen":"Tampico, Tamaulipas",
+					"descripcionLocalidad":"Naranjos, Veracruz",
+					"puntoActual":0,
+					"puntoInicial":0,
+					"puntoFinal":1,
+					"paradaCompletada":1,
+					"latitudGps": 31.633084, 
+					"longitudGps":  -106.387121,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Parada de ruta"
+				}
+			],
+			"proveedores":
+			[
+					{
+						"nbProveedor":"Solutions Cargo",
+						"camiones":[
+								{"nbCamion":"Caja Cerrada"},
+								{"nbCamion":"Jaula Ganadera"}
+						]
+					}
+			]
+		},
+		{
+			"orgDesc":"Pachuca de Soto, Hgo.",
+			"orgLat": 20.098234,
+			"orgLng": -98.760891,
+			"dstDesc":"San FELIPE, Consuelo Ruiz, 68",
+			"dstLat": 17.089911,
+			"dstLng": -96.716835,
+			"eventos":[
+				{
+					"fillCollor":"",
+					"strokeColor":"",
+					"routeColor":"",
+					"descripcionOrigen":"Guadalajara",
+					"descripcionLocalidad":"Apatzingan de la Constitución",
+					"puntoActual":0,
+					"puntoInicial":1,
+					"puntoFinal":0,
+					"paradaCompletada":1,
+					"latitudGps": 20.665706, 
+					"longitudGps": -103.376139,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Partida de ruta"
+				},
+				{
+					"fillCollor":"",
+					"strokeColor":"",
+					"routeColor":"",
+					"descripcionOrigen":"Guadalajara",
+					"descripcionLocalidad":"Apatzingan de la Constitución",
+					"puntoActual":0,
+					"puntoInicial":0,
+					"puntoFinal":1,
+					"paradaCompletada":1,
+					"latitudGps": 19.079637,
+					"longitudGps":   -102.353869,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Parada de ruta"
+				}
+			],
+			"proveedores":
+			[
+					{
+						"nbProveedor":"CFI Drive",
+						"camiones":[
+								{"nbCamion":""},
+								{"nbCamion":""}
+						]
+					}
+			]
+		}
+	],
+	"rutas" : [
+		{
+			"idRuta": "1",
+			"origen": "Camotl\u00E1n de Miraflores, Col.",
+			"destino": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+			"orgLat": "",
+			"orgLng": "",
+			"dstLat": "",
+			"dstLng": "",
+			"proveedores":[
+				{
+					"nbProveedor":"CFI Drive",
+					"vehiculos":[
+						{
+							"nbTipoCamion": "Cami\u00F3n de plataforma abierta",
+							"tarifa": "$1200.00",
+							"frecuenciaPartida": "Alta"
+						},
+						{
+							"nbTipoCamion": "Rabon (1 eje)",
+							"tarifa": "$2500.00",
+							"frecuenciaPartida": "Regular"
+						}
+					]
+				},
+				{
+					"nbProveedor":"Tampiqueños S.A de C.V",
+					"vehiculos":[
+						{
+							"nbTipoCamion": "Cami\u00F3n de plataforma abierta",
+							"tarifa": "$1200.00",
+							"frecuenciaPartida": "Alta"
+						},
+						{
+							"nbTipoCamion": "Caja cerrada de 53 pies",
+							"tarifa": "$2500.00",
+							"frecuenciaPartida": "Regular"
+						}
+					]
+				}
+			],
+			"eventos":[
+				{
+					"fillCollor":"#33cccc",
+					"strokeColor":"#0099ff",
+					"routeColor":"#0066ff",
+					"descripcionOrigen":"Manzanillo, Colima",
+					"descripcionLocalidad":"Oaxaca de Ju\u00E1rez, Oaxaca",
+					"puntoActual":0,
+					"puntoInicial":1,
+					"puntoFinal":0,
+					"paradaCompletada":1,
+					"latitudGps": 19.220377, 
+					"longitudGps": -104.234605,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Partida de ruta"
+				},
+				{
+					"fillCollor":"#33cccc",
+					"strokeColor":"#0099ff",
+					"routeColor":"#0066ff",
+					"descripcionOrigen":"Camotlán de Miraflores, Col.",
+					"descripcionLocalidad":"San FELIPE, Consuelo Ruiz, 68",
+					"puntoActual":0,
+					"puntoInicial":0,
+					"puntoFinal":1,
+					"paradaCompletada":1,
+					"latitudGps": 17.097652,
+					"longitudGps":  -96.711433,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Parada de ruta"
+				}
+			]
+			
+		},
+		{
+			"idRuta": "2",
+			"origen": "Camotl\u00E1n de Miraflores, Col.",
+			"destino": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+			"orgLat": "",
+			"orgLng": "",
+			"dstLat": "",
+			"dstLng": "",
+			"proveedores":[
+				{
+					"nbProveedor":"Solutions Cargo",
+					"vehiculos":[
+						{
+							"nbTipoCamion": "Cami\u00F3n de plataforma abierta",
+							"tarifa": "$1200.00",
+							"frecuenciaPartida": "Alta"
+						},
+						{
+							"nbTipoCamion": "Rabon (1 eje)",
+							"tarifa": "$2500.00",
+							"frecuenciaPartida": "Regular"
+						},
+						{
+							"nbTipoCamion": "Caja Refrigerada",
+							"tarifa": "$1240.00",
+							"frecuenciaPartida": "Alta"
+						},
+						{
+							"nbTipoCamion": "Autotanque/Pipa",
+							"tarifa": "$2550.00",
+							"frecuenciaPartida": "Regular"
+						}
+					]
+				},
+				{
+					"nbProveedor":"Tampiqueños S.A de C.V",
+					"vehiculos":[
+						{
+							"nbTipoCamion": "Cami\u00F3n de plataforma abierta",
+							"tarifa": "$1200.00",
+							"frecuenciaPartida": "Alta"
+						},
+						{
+							"nbTipoCamion": "Caja cerrada de 53 pies",
+							"tarifa": "$2500.00",
+							"frecuenciaPartida": "Regular"
+						}
+					]
+				}
+			],
+			"eventos":[
+				{
+					"fillCollor":"#00cc00",
+					"strokeColor":"#00ff00",
+					"routeColor":"#66ff99",
+					"descripcionOrigen":"Pachuca de Soto, Hidalgo",
+					"descripcionLocalidad":"Ciudad Juárez, Chihuahua",
+					"puntoActual":0,
+					"puntoInicial":1,
+					"puntoFinal":0,
+					"paradaCompletada":1,
+					"latitudGps": 20.101285, 
+					"longitudGps": -98.756909,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Partida de ruta"
+				},
+				{
+					"fillCollor":"#00cc00",
+					"strokeColor":"#00ff00",
+					"routeColor":"#66ff99",
+					"descripcionOrigen":"Pachuca de Soto, Hgo.",
+					"descripcionLocalidad":"Intermex, 32575 Cd Juárez, Chih.",
+					"puntoActual":0,
+					"puntoInicial":0,
+					"puntoFinal":1,
+					"paradaCompletada":1,
+					"latitudGps": 31.633084, 
+					"longitudGps":  -106.387121,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Parada de ruta"
+				}
+			]
+		},
+		{
+			"idRuta": "3",
+			"origen": "Pachuca de Soto, Hgo.",
+			"destino": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+			"orgLat": "",
+			"orgLng": "",
+			"dstLat": "",
+			"dstLng": "",
+			"proveedores":[
+				{
+					"nbProveedor":"Fletes Mylsa",
+					"vehiculos":[
+						{
+							"nbTipoCamion": "Cami\u00F3n de plataforma abierta",
+							"tarifa": "$1200.00",
+							"frecuenciaPartida": "Alta"
+						},
+						{
+							"nbTipoCamion": "Rabon (1 eje)",
+							"tarifa": "$2500.00",
+							"frecuenciaPartida": "Regular"
+						},
+						{
+							"nbTipoCamion": "Caja Refrigerada",
+							"tarifa": "$1240.00",
+							"frecuenciaPartida": "Alta"
+						},
+						{
+							"nbTipoCamion": "Autotanque/Pipa",
+							"tarifa": "$2550.00",
+							"frecuenciaPartida": "Regular"
+						}
+					]
+				},
+				{
+					"nbProveedor":"Tampiqueños S.A de C.V",
+					"vehiculos":[
+						{
+							"nbTipoCamion": "Cami\u00F3n de plataforma abierta",
+							"tarifa": "$1200.00",
+							"frecuenciaPartida": "Alta"
+						},
+						{
+							"nbTipoCamion": "Caja cerrada de 53 pies",
+							"tarifa": "$2500.00",
+							"frecuenciaPartida": "Regular"
+						}
+					]
+				}
+			],
+			"eventos":[
+				{
+					"fillCollor":"#ff9933",
+					"strokeColor":"#ff6600",
+					"routeColor":"#ffcc00",
+					"descripcionOrigen":"Ciudad Ju\u00E1rez, Chihuahua",
+					"descripcionLocalidad":"Pachuca de Soto, Hidalgo",
+					"puntoActual":0,
+					"puntoInicial":1,
+					"puntoFinal":0,
+					"paradaCompletada":1,
+					"latitudGps": 20.101285, 
+					"longitudGps": -98.756909,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Partida de ruta"
+				},
+				{
+					"fillCollor":"#ff9933",
+					"strokeColor":"#ff6600",
+					"routeColor":"#ffcc00",
+					"descripcionOrigen":"Tampico",
+					"descripcionLocalidad":"Veracruz Naranjos",
+					"puntoActual":0,
+					"puntoInicial":0,
+					"puntoFinal":1,
+					"paradaCompletada":1,
+					"latitudGps": 31.633084, 
+					"longitudGps":  -106.387121,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Parada de ruta"
+				}
+			]
+		},
+		{
+			"idRuta": "4",
+			"origen": "Pachuca de Soto, Hgo.",
+			"destino": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+			"orgLat": "",
+			"orgLng": "",
+			"dstLat": "",
+			"dstLng": "",
+			"proveedores":[
+				{
+					"nbProveedor":"CFI Drive",
+					"vehiculos":[
+						{
+							"nbTipoCamion": "Cami\u00F3n de plataforma abierta",
+							"tarifa": "$1200.00",
+							"frecuenciaPartida": "Alta"
+						},
+						{
+							"nbTipoCamion": "Rabon (1 eje)",
+							"tarifa": "$2500.00",
+							"frecuenciaPartida": "Regular"
+						},
+						{
+							"nbTipoCamion": "Caja Refrigerada",
+							"tarifa": "$1240.00",
+							"frecuenciaPartida": "Alta"
+						},
+						{
+							"nbTipoCamion": "Autotanque/Pipa",
+							"tarifa": "$2550.00",
+							"frecuenciaPartida": "Regular"
+						}
+					]
+				}
+			],
+			"eventos":[
+				{
+					"fillCollor":"#ff0000",
+					"strokeColor":"#cc0000",
+					"routeColor":"#990033",
+					"descripcionOrigen":"Guadalajara, Jalisco",
+					"descripcionLocalidad":"Apatzing\u00E1n de la Constitución, Michoac\u00E1n",
+					"puntoActual":0,
+					"puntoInicial":1,
+					"puntoFinal":0,
+					"paradaCompletada":1,
+					"latitudGps": 20.665706, 
+					"longitudGps": -103.376139,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Partida de ruta"
+				},
+				{
+					"fillCollor":"#ff0000",
+					"strokeColor":"#cc0000",
+					"routeColor":"#990033",
+					"descripcionOrigen":"Guadalajara",
+					"descripcionLocalidad":"Apatzingan de la Constitución",
+					"puntoActual":0,
+					"puntoInicial":0,
+					"puntoFinal":1,
+					"paradaCompletada":1,
+					"latitudGps": 19.079637,
+					"longitudGps":   -102.353869,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Parada de ruta"
+				}
+			]
+		},
+		{
+			"idRuta": "5",
+			"origen": "Pachuca de Soto, Hgo.",
+			"destino": "San FELIPE, Consuelo Ruiz, 68",
+			"orgLat": "",
+			"orgLng": "",
+			"dstLat": "",
+			"dstLng": "",
+			"proveedores":[
+				{
+					"nbProveedor":"CFI Dive",
+					"vehiculos":[
+						{
+							"nbTipoCamion": "Cami\u00F3n de plataforma abierta",
+							"tarifa": "$1200.00",
+							"frecuenciaPartida": "Alta"
+						},
+						{
+							"nbTipoCamion": "Rabon (1 eje)",
+							"tarifa": "$2500.00",
+							"frecuenciaPartida": "Regular"
+						},
+						{
+							"nbTipoCamion": "Caja Refrigerada",
+							"tarifa": "$1240.00",
+							"frecuenciaPartida": "Alta"
+						},
+						{
+							"nbTipoCamion": "Autotanque/Pipa",
+							"tarifa": "$2550.00",
+							"frecuenciaPartida": "Regular"
+						}
+					]
+				},
+				{
+					"nbProveedor":"Fletes Mylsa",
+					"vehiculos":[
+						{
+							"nbTipoCamion": "Cami\u00F3n de plataforma abierta",
+							"tarifa": "$1200.00",
+							"frecuenciaPartida": "Alta"
+						},
+						{
+							"nbTipoCamion": "Caja cerrada de 53 pies",
+							"tarifa": "$2500.00",
+							"frecuenciaPartida": "Regular"
+						}
+					]
+				}
+			],
+			"eventos":[
+				{
+					"fillCollor":"#660066",
+					"strokeColor":"#993399",
+					"routeColor":"#993366",
+					"descripcionOrigen":"Fresnillo, Zacatecas",
+					"descripcionLocalidad":"Del. Cuauhtémoc, Ciudad de México",
+					"puntoActual":0,
+					"puntoInicial":1,
+					"puntoFinal":0,
+					"paradaCompletada":1,
+					"latitudGps": 23.182859,
+					"longitudGps":  -102.882456,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Partida de ruta"
+				},
+				{
+					"fillCollor":"#660066",
+					"strokeColor":"#993399",
+					"routeColor":"#993366",
+					"descripcionOrigen":"Fresnillo",
+					"descripcionLocalidad":"Ciudad de México",
+					"puntoActual":0,
+					"puntoInicial":0,
+					"puntoFinal":1,
+					"paradaCompletada":1,
+					"latitudGps": 19.428622,
+					"longitudGps":    -99.166792,
+					"fechaProgramada":"10/10/2018",
+					"fechaEvento":"10/10/2018",
+					"descripcionEvento":"Parada de ruta"
+				}
+			]
+		}
+	
+	]
+}

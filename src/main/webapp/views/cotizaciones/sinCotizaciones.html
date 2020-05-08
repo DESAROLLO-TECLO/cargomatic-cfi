@@ -1,0 +1,249 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+	<section class="content-header">
+		<h1>Selección de Cotización</h1>
+		<ol class="breadcrumb">
+			<li><a href="#"><i class="fa fa-book"></i>Seguimiento</a></li>
+			<li class="active">Solicitudes</li>
+			<li class="active">Selección de Cotización</li>
+		</ol>
+	</section>
+
+	<section class="content">
+		<div class="row centerCol">
+			<div class="col-md-10">
+				<div class="box box-danger" id="mapDiv">
+					<div class="box-header with-border center">
+						<h3 class="box-title">Gestión de Cotizaciones</h3>
+					</div>
+					<div class="box-body">
+						<div class="row">
+							<div class="col-md-12">
+		      					<ul class="nav nav-tabs">
+		      						<li role="presentation"><a data-toggle="tab" data-target="#enviados" ng-show="provedoresEnviados.length>0">Enviadas al Cliente <strong>({{provedoresEnviados.length}})</strong></a></li>
+									<li role="presentation" class="active"><a data-toggle="tab" data-target="#respuestas">Respuestas de Cotizaciones <strong>(0)</strong></a></li>
+									<li role="presentation"><a data-toggle="tab" data-target="#otros">Otros Proveedores <strong>({{otrosProveedores.length}})</strong></a></li>
+									<li role="presentation"><a data-toggle="tab" data-target="#dvs">Datos del Viaje</a></li>
+								</ul>
+								<div class="tab-content">
+									<div id="enviados" class="tab-pane fade" ng-show="provedoresEnviados.length>0">
+										<div class="row table-responsive">
+											<div class="col-md-12">
+												<table class="table table-hover table-striped">
+													<tr>
+														<td><strong>Proveedor</strong></td>
+														<td><strong>Fecha Partida</strong></td>
+														<td><strong>Fecha Arribo</strong></td>
+														<td><strong>Subtotal</strong></td>
+														<td><strong>Impuestos</strong></td>
+														<td><strong>Total</strong></td>
+														<td><strong>Fecha máx. Confirmación</strong></td>
+													</tr>
+													<tr dir-paginate="pr in provedoresEnviados | itemsPerPage: 100">
+														<td>{{pr.cotizadorNombre}}</td>
+														<td>{{pr.fechaPartida}}</td>
+														<td>{{pr.fechaArribo}}</td>
+														<td>{{pr.cotizadorCostoSubtotal}}</td>
+														<td>{{pr.impuestos}}</td>
+														<td><strong>{{pr.cotizadorCostoTotal}}</strong></td>
+														<td>{{pr.validoHasta}}</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div class="box-footer">
+											<div class="row">
+												<div class="col-md-12 text-center">
+													<a href="#/seguimientoEnvios/{{solicitud}}" class="btn btn-md btn-danger">Regresar</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div id="respuestas" class="tab-pane fade in active">
+										<div class="row table-responsive">
+											<div class="col-md-12">
+												<table class="table table-hover table-striped">
+													<tr>
+														<td><strong>Postular</strong></td>
+														<td><strong>Proveedor</strong></td>
+														<td><strong>Fecha Partida</strong></td>
+														<td><strong>Fecha Arribo</strong></td>
+														<td><strong>Subtotal</strong></td>
+														<td><strong>Impuestos</strong></td>
+														<td><strong>Total</strong></td>
+														<td><strong>Fecha máx. Confirmación</strong></td>
+													</tr>
+													<tr dir-paginate="pr in proveedoresDefault | itemsPerPage: 100">
+														<td>
+															<button type="button" class="btn btn-warning btn-xs" ng-disabled="true">
+																<span class="fa fa-clock-o" aria-hidden="true"></span>
+															</button>
+														</td>
+														<td>{{pr.cotizadorNombre}}</td>
+														<td>-</td>
+														<td>-</td>
+														<td>$-</td>
+														<td>$-</td>
+														<td>$-</td>
+														<td>-</td>
+													</tr>
+													<tr>
+														<td>
+															<button type="button" class="btn btn-warning btn-xs" ng-disabled="true">
+																<span class="fa fa-clock-o" aria-hidden="true"></span>
+															</button>
+														</td>
+														<td>Another Logistic Company</td>
+														<td>-</td>
+														<td>-</td>
+														<td>$-</td>
+														<td>$-</td>
+														<td>$-</td>
+														<td>-</td>
+													</tr>
+													<tr dir-paginate="pr in proveedoresCotizacionManual | itemsPerPage: 100">
+														<td>
+															<button type="button" class="btn btn-warning btn-xs" ng-disabled="true">
+																<span class="fa fa-clock-o" aria-hidden="true"></span>
+															</button>
+														</td>
+														<td>{{pr.cotizadorNombre}}</td>
+														<td>-</td>
+														<td>-</td>
+														<td>$-</td>
+														<td>$-</td>
+														<td>$-</td>
+														<td>-</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div class="box-footer">
+											<div class="row">
+												<div class="col-md-12 text-center">
+													<a href="#/seguimientoEnvios/{{solicitud}}" class="btn btn-md btn-danger">Regresar</a>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div id="otros" class="col-md-12 tab-pane fade">
+										<div class="row table-responsive">
+											<div class="col-md-12">
+												<table class="table table-hover table-striped">
+													<tr>
+														<td><input type="checkbox" ng-model="otrosProveCheckedAll" ng-click="toogleAll()"><strong>Seleccionar</strong></td>
+														<td><strong>Proveedor</strong></td>
+														<td><strong>Tiempo Promedio de Respuesta</strong></td>
+														<td><strong>Calificación de Servicio</strong></td>
+													</tr>
+													<tr dir-paginate="pr in otrosProveedores | itemsPerPage: 100">
+														<td>
+															<input type="checkbox" ng-model="pr.checked" ng-click="toogleSingle()">
+														</td>
+														<td>{{pr.cotizadorNombre}}</td>
+														<td>{{pr.respuesta}}</td>
+														<td>{{pr.calidadServicio}}</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div class="box-footer" ng-show="otrosProveedores.length==0">
+											<div class="row">
+												<div class="col-md-12 text-center">
+													<a href="#/seguimientoEnvios/{{solicitud}}" class="btn btn-md btn-danger">Regresar</a>
+												</div>
+											</div>
+										</div>
+										<div class="box-footer" ng-show="otrosProveedores.length>0">
+											<div class="row">
+												<div class="col-md-12 text-center">
+													<a href="#/seguimientoEnvios/{{solicitud}}" class="btn btn-md btn-danger">Regresar</a>
+													<button type="button" class="btn btn-danger" ng-click="cotizar()">
+														Solicitar Cotización
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div id="dvs" class="col-md-12 table-responsive tab-pane fade">
+										<div class="row table-responsive">
+											<div class="col-md-12">
+												<table class="table table-hover header-fixed table-striped">
+													<tr>
+														<td width="20%"><strong>Origen: </strong><td>
+														<td width="30%">Tampico, Tamaulipas<td>
+														<td width="20%"><strong>Destino: </strong><td>
+														<td width="30%">Coatzacoalcos, Veracruz<td>
+													</tr>
+													<tr>
+														<td width="20%"><strong>Categoría:</strong><td>
+														<td width="30%">Artículos frágiles<td>
+														<td width="20%"><strong>Subcategoría:</strong><td>
+														<td width="30%">Cristales<td>
+													</tr>
+													<tr>
+														<td width="20%"><strong>Empaquetado:</strong><td>
+														<td width="20%">Anticorrosión<td>
+														<td width="30%"><strong>Tipo de Vehículo:</strong><td>
+														<td width="30%">Caja cerrada de 48 pies<td>
+													</tr>
+													<tr>
+														<td width="20%"><strong>Apilable:</strong><td>
+														<td>Si<td>
+														<td width="20%"><strong>Montacargas:</strong><td>
+														<td>Si<td>
+														<td width="30%"><strong>Peso del contenido:</strong><td>
+														<td>550Kgs<td>
+													</tr>
+													<tr>
+														<td width="27%"><strong>Largo total del contenido:</strong><td>
+														<td width="6%">2Mts.<td>
+														<td width="27%"><strong>Ancho total del contenido:</strong><td>
+														<td width="6%">2.5Mts<td>
+														<td width="27%"><strong>Alto total del contenido:</strong><td>
+														<td width="6%">3.5Mts<td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<div class="box-footer">
+											<div class="row">
+												<div class="col-md-12 text-center">
+													<a href="#/seguimientoEnvios/{{solicitud}}" class="btn btn-md btn-danger">Regresar</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+		      				</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title"></h4>
+				</div>
+				<div class="modal-body"></div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+[
+	{
+		"esatusId": 1,
+		"estatusCod": "S_P",
+		"estatusDesc": "Solicitud pendiente de verificar",
+		"estatusExplicacion": "Ningún pedido ha sido atendido.",
+		"classCode": "label-danger"
+	},
+	{
+		"esatusId": 2,
+		"estatusCod": "S_I",
+		"estatusDesc": "Solicitud incompleta",
+		"estatusExplicacion": "Faltan respuestas de algunos pedidos, por parte de proveedores o clientes.",
+		"classCode": "label-warning"
+	},
+	{
+		"esatusId": 3,
+		"estatusCod": "S_C",
+		"estatusDesc": "Solicitud completada",
+		"estatusExplicacion": "Todos los envios han sido atendidos.",
+		"classCode": "label-success"
+	}
+]

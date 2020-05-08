@@ -1,0 +1,309 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+	<section class="content-header">
+		<h1>{{breadCrumbs.servicio}}</h1>
+		<ol class="breadcrumb">
+			<li><a> <i class="{{breadCrumbs.icono}}"></i>{{breadCrumbs.modulo}}
+			</a></li>
+			<li class="active">{{breadCrumbs.servicio}}</li>
+		</ol>
+	</section>
+<section class="content">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="box box-danger collapsed-box">
+				<div class="box-header with-border text-center">
+					<h3 class="box-title">Parámetros de Búsqueda</h3>
+					<div class="box-tools pull-right">
+						<button type="button" class="btn btn-box-tool"
+							data-widget="collapse">
+							<i class="fa fa-plus"></i>
+						</button>
+					</div>
+<!-- 						{{'PROVEEDORES.Registro.consultaProveedores.tituloBox' | translate}} -->
+				</div>
+
+				<div class="box-body">
+					<div class="row">
+						<div class="col-md-6 {{filters.clase}}">
+							<div class="form-group">
+								<label>Parámetro:</label>
+								<div class="input-group">
+									<span class="input-group-addon"> <i class="fa fa-list"></i>
+									</span> <select class="form-control" select2
+										idioma-sp="{{currentLanguage}}"
+										data-selected-text-format="count > 2"
+										ng-model="filters.parameter"
+										ng-options="o as o.name for o in filters.parameters"
+										ng-change="changeFilter(filters.parameter)">
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6" ng-if="filters.parameter.id == 1">
+							<div class="form-group">
+								<label>Nombre:</label>
+								<div class="input-group">
+									<span class="input-group-addon"> <i class="fa fa-list"></i>
+									</span> 
+									<input type="text" class="form-control" ng-model="filters.client">
+									<span class="input-group-btn">
+										<button
+											ng-click="buscarSolicitudes()"
+											class="btn btn-danger">Buscar</button>
+									</span>
+								</div>
+							</div>
+
+						</div>
+						<div class="col-md-6" ng-if="filters.parameter.id == 3">
+							<div class="form-group">
+								<label>Folio de Operación:</label>
+								<div class="input-group">
+									<span class="input-group-addon"> <i class="fa fa-list"></i>
+									</span> 
+									<input type="text" class="form-control" ng-model="filters.client">
+									<span class="input-group-btn">
+										<button
+											ng-click="buscarSolicitudes()"
+											class="btn btn-danger">Buscar</button>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" ng-show="filters.parameter.id == 2">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>{{'PROVEEDORES.Registro.consultaProveedores.labelOrigen'
+									| translate}}:</label>
+								<div class="input-group">
+									<span class="input-group-addon"> <i
+										class="fa fa-map-marker"></i>
+									</span> <select ng-model="filters.origin" class="form-control" select2
+										data-minimum-results-for-search="Infinity" name="estadoRemi"
+										id="estadoRemi"
+										ng-options="org as org.nbUbicacion for org in origenes | orderBy: 'nbUbicacion'">
+										<option value="">Seleccione</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>{{'PROVEEDORES.Registro.consultaProveedores.labelDestino'
+									| translate}}:</label>
+								<div class="input-group">
+									<span class="input-group-addon"> <i
+										class="fa fa-map-marker" aria-hidden="true"></i>
+									</span> <select ng-model="filters.destination" class="form-control"
+										select2 data-minimum-results-for-search="Infinity"
+										name="detinoConsul" id="detinoConsul"
+										ng-options="dest as dest.nbUbicacion for dest in destinos | orderBy: 'nbUbicacion'">
+										<option value="">Seleccione</option>
+									</select> <span class="input-group-btn">
+										<button
+											ng-click="buscarSolicitudes()"
+											class="btn btn-danger">Buscar</button>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="row" ng-if="tipoSeguimiento.length > 0">
+		<div class="col-md-12">
+			<div class="box box-danger">
+<!-- 				<div class="box-header with-border center"> -->
+<!-- 					<h3>Seguimiento de Solicitudes</h3> -->
+<!-- 				</div> -->
+				<div class="box-body">
+
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="box-header">
+								<div class="col-md-6 col-xs-12">
+									<h3 class="box-title">
+										Número de Solicitudes: <span>{{ (tipoSeguimiento |
+											filter:fBus).length }}</span>
+									</h3>
+								</div>
+								<div class="col-md-6 form-group">
+									<div class="row">
+										<div class="col-md-offset-6 col-md-6 col-xs-8">
+											<div class="input-group">
+												<input id="searchsomething" type="text" class="form-control"
+													placeholder="Buscar por filtro" ng-model="fBus"> <span
+													class="input-group-addon"><i class="fa fa-search"></i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="box-body table-responsive no-padding">
+									<table id="garantiasTable"
+										class="table table-hover header-fixed table-striped">
+										<thead>
+											<tr>
+												<th sort order="'folio'" by="order" reverse="reverse">FOLIO
+													DE SOLICITUD</th>
+
+												<th sort order="'folio'" by="order" reverse="reverse">CLIENTE</th>
+
+												<th sort order="'txEmpresa'" by="order" reverse="reverse">FECHA
+													DE SOLICITUD</th>
+												<th class="wrap-text center" sort order="'txTipoInspec'"
+													by="order" reverse="reverse">FECHA DE ARRIBO</th>
+												<th class="center" sort order="'txDireccion'" by="order"
+													reverse="reverse">ORIGEN</th>
+
+												<th sort order="'fhServicio'" by="order" reverse="reverse"
+													class="center">DESTINO</th>
+
+												<th class="wrap-text center" sort order="'nbGestor'"
+													by="order" reverse="reverse">ESTATUS</th>
+
+												<th class="center">ACCIÓN</th>
+
+												<!-- 												<th class="wrap-text center" sort order="'nbInpectAsign'" -->
+												<!-- 													by="order" reverse="reverse">ENTREGA</th> -->
+
+											</tr>
+										</thead>
+										<tbody>
+											<tr
+												dir-paginate="obj in tipoSeguimiento | filter:fBus  | orderBy:order:reverse | itemsPerPage: view.rowsPerPage ">
+												<td class="center"><a target="_self">{{obj.folio}}</a></td>
+												<td>{{obj.nombre}}</td>
+
+												<td class="center">{{obj.fhcreacion}}</td>
+												<td class="center">{{obj.fhentrega}}</td>
+												<td>{{obj.origen.nbUbicacion}}</td>
+												<td>{{obj.destino.nbUbicacion}}</td>
+												<td class="center"><span class="label {{obj.label}}"
+													style="color: black;">{{obj.status}}</span></td>
+												<td class="center"><a target="_self"
+													ng-click="action(obj)"> {{obj.labelAction}} </a></td>
+											</tr>
+											<tr ng-if="(tipoSeguimiento | filter:fBus).length < 1">
+												<td colspan="5" class="text-center">
+													<h4>No se encontraron coincidencias</h4>
+												</td>
+											</tr>
+
+										</tbody>
+									</table>
+								</div>
+								<div class="container-fluid">
+									<div class="fixed-table-pagination" style="display: block;">
+										<rows-per-page rows="view.rowsPerPage" filtro="fBus"
+											array="tipoSeguimiento"></rows-per-page>
+										<div class="pull-right pagination">
+											<dir-pagination-controls class="pagination"></dir-pagination-controls>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<modal visible="view.showModalRating" size-modal="md" noescape modalstatic>
+	<modal-header title="{{'COTIZACION.NuevaOrden.sugerencia' |translate}}"></modal-header>
+	<modal-body>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col" class="center">Asociar</th>
+							<th scope="col" class="center">{{'COTIZACION.NuevaOrden.nbProveddor'
+								|translate}}</th>
+							<th scope="col" class="center">{{'COTIZACION.NuevaOrden.eficiencia'
+								|translate}}</th>
+							<th scope="col" class="center">{{'COTIZACION.NuevaOrden.calificacion'
+								|translate}}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="text-center" scope="row"><label class="col-md-2">
+									<input type="radio" name="nbProvedorSugerido"
+									ng-model="envio.nbProvedorSugerido" value="1"
+									ng-change="asignarProvSegerido(envio.nbProvedorSugerido)">
+							</label></th>
+							<td class="text-center">CFI Drive</td>
+							<td class="text-center">98 %</td>
+							<td class="text-center"><input id="input-1" name="input-1"
+								class="rating rating-loading" data-min="0" data-max="5"
+								value="5"></td>
+						</tr>
+						<tr>
+							<th class="text-center" scope="row"><label class="col-md-2">
+									<input type="radio" name="nbProvedorSugerido"
+									ng-model="envio.nbProvedorSugerido" value="2"
+									ng-change="asignarProvSegerido(envio.nbProvedorSugerido)">
+							</label></th>
+							<td class="text-center">Tampiqueños S.A de C.V</td>
+							<td class="text-center">97 %</td>
+							<td class="text-center"><input id="input-2" name="input-2"
+								class="rating rating-loading" data-min="0" data-max="5"
+								data-step="0.1" value="4.5"></td>
+						</tr>
+						<tr>
+							<th class="text-center" scope="row"><label class="col-md-2">
+									<input type="radio" name="nbProvedorSugerido"
+									ng-model="envio.nbProvedorSugerido" value="3"
+									ng-change="asignarProvSegerido(envio.nbProvedorSugerido)">
+							</label></th>
+							<td class="text-center">Fletes Mylsa</td>
+							<td class="text-center">96 %</td>
+							<td class="text-center"><input id="input-3" name="input-3"
+								class="rating rating-loading" data-min="0" data-max="5"
+								data-step="0.1" value="4"></td>
+						</tr>
+						<tr>
+							<th class="text-center" scope="row"><label class="col-md-2">
+									<input type="radio" name="nbProvedorSugerido"
+									ng-model="envio.nbProvedorSugerido" value="4"
+									ng-change="asignarProvSegerido(envio.nbProvedorSugerido)">
+							</label></th>
+							<td class="text-center">Solutions Cargo</td>
+							<td class="text-center">95 %</td>
+							<td class="text-center"><input id="input-4" name="input-4"
+								class="rating rating-loading" data-min="0" data-max="5"
+								data-step="0.1" value="3.6"></td>
+						</tr>
+						<tr>
+							<th class="text-center" scope="row"><label class="col-md-2">
+									<input type="radio" name="nbProvedorSugerido"
+									ng-model="envio.nbProvedorSugerido" value="5"
+									ng-change="asignarProvSegerido(envio.nbProvedorSugerido)">
+							</label></th>
+							<td class="text-center">SE Global Logistics SA de CV</td>
+							<td class="text-center">94 %</td>
+							<td class="text-center"><input id="input-5" name="input-5"
+								class="rating rating-loading" data-min="0" data-max="5"
+								data-step="0.1" value="3.5"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	</modal-body> <modal-footer btn-close="Cerrar"> </modal-footer> </modal>
+
+</section>

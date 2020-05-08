@@ -1,0 +1,41 @@
+[
+	{
+		"exp": 5533958040,
+		"inactivity": 15,
+		"userNum": null,
+		"sub": "admin",
+		"audience": "web",
+		"created": 1533938683468,
+		"name": "Andrés Pérez Mendiola",
+		"perfil": "ADMINISTRADOR",
+		"usuario": "operador",
+		"clave": "operador",
+		"pages": "/configuracion /proveedores /registroProveedores /consultaProveedores /rutas /consultaProveedores/modificacionProveedores/:id /operacionesConsulta/evaluacionProveedores/:folio /dashboardProveedores /dashboardVentas /contratacion /agregarOrden /seguimientoSolicitudes /monitoreoRuta /operacionesConsulta /listadoCotizaciones /seguimientoEnvios /seleccionProveedor /sinCotizaciones /esperaClienteCotizaciones /cotizacionAgotada /cotizacionDeclinada /seleccionProvDeclinado"
+	},
+	{
+		"exp": 5533958040,
+		"inactivity": 15,
+		"userNum": null,
+		"sub": "admin",
+		"audience": "web",
+		"created": 1533938683468,
+		"name": "Carolina Guzmán Ortíz",
+		"perfil": "CLIENTE",
+		"usuario": "cliente",
+		"clave": "cliente",
+		"pages": "/nuevaSolicitud /consultaSolicitudes /detalleSolicitud/:id /actividades /adminUsuariosModificaClave"
+	},
+	{
+		"exp": 5533958040,
+		"inactivity": 15,
+		"userNum": null,
+		"sub": "admin",
+		"audience": "web",
+		"created": 1533938683468,
+		"name": "V\u00EDctor L\u00F3pez Garc\u00EDa",
+		"perfil": "PROVEEDOR",
+		"usuario": "proveedor",
+		"clave": "proveedor",
+		"pages": "/seguimiento /cotizaciones /adminUsuariosModificaClave"
+	}
+]

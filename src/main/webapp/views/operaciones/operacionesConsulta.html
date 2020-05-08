@@ -1,0 +1,503 @@
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+#map2 {
+	height: 70vh;
+	margin-top: 0px;
+	border-radius: 2px;
+	border: 1px solid silver;
+}
+
+.ssearchbar {
+	z-index: 100;
+	position: absolute;
+	margin-top: 1px;
+	right: 4px;
+}
+
+.ssearchbar>.box>.box-header {
+	cursor: pointer !important;
+}
+
+.noFa {
+	display: none;
+}
+
+.pac-container {
+	z-index: 1051 !important;
+}
+</style>
+</head>
+<body>
+	<section class="content-header">
+		<h1>Consulta de Operaciones</h1>
+		<ol class="breadcrumb">
+			<li><a href="#"><i class="fa fa-book"></i>Operaciones</a></li>
+			<li class="active">Consulta</li>
+		</ol>
+	</section>
+
+	<section class="content">
+
+		<div class="row centerCol">
+			<div class="col-md-12">
+				<div class="box box-danger collapsed-box">
+					<div class="box-header with-border center">
+						<h2 class="box-title">Parámetros de Búsqueda</h2>
+						<div class="box-tools pull-right">
+							<button type="button" class="btn btn-box-tool"
+								data-widget="collapse">
+								<i class="fa fa-plus"></i>
+							</button>
+						</div>
+					</div>
+
+					<div class="box-body">
+						<div class="row centerCol">
+							<div class="col-md-12">
+								<form role="form" name="rutas" novalidate>
+									<div class="row">
+										<br>
+
+										<div class="col-md-12">
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<div class="form-group">
+															<label for="tipoComportamiento">Proveedor: </label>
+															<div class="input-group">
+																<span class="input-group-addon"> <i
+																	class="fa fa-list"></i></span> <select class="form-control"
+																	select-picker multiple idioma-sp="{{currentLanguage}}"
+																	data-actions-box="true"
+																	data-selected-text-format="count > 2"
+																	ng-model="formRoute.provedor"
+																	ng-options="o.id as o.nbProveedor for o in vo.proveedor">
+																</select>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-md-3">
+													<div class="form-group">
+														<div class="form-group">
+															<label for="tipoComportamiento">Folio de
+																Operación: </label>
+															<div class="input-group">
+																<span class="input-group-addon"> <i
+																	class="fa fa-file-text-o"></i></span> <input type="text"
+																	class="form-control" ng-model="formRoute.folio">
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<div class="form-group">
+															<label for="tipoComportamiento">Número de Guía: </label>
+															<div class="input-group">
+																<span class="input-group-addon"> <i
+																	class="fa fa-file-text-o"></i></span> <input type="text"
+																	class="form-control" ng-model="formRoute.numerGuia">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<div class="form-group">
+															<label for="tipoComportamiento">Origen: </label>
+															<div class="input-group">
+																<span class="input-group-addon"> <i
+																	class="fa fa-map-marker"></i></span>
+																<div class="padded-row">
+																	<select id="origin" ng-model="x" class="form-control"
+																		select2 data-minimum-results-for-search="Infinity"
+																		name="estadoRemi" id="estadoRemi"
+																		ng-options="org as org.nbUbicacion for org in vo.orgien | orderBy: 'nbUbicacion'">
+																		<option value="">Seleccione</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<div class="form-group">
+															<label for="tipoComportamiento">Destino: </label>
+															<div class="input-group">
+																<span class="input-group-addon"> <i
+																	class="fa fa-map-marker"></i></span>
+																<div class="padded-row">
+																	<select id="origin" ng-model="y" class="form-control"
+																		select2 data-minimum-results-for-search="Infinity"
+																		name="estadoRemi" id="estadoRemi"
+																		ng-options="org as org.nbUbicacion for org in vo.destino | orderBy: 'nbUbicacion'">
+																		<option value="">Seleccione</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- 												{{formRoute}} -->
+											</div>
+											<fieldset class="scheduler-border">
+												<legend class="scheduler-border legendStyle">
+													<a data-toggle="collapse"
+														data-target="#divBusquedaAvanzada" style="color: black">
+														Búsqueda Avanzada </a>
+												</legend>
+												<div class="row collapse" id="divBusquedaAvanzada">
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<div class="form-group">
+																	<label for="tipoComportamiento">Categoria: </label>
+																	<div class="input-group">
+																		<span class="input-group-addon"> <i
+																			class="fa fa-list"></i></span> <select
+																			name="category{{$index}}" id="category{{$index}}"
+																			class="form-control" select-picker multiple
+																			idioma-sp="{{currentLanguage}}"
+																			data-actions-box="true"
+																			data-selected-text-format="count > 2"
+																			ng-model="formRoute.categorias"
+																			ng-options="c as c.nbCategoria for c in vo.categoria"
+																			ng-change="filtraSubcategoria(formRoute.categorias)">
+																		</select>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6">
+															<div class="form-group">
+																<div class="form-group">
+																	<label for="tipoComportamiento">Subcategoría: </label>
+																	<div class="input-group">
+																		<span class="input-group-addon"> <i
+																			class="fa fa-list"></i></span> <select class="form-control"
+																			select2 name="subcategory{{$index}}"
+																			id="subcategory{{$index}}" multiple="multiple"
+																			data-allow-clear="true"
+																			idioma-s2="{{currentLanguage}}"
+																			ng-model="formRoute.subCategorias"
+																			ng-options="sm.nbOpcion group by sm.nbGroup for sm in subcategoriasFiltro">
+																		</select>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<div class="form-group">
+																	<label for="tipoComportamiento">Periodo: </label>
+																	<div class="input-group">
+																		<span class="input-group-addon"> <i
+																			class="fa fa-list"></i></span> <select class="form-control"
+																			ng-model="periodo">
+																			<option value="s">Seleccione</option>
+																			<option value="d">Día actual</option>
+																			<option value="d">Últimos 7 días</option>
+																			<option value="d">Últimos 15 días</option>
+																			<option value="d">Último Mes</option>
+																			<option value="r">Rango de días</option>
+																		</select>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6">
+															<div class="form-group">
+																<div class="form-group">
+																	<label for="tipoComportamiento">Estatus: </label>
+																	<div class="input-group">
+																		<span class="input-group-addon"> <i
+																			class="fa fa-list"></i></span> <select
+																			name="category{{$index}}" id="category{{$index}}"
+																			class="form-control" select-picker multiple
+																			idioma-sp="{{currentLanguage}}"
+																			data-actions-box="true"
+																			data-selected-text-format="count > 2"
+																			ng-model="formRoute.categorias"
+																			ng-options="c.estatus as c.estatus for c in vo.estatusOperaciones">
+																		</select>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="row" ng-show="periodo=='r'">
+														<div class="col-md-6">
+															<div class="form-group"
+																ng-class="{'has-error': rutasForm.fechaCoordenadas.$invalid && rutasForm.fechaCoordenadas.$dirty}">
+																<label for="fechaCoordenadas">Fecha inicial:</label>
+																<div class="input-group date ">
+																	<div class="input-group-addon">
+																		<i class="fa fa-calendar"></i>
+																	</div>
+																	<input type="text" class="form-control pointer"
+																		id="datepicker" data-date-format="dd/mm/yyyy"
+																		ng-model="fecha" ng-required="true"
+																		name="fechaCoordenadas" id="fechaCoordenadas"
+																		ng-change="updateFIFecha()" show-button-bar="true"
+																		readonly style="background-color: white;">
+																</div>
+																<div
+																	ng-show="rutasForm.fechaCoordenadas.$invalid && rutasForm.fechaCoordenadas.$dirty"
+																	ng-style="{color:'red'}">La fecha es requerida</div>
+															</div>
+														</div>
+														<div class="col-md-6">
+															<div class="form-group"
+																ng-class="{'has-error': rutasForm.fechaCoordenadas.$invalid && rutasForm.fechaCoordenadas.$dirty}">
+																<label for="fechaCoordenadas">Fecha final:</label>
+																<div class="input-group date ">
+																	<div class="input-group-addon">
+																		<i class="fa fa-calendar"></i>
+																	</div>
+																	<input type="text" class="form-control pointer"
+																		id="datepicker1" data-date-format="dd/mm/yyyy"
+																		ng-model="fecha1" ng-required="true"
+																		name="fechaCoordenadas" id="fechaCoordenadas"
+																		ng-change="updateFIFecha()" show-button-bar="true"
+																		readonly style="background-color: white;">
+																</div>
+																<div
+																	ng-show="rutasForm.fechaCoordenadas.$invalid && rutasForm.fechaCoordenadas.$dirty"
+																	ng-style="{color:'red'}">La fecha es requerida</div>
+															</div>
+														</div>
+													</div>
+													<br>
+													<div class="row">
+														<div class="col-sm-6">
+															<div class="form-group">
+																<label for="stApilable">Parámetro de carga: </label>
+																<switcher class="swTeclo pull-right"
+																	id-check="checkTest1" ng-disabled="isDisabled"
+																	true-label="{{'COTIZACION.Nuevo.si'|translate}}"
+																	true-value="'1'"
+																	false-label="{{'COTIZACION.Nuevo.no'|translate}}"
+																	false-value="'0'"
+																	ng-change="checkVal(newValue, oldValue)"
+																	ng-model="disponibilidadSwitch.carga"> </switcher>
+															</div>
+														</div>
+														<div class="col-sm-6">
+															<div class="form-group">
+																<label for="stApilable">Parámetro de volumen: </label>
+																<switcher class="swTeclo pull-right"
+																	id-check="checkTest1" ng-disabled="isDisabled"
+																	true-label="{{'COTIZACION.Nuevo.si'|translate}}"
+																	true-value="'1'"
+																	false-label="{{'COTIZACION.Nuevo.no'|translate}}"
+																	false-value="'0'"
+																	ng-change="checkVal(newValue, oldValue)"
+																	ng-model="disponibilidadSwitch.volumen"> </switcher>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-md-6">
+															<div ng-show="disponibilidadSwitch.carga=='1'">
+																<label for="fechaCoordenadas">Disponibilidad de
+																	Carga: <span id="cargaOut"></span>%
+																</label> <br />
+																<div class="col-offset-1 col-md-10">
+																	<div class="form-group text-center">
+																		<div class="slidecontainer">
+																			<input type="range" min="1" max="100" value="50"
+																				class="slider" id="cargaRange">
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6">
+															<div ng-show="disponibilidadSwitch.volumen=='1'">
+																<label for="fechaCoordenadas">Disponibilidad de
+																	volumen: <span id="volOut"></span>%
+																</label> <br />
+																<div class="col-offset-1 col-md-10">
+																	<div class="form-group text-center">
+																		<div class="slidecontainer">
+																			<input type="range" min="1" max="100" value="50"
+																				class="slider" id="volRange">
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</fieldset>
+											<div class="row">
+												<div class="col-md-12 text-center">
+													<button class="btn btn-md btn-danger"
+														ng-click="searchRoutes()">Buscar</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<br>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row centerCol">
+			<div class="col-md-12">
+				<div class="row" ng-if="rutasSet.length > 0">
+					<div class="col-xs-12">
+						<div class="box box-danger">
+							<div class="box-header row">
+								<div class="col-md-6 col-xs-12">
+									<h3 class="box-title">Operaciones encontradas: {{(rutasSet
+										| filter : view.searchSomething).length}}</h3>
+								</div>
+								<div class="col-md-offset-3 col-md-3 col-xs-10">
+									<div class="input-group">
+										<input id="searchsomething" type="text" class="form-control"
+											placeholder="Buscar por filtro"
+											ng-model="view.searchSomething"> <span
+											class="input-group-addon"><i class="fa fa-search"></i></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="box-body table-responsive">
+								<table class="table table-striped header-fixed">
+									<thead>
+										<tr>
+											<th class="center">Folio de Operación</th>
+											<th sort order="'nombreZonaVial'" by="order"
+												reverse="reverse">Proveedor</th>
+											<th sort order="'oficiales[0].empPlaca'" by="order"
+												reverse="reverse">Origen</th>
+											<th sort order="'oficiales[0].empNombre'" by="order"
+												reverse="reverse">Destino</th>
+											<th sort order="'oficiales[0].empNombre'" by="order"
+												reverse="reverse">Disponibilidad de Carga</th>
+											<th sort order="'oficiales[0].empNombre'" by="order"
+												reverse="reverse">Disponibilidad de Volumen</th>
+											<th sort order="'oficiales[0].empNombre'" by="order"
+												reverse="reverse">Fecha Partida</th>
+											<th sort order="'oficiales[0].empNombre'" by="order"
+												reverse="reverse">Fecha Llegada</th>
+											<th sort order="'oficiales[0].empNombre'" by="order"
+												reverse="reverse">Estatus</th>
+											<th sort order="'oficiales[0].empNombre'" by="order"
+												reverse="reverse">Inspeccionar Carga</th>
+											<th class="center">Evaluación</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr
+											dir-paginate="ruta in rutasSet | orderBy:order:reverse | filter:view.searchSomething | itemsPerPage: view.rowsPerPage">
+											<td>{{ruta.folio}}</td>
+											<td>{{ruta.provedor}}</td>
+											<td class="center">{{ruta.origen}}</td>
+											<td class="center">{{ruta.destino}}</td>
+											<td class="center">{{ruta.cargaDisponible}}%</td>
+											<td class="center">{{ruta.volumenDisponible}}%</td>
+											<td class="center">{{ruta.fechaLLegada}}</td>
+											<td class="center">{{ruta.fechaPartida}}</td>
+											<td class="center"><span
+												class='label {{ruta.estatusColor}}'>{{ruta.estatus}}</span></td>
+
+											<td class="center"><a class="btn btn-sm btn-danger"
+												href="#/monitoreoRuta/{{ruta.rutaId}}"> <i
+													class="fa fa-indent" aria-hidden="true"></i>
+											</a></td>
+											<td class="center"><a ng-if="ruta.estatusId == '04'"
+												style="color: white;"
+												href="#/operacionesConsulta/evaluacionProveedores/{{ruta.folio}}"
+												class="btn btn-success" role="button" tooltip="Encuesta"><i
+													class="fa fa-file-text" aria-hidden="true"></i></a> <a
+												ng-if="ruta.estatusId != '04'" target="_self" ng-disabled="true"
+												class="btn btn-danger" role="button"
+												tooltip="Encuesta no disponible"><i
+													class="fa fa-file-text" aria-hidden="true"></i></a></td>
+										</tr>
+										<tr
+											ng-if="(rutasSet | filter:view.searchSomething).length < 1">
+											<td colspan="4" class="text-center"><h4>No se
+													encontraron coincidencias</h4></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="container-fluid">
+								<div class="fixed-table-pagination" style="display: block;">
+									<rows-per-page rows="view.rowsPerPage"
+										filtro="view.searchSomething" array="rutasSet"></rows-per-page>
+
+									<div class="pull-right pagination">
+										<dir-pagination-controls class="pagination"></dir-pagination-controls>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Datos de la ruta</h4>
+				</div>
+				<div class="modal-body"></div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$('#datepicker').datepicker({
+		autoclose : true,
+		endDate : '+0d',
+		todayHighlight : true
+	})
+
+	$('#datepicker1').datepicker({
+		autoclose : true,
+		endDate : '+0d',
+		todayHighlight : true
+	})
+
+	var slider = document.getElementById("cargaRange");
+	var output = document.getElementById("cargaOut");
+	var slider1 = document.getElementById("volRange");
+	var output1 = document.getElementById("volOut");
+	output.innerHTML = slider.value;
+	output1.innerHTML = slider1.value;
+	slider.oninput = function() {
+		output.innerHTML = this.value;
+	}
+	slider1.oninput = function() {
+		output1.innerHTML = this.value;
+	}
+</script>
+</html>

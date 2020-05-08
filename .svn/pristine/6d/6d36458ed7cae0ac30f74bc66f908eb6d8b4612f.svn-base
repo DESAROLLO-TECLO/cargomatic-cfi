@@ -1,0 +1,334 @@
+{
+	"nbCliente": "CFI Log\u00EDstica",
+	"stApilable": "false",
+	"stMontacargas": "false",
+	"nbUnidadMed": "Mts",
+	"nbUnidadMedPes": "Kgs",
+	"nuLargo": null,
+	"nuAncho": null,
+	"nuAlto": null,
+	"nuPesoArt": null,
+	"nuValor": null,
+	"orgien": [
+		{
+			"id": 1,
+			"nbUbicacion": "Camotl\u00E1n de Miraflores, Col.",
+			"lat": "19.2223273",
+			"lng": "-104.23562600000002"
+		},
+		{
+			"id": 2,
+			"nbUbicacion": "Pachuca de Soto, Hgo.",
+			"lat": "20.1010608",
+			"lng": "-98.75913109999999"
+		},
+		{
+			"id": 3,
+			"nbUbicacion": "Tampico, Tamaulipas",
+			"lat": "18.09796",
+			"lng": "-97.11517"
+		},
+		{
+			"id": 4,
+			"nbUbicacion": "Tlalpan, Ciudad de Mexico",
+			"lat": "19.2833",
+			"lng": "-99.1667"
+		},
+		{
+			"id": 5,
+			"nbUbicacion": "Nuevo Laredo, Tamaulipas",
+			"lat": "16.31304",
+			"lng": "-95.09935"
+		},
+		{
+			"id": 6,
+			"nbUbicacion": "Zapopan, Jalisco",
+			"lat": "16.93016",
+			"lng": "-97.42459"
+		},
+		{
+			"id": 7,
+			"nbUbicacion": "Apodaca, Nuevo León",
+			"lat": "19.10111",
+			"lng": "-97.53139"
+		}
+	],
+	"destino": [
+		{
+			"id": 1,
+			"nbUbicacion": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+			"lat": "31.6316099",
+			"lng": "-106.38906179999998"
+		},
+		{
+			"id": 2,
+			"nbUbicacion": "San FELIPE, Consuelo Ruiz, 68",
+			"lat": "31.0250709",
+			"lng": "-114.84077760000002"
+		},
+		{
+			"id": 3,
+			"nbUbicacion": "Coatzacoalcos, Veracruz",
+			"lat": "18.8361",
+			"lng": "-95.7971"
+		},
+		{
+			"id": 4,
+			"nbUbicacion": "Ahualulco, San Luis Potosi",
+			"lat": "18.53048",
+			"lng": "-96.78840"
+		},
+		{
+			"id": 5,
+			"nbUbicacion": "Pachuca, Hidalgo",
+			"lat": "20.1169700",
+			"lng": "-98.7332900"
+		},
+		{
+			"id": 6,
+			"nbUbicacion": "Mexicali, Baja California",
+			"lat": "32.6519",
+			"lng": "-115.4683"
+		},
+		{
+			"id": 7,
+			"nbUbicacion": "Cozumel, Quintana Roo",
+			"lat": "21.39277",
+			"lng": "-88.89149"
+		}
+	],
+	"proveedor": [
+		{
+			"id": "1",
+			"nbProveedor": "CFI Drive"
+		},
+		{
+			"id": "2",
+			"nbProveedor": "Tampiqueños S.A de C.V"
+		},
+		{
+			"id": "3",
+			"nbProveedor": "Fletes Mylsa"
+		},
+		{
+			"id": "4",
+			"nbProveedor": "Solutions Cargo"
+		},
+		{
+			"id": "5",
+			"nbProveedor": "SE Global Logistics SA de CV"
+		}
+	],
+	"categoria": [
+		{
+			"id": "1",
+			"nbCategoria": "Animales"
+		},
+		{
+			"id": "2",
+			"nbCategoria": "Art\u00EDculos de tecnolog\u00EDa"
+		},
+		{
+			"id": "3",
+			"nbCategoria": "Art\u00EDculos fr\u00E1giles"
+		},
+		{
+			"id": "4",
+			"nbCategoria": "Carga completa"
+		},
+		{
+			"id": "5",
+			"nbCategoria": "Carga Consolidada"
+		}
+	],
+	"subcategoria": [
+		{
+			"idPadre": "1",
+			"id": "1",
+			"nbSubCategoria": "Animales acu\u00E1ticos"
+		},
+		{
+			"idPadre": "1",
+			"id": "2",
+			"nbSubCategoria": "Animales de cr\u00EDa"
+		},
+		{
+			"idPadre": "1",
+			"id": "3",
+			"nbSubCategoria": "Aves"
+		},
+		{
+			"idPadre": "2",
+			"id": "4",
+			"nbSubCategoria": "Accesorios"
+		},
+		{
+			"idPadre": "2",
+			"id": "5",
+			"nbSubCategoria": "Celulares"
+		},
+		{
+			"idPadre": "2",
+			"id": "6",
+			"nbSubCategoria": "Computadoras"
+		},
+		{
+			"idPadre": "3",
+			"id": "7",
+			"nbSubCategoria": "Antig\u00FCedad"
+		},
+		{
+			"idPadre": "3",
+			"id": "8",
+			"nbSubCategoria": "Cer\u00E1mica"
+		},
+		{
+			"idPadre": "3",
+			"id": "9",
+			"nbSubCategoria": "Cristales"
+		},
+		{
+			"idPadre": "4",
+			"id": "10",
+			"nbSubCategoria": "Carga llena"
+		},
+		{
+			"idPadre": "4",
+			"id": "11",
+			"nbSubCategoria": "Carga intermodal"
+		},
+		{
+			"idPadre": "5",
+			"id": "12",
+			"nbSubCategoria": "Art\u00EDculos de segunda mano"
+		},
+		{
+			"idPadre": "5",
+			"id": "13",
+			"nbSubCategoria": "Art\u00EDculos nuevos"
+		},
+		{
+			"idPadre": "5",
+			"id": "14",
+			"nbSubCategoria": "Bebidas Alcoh\u00F3licas"
+		},
+		{
+			"idPadre": "5",
+			"id": "15",
+			"nbSubCategoria": "L\u00EDquidos"
+		},
+		{
+			"idPadre": "5",
+			"id": "16",
+			"nbSubCategoria": "Materia prima"
+		}
+	],
+	"empaquetado": [
+		{
+			"id": "1",
+			"nbEmpaquetado": "Anti-corrosi\u00F3n"
+		},
+		{
+			"id": "2",
+			"nbEmpaquetado": "Cajas de cart\u00F3n"
+		},
+		{
+			"id": "3",
+			"nbEmpaquetado": "Cajas de madera"
+		},
+		{
+			"id": "4",
+			"nbEmpaquetado": "Rejas de madera"
+		},
+		{
+			"id": "5",
+			"nbEmpaquetado": "Saco"
+		},
+		{
+			"id": "6",
+			"nbEmpaquetado": "Sin empaquetar"
+		},
+		{
+			"id": "7",
+			"nbEmpaquetado": "Palets (en tarimas)"
+		},
+		{
+			"id": "8",
+			"nbEmpaquetado": "Tanques"
+		}
+	],
+	"camion": [
+		{
+			"id": "1",
+			"nbTipoCamion": "Cami\u00F3n de plataforma abierta"
+		},
+		{
+			"id": "2",
+			"nbTipoCamion": "Rabon (1 eje)"
+		},
+		{
+			"id": "3",
+			"nbTipoCamion": "Torton (2 ejes)"
+		},
+		{
+			"id": "4",
+			"nbTipoCamion": "Caja cerrada de 53 pies"
+		},
+		{
+			"id": "5",
+			"nbTipoCamion": "Caja Cerrada de 48 pies"
+		},
+		{
+			"id": "6",
+			"nbTipoCamion": "Full/Doble semiremolque"
+		},
+		{
+			"id": "7",
+			"nbTipoCamion": "Caja refrigerada"
+		},
+		{
+			"id": "8",
+			"nbTipoCamion": "Autotanque/pipa"
+		},
+		{
+			"id": "9",
+			"nbTipoCamion": "Jaula granel/granelera"
+		},
+		{
+			"id": "10",
+			"nbTipoCamion": "Jaula ganadera"
+		},
+		{
+			"id": "11",
+			"nbTipoCamion": "Low boy/cama baja"
+		},
+		{
+			"id": "12",
+			"nbTipoCamion": "Tolva"
+		},
+		{
+			"id": "13",
+			"nbTipoCamion": "Madrina/porta veh\u00EDculos"
+		}
+	],
+	"estatusOperaciones": [
+		{
+			"estatus": "Reservado"
+		},
+		{
+			"estatus": "Carga en proceso"
+		},
+		{
+			"estatus": "Enviado"
+		},
+		{
+			"estatus": "En ruta"
+		},
+		{
+			"estatus": "Descargando"
+		},
+		{
+			"estatus": "Entregado"
+		}
+	]
+}

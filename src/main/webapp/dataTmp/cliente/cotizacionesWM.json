@@ -1,0 +1,108 @@
+{
+	"cotizadores":[
+		{
+			"cotizadorId":3,
+			"validoHasta": "29/08/2018 10:00",
+			"fechaPartida": "29/08/2018 15:00",
+			"fechaArribo": "30/08/2018 12:00",
+			"cotizadorNombre":"Logistics International",
+			"cotizadorCostoSubtotal": "$13,705.00",
+			"impuestos": "$2,192.00",
+			"cotizadorCostoTotal": "$15,897.8",
+			"cotizadorClass": "bs-callout-info",
+			"predeterminado": "Si",
+			"envioId" : 4
+		},
+		{
+			"cotizadorId":4,
+			"validoHasta": "29/08/2018 10:00",
+			"fechaPartida": "29/08/2018 15:00",
+			"fechaArribo": "29/08/2018 15:00",
+			"cotizadorNombre":"Products Supplier",
+			"cotizadorCostoSubtotal": "$13,804.00",
+			"impuestos": "$2,208.64",
+			"cotizadorCostoTotal": "$16,012.64",
+			"cotizadorClass": "bs-callout-primary",
+			"predeterminado": "Si",
+			"envioId" : 4
+		},
+		{
+			"cotizadorId":5,
+			"validoHasta": "29/08/2018 10:00",
+			"fechaPartida": "29/08/2018 15:00",
+			"fechaArribo": "29/08/2018 15:00",
+			"cotizadorNombre":"Tampiqueños S.A de C.V",
+			"cotizadorCostoSubtotal": "$10,000.00",
+			"impuestos": "$1,000.00",
+			"cotizadorCostoTotal": "$11,000.00",
+			"cotizadorClass": "bs-callout-primary",
+			"predeterminado": "Si",
+			"envioId" : 6
+		},
+		{
+			"cotizadorId":6,
+			"validoHasta": "29/08/2018 12:00",
+			"fechaPartida": "29/08/2018 19:00",
+			"fechaArribo": "29/08/2018 12:00",
+			"cotizadorNombre":"Tampiqueños S.A de C.V",
+			"cotizadorCostoSubtotal": "$25,000.00",
+			"impuestos": "$1,500.00",
+			"cotizadorCostoTotal": "$26,500.00",
+			"cotizadorClass": "bs-callout-primary",
+			"predeterminado": "Si",
+			"envioId" : 8
+		},
+		{
+			"cotizadorId":7,
+			"validoHasta": "31/01/2018 12:00",
+			"fechaPartida": "17/01/2018 19:00",
+			"fechaArribo": "25/01/2018 12:00",
+			"cotizadorNombre":"Tampiqueños S.A de C.V",
+			"cotizadorCostoSubtotal": "$10,000.00",
+			"impuestos": "$1,500.00",
+			"cotizadorCostoTotal": "$11,500.00",
+			"cotizadorClass": "bs-callout-primary",
+			"predeterminado": "Si",
+			"envioId" : 1
+		},
+		{
+			"cotizadorId":8,
+			"validoHasta": "30/06/2018 12:00",
+			"fechaPartida": "30/08/2018 19:00",
+			"fechaArribo": "30/09/2018 12:00",
+			"cotizadorNombre":"Tampiqueños S.A de C.V",
+			"cotizadorCostoSubtotal": "$9,000.00",
+			"impuestos": "$1,500.00",
+			"cotizadorCostoTotal": "$10,500.00",
+			"cotizadorClass": "bs-callout-primary",
+			"predeterminado": "Si",
+			"envioId" : 2
+		},
+		{
+			"cotizadorId":9,
+			"validoHasta": "31/03/2018 12:00",
+			"fechaPartida": "15/03/2018 19:00",
+			"fechaArribo": "30/09/2018 12:00",
+			"cotizadorNombre":"Tampiqueños S.A de C.V",
+			"cotizadorCostoSubtotal": "$20,000.00",
+			"impuestos": "$1,500.00",
+			"cotizadorCostoTotal": "$21,500.00",
+			"cotizadorClass": "bs-callout-primary",
+			"predeterminado": "Si",
+			"envioId" : 5
+		},
+		{
+			"cotizadorId":10,
+			"validoHasta": "25/04/2018 12:00",
+			"fechaPartida": "20/04/2018 19:00",
+			"fechaArribo": "01/05/2018 12:00",
+			"cotizadorNombre":"Tampiqueños S.A de C.V",
+			"cotizadorCostoSubtotal": "$20,000.00",
+			"impuestos": "$1,500.00",
+			"cotizadorCostoTotal": "$21,500.00",
+			"cotizadorClass": "bs-callout-primary",
+			"predeterminado": "Si",
+			"envioId" : 7
+		}
+	]
+}

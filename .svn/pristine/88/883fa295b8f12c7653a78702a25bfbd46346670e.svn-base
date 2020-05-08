@@ -1,0 +1,63 @@
+{
+	"checkedAll":false,
+	"prs":[
+		{
+			"cotizadorNombre": "Fedex",
+			"checked": false
+		},
+		{
+			"cotizadorNombre": "Shipping Company",
+			"checked": false
+		},
+		{
+			"cotizadorNombre": "Products Supplier",
+			"checked": false
+		},
+		{
+			"cotizadorNombre": "TMS International",
+			"checked": false
+		}
+	],
+	"otrosProv":[
+		{"cotizadorNombre": "The Best Route",
+		 "respuesta": "Inmediata",
+		 "calidadServicio": "Excelente",
+		 "checked":false
+		 },
+		{"cotizadorNombre": "MHF",
+		 "respuesta": "Inmediata",
+		 "calidadServicio": "Regular",
+		 "checked":false
+		 },
+		{"cotizadorNombre": "Intelligent Logistic",
+		 "respuesta": "Alta",
+		 "calidadServicio": "Aceptable",
+		 "checked":false
+		 },
+		{"cotizadorNombre": "Route Provider",
+		 "respuesta": "Alta",
+		 "calidadServicio": "Aceptable",
+		 "checked":false
+		 },
+		{"cotizadorNombre": "Empresarial Solutions",
+		 "respuesta": "Alta",
+		 "calidadServicio": "Regular",
+		 "checked":false
+		 },
+		{"cotizadorNombre": "Arround The World Company",
+		 "respuesta": "Regular",
+		 "calidadServicio": "Regular",
+		 "checked":false
+		 },
+		{"cotizadorNombre": "LogiMex S.A de C.V",
+		 "respuesta": "Regular",
+		 "calidadServicio": "Aceptable",
+		 "checked":false
+		 },
+		{"cotizadorNombre": "Procesos Industriales de México S.A de C.V",
+		 "respuesta": "Baja",
+		 "calidadServicio": "Regular",
+		 "checked":false
+		}
+	]
+}

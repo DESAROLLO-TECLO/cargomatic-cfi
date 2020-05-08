@@ -1,0 +1,155 @@
+{
+	"impuesto": "16 %",
+	"solicitudes": [
+		{
+			"folio": "FOL1230001",
+			"origen": "Victoria de Durango, Durango",
+			"destino": "Culiacán Rosales, Sinaloa",
+			"categoria": "Art\u00EDculos de tecnolog\u00EDa",
+			"subcategoria": "Accesorios",
+			"dimension": "1m x 1m x 1m",
+			"largo": "1m",
+			"ancho": "1m",
+			"alto": "1m",
+			"pesoUnidad": "100 Kg",
+			"cantidad": "34",
+			"fhSalida": "04/08/2018",
+			"fhArribo": "05/08/2018",
+			"valido": "03/08/2018"
+		},
+		{
+			"folio": "FOL1230002",
+			"origen": "Tampico, Tamaulipas",
+			"destino": "Veracruz",
+			"categoria": "Art\u00EDculos de tecnolog\u00EDa",
+			"subcategoria": "Accesorios",
+			"dimension": "48cm x 48cm x 48cm",
+			"largo": "48cm",
+			"ancho": "48cm",
+			"alto": "48cm",
+			"pesoUnidad": "85 Kg",
+			"cantidad": "25",
+			"fhSalida": "04/08/2018",
+			"fhArribo": "05/08/2018",
+			"valido": "03/08/2018"
+		},
+		{
+			"folio": "FOL1230003",
+			"origen": "Camotl\u00E1n de Miraflores, Col.",
+			"destino": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+			"categoria": "Art\u00EDculos fr\u00E1giles",
+			"subcategoria": "Antig\u00FCedad",
+			"dimension": "40cm x 40cm x 40cm",
+			"largo": "40cm",
+			"ancho": "40cm",
+			"alto": "40cm",
+			"pesoUnidad": "90 Kg",
+			"cantidad": "90",
+			"fhSalida": "04/08/2018",
+			"fhArribo": "05/08/2018",
+			"valido": "03/08/2018"
+		},
+		{
+			"folio": "FOL1230004",
+			"origen": "Pachuca de Soto, Hgo.",
+			"destino": "San FELIPE, Consuelo Ruiz, 68",
+			"categoria": "Animales",
+			"subcategoria": "Animales de cr\u00EDa",
+			"dimension": "2.5m x 2m x 1.5m",
+			"largo": "2.5m",
+			"ancho": "2m",
+			"alto": "1.5m",
+			"pesoUnidad": "200 Kg",
+			"cantidad": "8",
+			"fhSalida": "04/08/2018",
+			"fhArribo": "05/08/2018",
+			"valido": "03/08/2018"
+		},
+		{
+			"folio": "FOL1230005",
+			"origen": "Pachuca de Soto, Hgo.",
+			"destino": "San FELIPE, Consuelo Ruiz, 68",
+			"categoria": "Animales",
+			"subcategoria": "Animales de cr\u00EDa",
+			"dimension": "45cm x 39cm x 50cm",
+			"largo": "45cm",
+			"ancho": "39cm",
+			"alto": "50cm",
+			"pesoUnidad": "40 Kg",
+			"cantidad": "90",
+			"fhSalida": "04/08/2018",
+			"fhArribo": "05/08/2018",
+			"valido": "03/08/2018"
+		},
+		{
+			"folio": "FOL1230006",
+			"origen": "Camotl\u00E1n de Miraflores, Col.",
+			"destino": "San FELIPE, Consuelo Ruiz, 68",
+			"categoria": "Carga Consolidada",
+			"subcategoria": "Art\u00EDculos de segunda mano",
+			"dimension": "3m x 3m x 3cm",
+			"largo": "3m",
+			"ancho": "3m",
+			"alto": "3m",
+			"pesoUnidad": "400 Kg",
+			"cantidad": "9",
+			"fhSalida": "04/08/2018",
+			"fhArribo": "05/08/2018",
+			"valido": "03/08/2018"
+		}
+	],
+	"camion": [
+		{
+			"id": "1",
+			"nbTipoCamion": "Cami\u00F3n de plataforma abierta"
+		},
+		{
+			"id": "2",
+			"nbTipoCamion": "Rabon (1 eje)"
+		},
+		{
+			"id": "3",
+			"nbTipoCamion": "Torton (2 ejes)"
+		},
+		{
+			"id": "4",
+			"nbTipoCamion": "Caja cerrada de 53 pies"
+		},
+		{
+			"id": "5",
+			"nbTipoCamion": "Caja Cerrada de 48 pies"
+		},
+		{
+			"id": "6",
+			"nbTipoCamion": "Full/Doble semiremolque"
+		},
+		{
+			"id": "7",
+			"nbTipoCamion": "Caja refrigerada"
+		},
+		{
+			"id": "8",
+			"nbTipoCamion": "Autotanque/pipa"
+		},
+		{
+			"id": "9",
+			"nbTipoCamion": "Jaula granel/granelera"
+		},
+		{
+			"id": "10",
+			"nbTipoCamion": "Jaula ganadera"
+		},
+		{
+			"id": "11",
+			"nbTipoCamion": "Low boy/cama baja"
+		},
+		{
+			"id": "12",
+			"nbTipoCamion": "Tolva"
+		},
+		{
+			"id": "13",
+			"nbTipoCamion": "Madrina/porta veh\u00EDculos"
+		}
+	]
+}

@@ -1,0 +1,188 @@
+[
+	{
+		"idRuta":"2",
+		"origen":"Tampico, Tamaulipas",
+		"destino":"Veracruz",
+		"eventos":[
+			{
+				"descripcionOrigen":"Partida Inicial",
+				"descripcionLocalidad":"Tampico, Tamaulipas",
+				"puntoActual":0,
+				"puntoInicial":1,
+				"puntoFinal":0,
+				"paradaCompletada":1,
+				"latitudGps": 22.233101, 
+				"longitudGps": -97.860995,
+				"fechaProgramada":"10/10/2018",
+				"fechaEvento":"10/10/2018",
+				"descripcionEvento":"Partida de ruta"
+			},
+			{
+				"descripcionOrigen":"Tampico, Tamaulipas",
+				"descripcionLocalidad":"Calle Ote. Rafael Hernandez Ochoa",
+				"puntoActual":0,
+				"puntoInicial":0,
+				"puntoFinal":0,
+				"paradaCompletada":1,
+				"latitudGps":20.974789,
+				"longitudGps": -97.403279,
+				"fechaProgramada":"10/10/2018",
+				"fechaEvento":"10/10/2018",
+				"descripcionEvento":"Parada de ruta"
+			},
+			{
+				"descripcionOrigen":"Calle Ote. Rafael Hernandez Ochoa",
+				"descripcionLocalidad":"Centro Zempoala, Veracruz",
+				"puntoActual":0,
+				"puntoInicial":0,
+				"puntoFinal":0,
+				"paradaCompletada":1,
+				"latitudGps": 19.445206,
+				"longitudGps": -96.408033,
+				"fechaProgramada":"10/10/2018",
+				"fechaEvento": "10/10/2018",
+				"descripcionEvento":"Parada de ruta"
+			},
+			{
+				"descripcionOrigen":"Centro Zempoala, Veracruz",
+				"descripcionLocalidad":"Calle Benito Juárez, Centro, 91680 José Cardel, Ver.",
+				"puntoActual":0,
+				"puntoInicial":0,
+				"puntoFinal":0,
+				"paradaCompletada":0,
+				"latitudGps": 19.371523,
+				"longitudGps": -96.379479,
+				"fechaProgramada":"10/10/2018",
+				"fechaEvento":"10/10/2018",
+				"descripcionEvento":"Parada de ruta"
+			},
+			{
+				"descripcionOrigen":"Calle Benito Juárez, Centro, 91680 José Cardel, Ver.",
+				"descripcionLocalidad":"Cristobal Colón",
+				"puntoActual":1,
+				"puntoInicial":0,
+				"puntoFinal":0,
+				"paradaCompletada":-1,
+				"latitudGps": 19.195940,
+				"longitudGps": -96.150559,
+				"fechaProgramada":"",
+				"fechaEvento": "10/10/2018",
+				"descripcionEvento":"Ubicación Actual"
+			},
+			{
+				"descripcionOrigen":"Calle Benito Juárez, Centro, 91680 José Cardel, Ver.",
+				"descripcionLocalidad":"Veracruz",
+				"puntoActual":0,
+				"puntoInicial":0,
+				"puntoFinal":1,
+				"paradaCompletada":0,
+				"latitudGps": 19.173599,
+				"longitudGps": -96.134421,
+				"fechaProgramada":"10/10/2018",
+				"fechaEvento":"10/10/2018",
+				"descripcionEvento":"Fin de ruta"
+			}
+		]
+	}
+	,
+	{
+		"idRuta":"1",
+		"origen":"Victoria de Durango, Durango",
+		"destino":"Culiacán Rosales, Sinaloa",
+		"eventos":[
+			{
+				"descripcionOrigen":"Partida Inicial",
+				"descripcionLocalidad":"Victoria de Durango, Durango",
+				"puntoActual":0,
+				"puntoInicial":1,
+				"puntoFinal":0,
+				"paradaCompletada":1,
+				"latitudGps": 24.027245, 
+				"longitudGps": -104.654824,
+				"fechaProgramada":"10/10/2018",
+				"fechaEvento":"10/10/2018",
+				"descripcionEvento":"Partida de ruta"
+			},
+			{
+				"descripcionOrigen":"Durango",
+				"descripcionLocalidad":"Pueblo Nuevo",
+				"puntoActual":0,
+				"puntoInicial":0,
+				"puntoFinal":0,
+				"paradaCompletada":1,
+				"latitudGps":23.787408,
+				"longitudGps": -105.358049,
+				"fechaProgramada":"10/10/2018",
+				"fechaEvento":"10/10/2018",
+				"descripcionEvento":"Parada de ruta"
+			},
+			{
+				"descripcionOrigen":"DURANGO",
+				"descripcionLocalidad":"Concordia",
+				"puntoActual":0,
+				"puntoInicial":0,
+				"puntoFinal":0,
+				"paradaCompletada":1,
+				"latitudGps": 23.423661,
+				"longitudGps": -105.894645,
+				"fechaProgramada":"10/10/2018",
+				"fechaEvento": "10/10/2018",
+				"descripcionEvento":"Parada de ruta"
+			},
+			{
+				"descripcionOrigen":"Sinaloa",
+				"descripcionLocalidad":"Tepic-Mazatlán, Sinaloa",
+				"puntoActual":0,
+				"puntoInicial":0,
+				"puntoFinal":0,
+				"paradaCompletada":-1,
+				"latitudGps": 23.193465,
+				"longitudGps": -106.180360,
+				"fechaProgramada":"",
+				"fechaEvento": "10/10/2018",
+				"descripcionEvento":"Ubicación Actual"
+			},
+			{
+				"descripcionOrigen":"Mazatlan, Sinaloa",
+				"descripcionLocalidad":"Valle Dorado LI, Sinaloa",
+				"puntoActual":1,
+				"puntoInicial":0,
+				"puntoFinal":0,
+				"paradaCompletada":-1,
+				"latitudGps": 23.260243,
+				"longitudGps": -106.404668,
+				"fechaProgramada":"",
+				"fechaEvento": "10/10/2018",
+				"descripcionEvento":"Ubicación Actual"
+			},
+			{
+				"descripcionOrigen":"Sinaloa",
+				"descripcionLocalidad":"Las mesitas, Sinaloa",
+				"puntoActual":0,
+				"puntoInicial":0,
+				"puntoFinal":0,
+				"paradaCompletada":0,
+				"latitudGps": 23.506934,
+				"longitudGps": -106.605380,
+				"fechaProgramada":"10/10/2018",
+				"fechaEvento":"10/10/2018",
+				"descripcionEvento":"Parada de ruta"
+			},
+			
+			
+			{
+				"descripcionOrigen":"Prol.Alvaro Obregón",
+				"descripcionLocalidad":"Culiacan Rosales",
+				"puntoActual":0,
+				"puntoInicial":0,
+				"puntoFinal":1,
+				"paradaCompletada":0,
+				"latitudGps": 24.810615,
+				"longitudGps": -107.394794,
+				"fechaProgramada":"10/10/2018",
+				"fechaEvento":"10/10/2018",
+				"descripcionEvento":"Fin de ruta"
+			}
+		]
+	}
+]

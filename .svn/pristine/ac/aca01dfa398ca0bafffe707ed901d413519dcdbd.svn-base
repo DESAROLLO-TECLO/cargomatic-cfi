@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+</head>
+
+<body>
+	<div class="row">
+		<form name="formStepTwo" novalidate role="form">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-6">
+						<fieldset class="fieldset">
+							<legend class="legendStyle">
+								<a data-toggle="collapse" data-target="#divAutoriza" href=""
+									style="color: black">Origen</a>
+							</legend>
+							<div id="divAutoriza">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>*Estado:</label>
+											<div class="input-group">
+												<span class="input-group-addon"><i
+													class="fa fa-university"></i></span> <select class="form-control"
+													ng-model="vo.selectEstadoRemitente" select2
+													data-minimum-results-for-search="Infinity"
+													name="estadoRemi" id="estadoRemi"
+													ng-options="grp as grp.nb_estado for grp in vo.estados | orderBy: 'nb_estado'"
+													ng-change="changedCiudad(vo.selectEstadoRemitente.id_estado,'ciudadRe')">
+													<option value="">Seleccione</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>*Ciudad:</label>
+											<div class="input-group">
+												<span class="input-group-addon"><i
+													class="fa fa-building"></i></span> <select class="form-control"
+													ng-model="vo.selectCiudadRemitnte"
+													ng-disabled="!vo.selectEstadoRemitente" select2
+													data-minimum-results-for-search="Infinity" name="ciudadRe"
+													id="ciudadRe"
+													ng-options="cd as cd.nb_ciudad for cd in listCiudadesRemisten | orderBy: 'nb_ciudad'">
+													<option value="">Seleccione una opción</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>*Sucursal Origen:</label>
+											<div class="input-group">
+												<span class="input-group-addon"><i
+													class="fa fa-university"></i></span> <select class="form-control"
+													ng-model="vo.SucursalRemitente" select2
+													data-minimum-results-for-search="Infinity"
+													name="scurRemi" id="scurRemi"
+													ng-options="scr as scr.nbSucursal for scr in vo.listSucursales | orderBy: 'nbSucursal'">
+													<option value="">Seleccione una opción</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>*Código Postal:</label>
+											<div class="input-group">
+												<span class="input-group-addon"><i
+													class="fa fa-bookmark"></i></span> <input type="text"
+													name="actPass" class="form-control"
+													ng-model="vo.SucursalRemitente.cdPostal" id="cdPostal" integer-number
+													name="cdPostal">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+					<div class="col-md-6">
+						<fieldset class="fieldset">
+							<legend class="legendStyle">
+								<a data-toggle="collapse" data-target="#divAutoriza" href=""
+									style="color: black">Destino</a>
+							</legend>
+							<div id="divAutoriza">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>*Estado:</label>
+											<div class="input-group">
+												<span class="input-group-addon"><i
+													class="fa fa-university"></i></span> <select class="form-control"
+													ng-model="vo.selectEstadoDest" select2
+													data-minimum-results-for-search="Infinity"
+													name="estadoDest" id="estadoDest"
+													ng-options="grp as grp.nb_estado for grp in vo.estados | orderBy: 'nb_estado'"
+													ng-change="changedCiudad(vo.selectEstadoDest.id_estado,'ciudadDest')">
+													<option value="">Seleccione</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>*Ciudad:</label>
+											<div class="input-group">
+												<span class="input-group-addon"><i
+													class="fa fa-building"></i></span> <select class="form-control"
+													ng-model="vo.selectCiudadDest"
+													ng-disabled="!vo.selectEstadoDest" select2
+													data-minimum-results-for-search="Infinity"
+													name="ciudadDest" id="ciudadDest"
+													ng-options="cd as cd.nb_ciudad for cd in listCiudadesDets | orderBy: 'nb_ciudad'">
+													<option value="">Seleccione una opción</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>*Sucursal Destino:</label>
+											<div class="input-group">
+												<span class="input-group-addon"><i
+													class="fa fa-university"></i></span> <select class="form-control"
+													ng-model="vo.SucursalDest" select2
+													data-minimum-results-for-search="Infinity"
+													name="scurDest" id="scurDest"
+													ng-options="scr as scr.nbSucursal for scr in vo.listSucursales | orderBy: 'nbSucursal'">
+													<option value="">Seleccione una opción</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>*Código Postal:</label>
+											<div class="input-group">
+												<span class="input-group-addon"><i
+													class="fa fa-bookmark"></i></span> <input type="text"
+													name="actPass" class="form-control"
+													ng-model="vo.SucursalDest.cdPostal" integer-number id="cdPostal" name="cdPostal">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+
+				<div class="row centerCol">
+					<div class="col-xs-12 col-md-2">
+						<div class="row centerRow">
+							<!-- <button class="btn btn-default" wz-reset>
+								<i class="fa fa-refresh"></i>
+							</button> -->
+							<button class="btn btn-danger" wz-next>
+								<i class="fa fa-arrow-right"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

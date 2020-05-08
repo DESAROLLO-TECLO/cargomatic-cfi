@@ -1,0 +1,30 @@
+{
+"nbProvedorSugerido":null,
+	"proveedor": [
+		{
+			"id": "1",
+			"nbProveedor": "CFI Drive",
+			"eficiencia":"98 %"
+		},
+		{
+			"id": "2",
+			"nbProveedor": "Tampiqueños S.A de C.V",
+			"eficiencia":"95 %"
+		},
+		{
+			"id": "3",
+			"nbProveedor": "Fletes Mylsa",
+			"eficiencia":"96 %"
+		},
+		{
+			"id": "4",
+			"nbProveedor": "Solutions Cargo",
+			"eficiencia":"90 %"
+		},
+		{
+			"id": "5",
+			"nbProveedor": "SE Global Logistics SA de CV",
+			"eficiencia":"92 %"
+		}
+	]
+}

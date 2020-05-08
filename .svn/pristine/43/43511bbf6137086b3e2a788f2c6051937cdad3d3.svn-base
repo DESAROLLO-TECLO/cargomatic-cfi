@@ -1,0 +1,353 @@
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+#map {
+	height: 46vh;
+	margin-top: 0px;
+	border-radius: 2px;
+	border: 1px solid silver;
+}
+
+.ssearchbar {
+	z-index: 100;
+	position: absolute;
+	margin-top: 1px;
+	right: 4px;
+}
+
+.ssearchbar>.box>.box-header {
+	cursor: pointer !important;
+}
+
+.noFa {
+	display: none;
+}
+
+.pac-container {
+	z-index: 1051 !important;
+}
+</style>
+</head>
+<body>
+	<section class="content-header">
+		<h1>{{breadCrumbs.servicio}}</h1>
+		<ol class="breadcrumb">
+			<li><a> <i class="{{breadCrumbs.icono}}"></i>{{breadCrumbs.modulo}}
+			</a></li>
+			<li class="active">{{breadCrumbs.servicio}}</li>
+		</ol>
+	</section>
+	<section class="content">
+		<!-- Info boxes -->
+		<div class="row centerCol">
+			<div class="col-md-12">
+				<div class="box box-danger">
+					<div class="box-header with-border center">
+						<h2 class="box-title">{{'COTIZACION.Registro.tituloBox' | translate}}</h2>
+					</div>
+					<div class="box-body">
+						<div class="row centerCol">
+							<div class="col-md-11">
+								<form role="form" name="formRegistro" novalidate>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="tipoComportamiento">{{'COTIZACION.Nuevo.proveedor'
+															| translate}}: </label>
+														<div class="input-group">
+															<span class="input-group-addon"> <i
+																class="fa fa-list"></i></span> <select name="nbProveedor"
+																ng-disabled="deshabilitaCombo" id="nbProveedor" select2
+																idioma-s2="{{currentLanguage}}"
+																ng-options="o.nbProveedor as o.nbProveedor for o in vo.proveedor"
+																ng-model="vovoContrat.nbProveedor" class="form-control"
+																ng-change="cambioProveedor(vovoContrat.nbProveedor)">
+																<option value="">{{'APP.Base.mensaje.seleccioneOpcion'|
+																	translate}}</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6" ng-if="idSolicitud == null">
+													<div class="form-group">
+														<label> {{'COTIZACION.Registro.ruta' |
+															translate}}: </label>
+														<div class="input-group">
+															<div class="input-group-addon">
+																<i class="fa fa-list-ul"></i>
+															</div>
+															<select class="form-control" select2
+																ng-disabled="rutaHabilitada"
+																data-minimum-results-for-search="Infinity"
+																name="nbRuta1" id="nbRuta1"
+																idioma-s2="{{currentLanguage}}"
+																ng-model="vovoContrat.nbRuta"
+																ng-options="r as r.nbRuta for r in vovoContrat.rutas"
+																ng-change="cambiosRuta(vovoContrat.nbRuta)">
+																<option value="">{{'APP.Base.mensaje.seleccioneOpcion' | translate}}</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6" ng-if="idSolicitud != null">
+													<div class="form-group">
+														<label>Ruta: </label>
+														<div class="input-group">
+															<span class="input-group-addon"> <i
+																class="fa fa-map-marker"></i></span> <input
+																class="form-control" name="idSolicitud" type="text"
+																name="idSolicitud" ng-model="vovoContrat.nbRuta1">
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-6" ng-if="idSolicitud == null">
+													<div class="form-group">
+														<label> {{'COTIZACION.Nuevo.tipotransporte'|
+															translate}}: </label>
+														<div class="input-group">
+															<div class="input-group-addon">
+																<i class="fa fa-list-ul"></i>
+															</div>
+															<select class="form-control" select2
+																ng-disabled="transporteHabilitado"
+																data-minimum-results-for-search="Infinity"
+																name="nbTipoTransporte" id="nbTipoTransporte"
+																idioma-s2="{{currentLanguage}}"
+																ng-model="vovoContrat.nbTipoTransporte"
+																ng-options="t as t.nbTipoCamion for t in vovoContrat.camion"
+																ng-change="cambioTipoTransporte(vovoContrat)">
+																<option value="">{{'APP.Base.mensaje.seleccioneOpcion'
+																	| translate}}</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6" ng-if="idSolicitud != null">
+													<div class="form-group">
+														<label>Tipo de Vehículo: </label>
+														<div class="input-group">
+															<span class="input-group-addon"> <i
+																class="fa fa-truck"></i></span> <input class="form-control"
+																name="nbTipoTransporte" type="text"
+																name="nbTipoTransporte"
+																ng-model="vovoContrat.nbTipoTransporte" readonly>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label> {{'COTIZACION.Registro.tarifa' |
+															translate}}: </label>
+														<div class="input-group">
+															<span class="input-group-addon"> <i
+																class="fa fa-money"></i></span> <input class="form-control"
+																name="nuTarifa" type="text"
+																ng-model="vovoContrat.nuTarifa" readonly>
+														</div>
+													</div>
+												</div>
+											</div>
+
+
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label> {{'COTIZACION.Nuevo.origen' | translate}}:
+														</label>
+														<div class="input-group">
+															<span class="input-group-addon"> <i
+																class="fa fa-map-marker"></i></span> <input
+																class="form-control" name="nbOrigen" type="text"
+																ng-model="vovoContrat.nbOrigen" readonly>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label> {{'COTIZACION.Nuevo.destino' |
+															translate}}: </label>
+														<div class="input-group">
+															<span class="input-group-addon"> <i
+																class="fa fa-map-marker"></i></span> <input
+																class="form-control" name="nbDestino" type="text"
+																ng-model="vovoContrat.nbDestino" readonly>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- <div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label> {{'COTIZACION.Registro.tarifaDif' |
+															translate}}: </label>
+														<div class="input-group">
+															<span class="input-group-addon"> <i
+																class="fa fa-money"></i></span> <input class="form-control"
+																name="nuTarifaDif" type="text"
+																ng-model="vovoContrat.nuTarifaDif" readonly>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-md-6">
+													<div class="form-group">
+														<label> {{'COTIZACION.Registro.iva' |
+															translate}}: </label>
+														<div class="input-group">
+															<div class="form-check">
+																<input type="checkbox" class="form-check-input"
+																	id="exampleCheck1" ng-model="vovoContrat.nuIva" ng-change="ivaChnage(vovoContrat.nuIva)"> <label
+																	class="form-check-label" for="exampleCheck1"
+																	></label>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div> -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label> {{'COTIZACION.Registro.fhSalida' |
+															translate}}: </label>
+														<div class="input-group">
+															<div class="input-group-addon">
+																<i class="fa fa-calendar"></i>
+															</div>
+															<input class="form-control inputFecha" id="fhSalida"
+																name="fhSalida" date-picker
+																idioma-dp="{{currentLanguage}}" mindate="'29/01/2018'"
+																maxdate="'09/02/2018'" elemento="'fechaPicker'"
+																ng-model="vovoContrat.fhSalida" readonly />
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label> {{'COTIZACION.Registro.fhLlegada' |
+															translate}}: </label>
+														<div class="input-group">
+															<div class="input-group-addon">
+																<i class="fa fa-calendar"></i>
+															</div>
+															<input class="form-control inputFecha" id="fhLlegada"
+																name="fhLlegada" date-picker
+																idioma-dp="{{currentLanguage}}" mindate="'29/01/2018'"
+																maxdate="'09/02/2018'" elemento="'fechaPicker'"
+																ng-model="vovoContrat.fhLlegada" readonly />
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label> {{'COTIZACION.Registro.sturgencia' |
+															translate}}: </label>
+														<div class="input-group">
+															<div class="input-group-addon">
+																<i class="fa fa-list-ul"></i>
+															</div>
+															<select class="form-control" select2
+																data-minimum-results-for-search="Infinity"
+																name="stPrioridad" id="nbRuta"
+																idioma-s2="{{currentLanguage}}"
+																ng-model="vovoContrat.stPrioridad"
+																ng-options="p.id as p.nbPrioridad for p in vovoContrat.prioridad track by p.id">
+																<option value="">{{'APP.Base.mensaje.seleccioneOpcion'
+																	| translate}}</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label> {{'COTIZACION.Registro.subtotal' |
+															translate}}: </label>
+														<div class="input-group">
+															<span class="input-group-addon"> <i
+																class="fa fa-money"></i></span> <input class="form-control"
+																name="nuSubtotal" type="text"
+																ng-model="vovoContrat.nuSubtotal" readonly>
+														</div>
+													</div>
+												</div>
+
+
+											</div>
+											<div class="row">
+												<div class="col-md-6"></div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label> {{'COTIZACION.Registro.iva' | translate}}:
+														</label>
+														<div class="input-group">
+															<span class="input-group-addon"> <i
+																class="fa fa-money"></i></span> <input class="form-control"
+																name="nuTotal" type="text" ng-model="vovoContrat.nuIva"
+																readonly>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6"></div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label> {{'COTIZACION.Registro.total' |
+															translate}}: </label>
+														<div class="input-group">
+															<span class="input-group-addon"> <i
+																class="fa fa-money"></i></span> <input class="form-control"
+																name="nuTotal" type="text"
+																ng-model="vovoContrat.nuTotal" readonly>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<!-- div maps paps -->
+											<br>
+											<div class="box box-danger" id="mapDiv">
+												<div class="box-header with-border center">
+													<h2 class="box-title">{{'COTIZACION.Nuevo.tituloboxMap'|
+														translate}}</h2>
+												</div>
+												<div class="box-body">
+													<div id='map'></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="box-footer">
+						<div class="row centerRow">
+							<button class="btn btn-danger" type="button" ng-click="guardarServicios()"> {{'APP.Base.boton.guardar' | translate}}</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- <script type="text/javascript">
+	var slider = document.getElementById("cargaRange");
+	var output = document.getElementById("cargaOut");
+	
+	output.innerHTML = slider.value;
+	slider.oninput = function() {
+		output.innerHTML = this.value;
+	}
+</script> -->
+</body>
+</html>

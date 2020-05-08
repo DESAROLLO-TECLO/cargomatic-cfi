@@ -1,0 +1,381 @@
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+#busquedaProveedor{
+	max-height: 400px;
+	
+}
+.bs-callout {
+	padding: 20px;
+	margin: 20px 0;
+	border: 1px solid #eee;
+	border-left-width: 5px;
+	border-radius: 3px;
+}
+
+.bs-callout h4 {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+.bs-callout p:last-child {
+	margin-bottom: 0;
+}
+
+.bs-callout code {
+	border-radius: 3px;
+}
+
+.bs-callout+.bs-callout {
+	margin-top: -5px;
+}
+
+.bs-callout-default {
+	border-left-color: #777;
+}
+
+.bs-callout-default h4 {
+	color: #777;
+}
+
+.bs-callout-primary {
+	border-left-color: #428bca;
+}
+
+.bs-callout-primary h4 {
+	color: #428bca;
+}
+
+.bs-callout-success {
+	border-left-color: #5cb85c;
+}
+
+.bs-callout-success h4 {
+	color: #5cb85c;
+}
+
+.bs-callout-danger {
+	border-left-color: #d9534f;
+}
+
+.bs-callout-danger h4 {
+	color: #d9534f;
+}
+
+.bs-callout-warning {
+	border-left-color: #f0ad4e;
+}
+
+.bs-callout-warning h4 {
+	color: #f0ad4e;
+}
+
+.bs-callout-info {
+	border-left-color: #5bc0de;
+}
+
+.bs-callout-info h4 {
+	color: #5bc0de;
+}
+.ssearchbar{
+	z-index: 100;
+	position: absolute;
+	width: calc(100% - 2.15rem);
+/* 	margin-top: 1px; */
+/* 	right: 4px; */
+/* 	left:100; */
+}
+.bootstrap-select .dropdown-toggle {
+	position: absolute;
+}
+.fa-minus, .fa-plus{
+	color: white;
+}
+
+#noFa{
+	display:none;
+}
+.scrollable-content {
+ 	overflow: auto;
+	max-height: 70vh;
+}
+.pointer{
+    cursor: pointer !important;
+}
+</style>
+</head>
+<body>
+	<section class="content-header">
+		<h1>Selección de Cotización</h1>
+		<ol class="breadcrumb">
+			<li><a href="#"><i class="fa fa-book"></i>Seguimiento</a></li>
+			<li class="active">Solicitudes</li>
+			<li class="active">Selección de Cotización</li>
+		</ol>
+	</section>
+
+	<section class="content">
+
+		<div class="row centerCol">
+			<div class="col-xs-12 col-md-12">
+				<div class="box box-danger">
+					<div class="box-header with-border center">
+						<h2 class="box-title">Selección de Proveedor</h2>
+					</div>
+
+					<div class="box-body">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="box box-danger insideBox collapsed-box" ng-class="['ssearchbar','col-md-4']" ng-show="toggleFlag=='V'">
+									<div class="box-header with-border text-center pointer" data-widget="collapse">
+										<h2 id="noFa"></h2>
+										<h2 class="box-title">Filtro de Proveedores</h2>
+									</div>
+									<div class="box-body">
+										<form name="rutasForm">
+											<div class="row">
+												<div class="col-md-12">
+													<div class="table-responsive">
+														<table class="table table-condensed table-hover">
+															<tbody>
+																<tr>
+																	<td><input type="checkbox" ng-model="proveedores.checkedAll" ng-click="toogleAll()"></td>
+																	<td><strong>Todos los proveedores</strong></td>
+																</tr>
+																<tr dir-paginate="pr in proveedores.prs | itemsPerPage: 100">
+																	<td width="5%"><input type="checkbox" ng-model="pr.checked" ng-click="toogleSingle()"></td>
+																	<td>{{pr.cotizadorNombre}}</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+													
+													<div class="col-md-12">
+														<div class="form-group" ng-class="{'has-error': rutasForm.fechaCoordenadas.$invalid && rutasForm.fechaCoordenadas.$dirty}">
+									                      <label for="fechaCoordenadas">Fecha de partida:</label>
+									                      <div class="input-group date ">
+									                          <div class="input-group-addon">
+									                              <i class="fa fa-calendar"></i>
+									                          </div>
+									                          <input type="text" class="form-control pointer" id="datepicker"
+									                                 data-date-format="dd/mm/yyyy" ng-model="fechaA"
+									                                 ng-required="true" name="fechaCoordenadas" id="fechaCoordenadas"
+									                                 ng-change="updateFIFecha()" show-button-bar="true" readonly
+									                                 style="background-color:white;">
+									                      	</div>
+									                  	</div>
+													</div>
+													
+													<div class="col-md-12">
+														<div class="form-group" ng-class="{'has-error': rutasForm.fechaCoordenadas.$invalid && rutasForm.fechaCoordenadas.$dirty}">
+									                      <label for="fechaCoordenadas">Fecha de arribo:</label>
+									                      <div class="input-group date ">
+									                          <div class="input-group-addon">
+									                              <i class="fa fa-calendar"></i>
+									                          </div>
+									                          <input type="text" class="form-control pointer" id="datepicker1"
+									                                 data-date-format="dd/mm/yyyy" ng-model="fechaP"
+									                                 ng-required="true" name="fechaCoordenadas" id="fechaCoordenadas"
+									                                 ng-change="updateFIFecha()" show-button-bar="true" readonly
+									                                 style="background-color:white;">
+									                      	</div>
+									                  	</div>
+													</div>
+													<rzslider rz-slider-model="slider.minValue"
+											          rz-slider-high="slider.maxValue"
+											          rz-slider-options="slider.options"></rzslider>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+								
+								<div class="box box-danger">
+									<div class="box-header with-border center">
+										<h2 class="box-title">Cotizaciones</h2>
+									</div>
+
+									<div class="box-body">
+										<div class="row" id="busquedaProveedor">
+											<div class="col-md-12">
+												<div ng-repeat="cot in cotizadores">
+													<div class="bs-callout {{cot.cotizadorClass}}" ng-click="goCot(cot)">
+														<h4>{{cot.cotizadorNombre}}</h4>&nbsp;<span><strong>{{cot.fechaPartida}}   -   {{cot.fechaArribo}}</strong></span>
+														<br><span><strong>Válido hasta:   {{cot.validoHasta}}</strong></span>
+														<div class="table-responsive no-padding">
+															<table class="table table-hover header-fixed table-striped">
+																<tr><td>Subtotal:</td><td>{{cot.cotizadorCostoSubtotal}}</td></tr>
+																<tr><td>Impuestos:</td><td>{{cot.impuestos}}</td></tr>
+																<tr><td><strong>Total:</strong></td><td><strong>{{cot.cotizadorCostoTotal}}</strong></td></tr>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-8">
+								<div class="box box-danger">
+									<div class="box-header with-border center">
+										<h2 class="box-title">Datos del Viaje Solicitado</h2>
+									</div>
+
+									<div class="box-body">
+										<div class="row table-responsive">
+											<div class="col-md-12">
+												<table class="table table-hover header-fixed table-striped">
+													<tr>
+														<td width="20%"><strong>Origen: </strong><td>
+														<td width="30%">Tampico, Tamaulipas<td>
+														<td width="20%"><strong>Destino: </strong><td>
+														<td width="30%">Coatzacoalcos, Veracruz<td>
+													</tr>
+													<tr>
+														<td width="20%"><strong>Categoría:</strong><td>
+														<td width="30%">Artículos frágiles<td>
+														<td width="20%"><strong>Subcategoría:</strong><td>
+														<td width="30%">Cristales<td>
+													</tr>
+													<tr>
+														<td width="20%"><strong>Empaquetado:</strong><td>
+														<td width="20%">Anticorrosión<td>
+														<td width="30%"><strong>Tipo de Vehículo:</strong><td>
+														<td width="30%">Caja cerrada de 48 pies<td>
+													</tr>
+													<tr>
+														<td width="20%"><strong>Apilable:</strong><td>
+														<td>Si<td>
+														<td width="20%"><strong>Montacargas:</strong><td>
+														<td>Si<td>
+														<td width="30%"><strong>Peso del contenido:</strong><td>
+														<td>550Kgs<td>
+													</tr>
+													<tr>
+														<td width="27%"><strong>Largo total del contenido:</strong><td>
+														<td width="6%">2Mts.<td>
+														<td width="27%"><strong>Ancho total del contenido:</strong><td>
+														<td width="6%">2.5Mts<td>
+														<td width="27%"><strong>Alto total del contenido:</strong><td>
+														<td width="6%">3.5Mts<td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+<!-- 									{{proveedoresDeclined}} -->
+									<div class="box-footer" ng-show="selectedProv.length>0 || proveedoresDeclined.length>0">
+								
+										<div class="table-responsive no-padding">
+											<table class="table table-hover table-striped">
+												<tr>
+													<td colspan="7"><h3>Proveedores Declinados</h3><td>
+												</tr>
+												<tr>
+													<td><strong>Proveedor</strong></td>
+													<td><strong>Fecha Partida</strong></td>
+													<td><strong>Fecha Arribo</strong></td>
+													<td><strong>Subtotal</strong></td>
+													<td><strong>Impuestos</strong></td>
+													<td><strong>Total</strong></td>
+													<td><strong>Fecha máx. Confirmación</strong></td>
+												</tr>
+												<tr dir-paginate="pr in proveedoresDeclined | itemsPerPage: 100" class="danger">
+
+													<td>{{pr.cotizadorNombre}}</td>
+													<td>{{pr.fechaPartida}}</td>
+													<td>{{pr.fechaArribo}}</td>
+													<td>{{pr.cotizadorCostoSubtotal}}</td>
+													<td>{{pr.impuestos}}</td>
+													<td><strong>{{pr.cotizadorCostoTotal}}</strong></td>
+													<td>{{pr.validoHasta}}</td>
+												</tr>
+												<tr ng-show="selectedProv.length>0">
+													<td colspan="{{selectedProv.length>0? 8 : 7}}"><h3>Proveedores Seleccionados</h3><td>
+												</tr>
+												<tr ng-show="selectedProv.length>0">
+													<td ng-show="selectedProv.length>0"><strong>Remover</strong></td>
+													<td><strong>Proveedor</strong></td>
+													<td><strong>Fecha Partida</strong></td>
+													<td><strong>Fecha Arribo</strong></td>
+													<td><strong>Subtotal</strong></td>
+													<td><strong>Impuestos</strong></td>
+													<td><strong>Total</strong></td>
+													<td><strong>Fecha máx. Confirmación</strong></td>
+												</tr>
+												<tr dir-paginate="pr in selectedProv | itemsPerPage: 100">
+													<td ng-show="selectedProv.length>0">
+														<button type="button" class="btn btn-danger btn-xs" ng-click="removeItem($index)">
+															<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+														</button>
+													</td>
+													<td>{{pr.cotizadorNombre}}</td>
+													<td>{{pr.fechaPartida}}</td>
+													<td>{{pr.fechaArribo}}</td>
+													<td>{{pr.cotizadorCostoSubtotal}}</td>
+													<td>{{pr.impuestos}}</td>
+													<td><strong>{{pr.cotizadorCostoTotal}}</strong></td>
+													<td>{{pr.validoHasta}}</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+									<div class="box-footer">
+										<div class="row">
+											<div class="col-md-12 text-center" ng-show="selectedProv.length>0">
+												<a href="#/seguimientoEnvios/{{solicitud}}" class="btn btn-md btn-danger">Regresar</a>
+												<a href="#/seguimientoEnvios/{{solicitud}}" class="btn btn-md btn-danger">Enviar Cotización al Cliente</a>
+											</div>
+											<div class="col-md-12 text-center" ng-show="selectedProv.length==0">
+												<a href="#/seguimientoEnvios/{{solicitud}}" class="btn btn-md btn-danger">Regresar</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title"></h4>
+				</div>
+				<div class="modal-body"></div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$('#datepicker').datepicker({
+		autoclose: true,
+		endDate: '+0d',
+		todayHighlight: true
+    })
+    $('#datepicker1').datepicker({
+		autoclose: true,
+		endDate: '+0d',
+		todayHighlight: true
+    })
+</script>
+</html>

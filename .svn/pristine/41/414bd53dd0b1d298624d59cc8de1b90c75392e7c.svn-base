@@ -1,0 +1,236 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+	<section class="content-header">
+		<h1>{{breadCrumbs.servicio}}</h1>
+		<ol class="breadcrumb">
+			<li><a> <i class="{{breadCrumbs.icono}}"></i>{{breadCrumbs.modulo}}
+			</a></li>
+			<li class="active">{{breadCrumbs.servicio}}</li>
+		</ol>
+	</section>
+
+	<section class="content">
+		<div class="row">
+			<div class="col-md-3 col-xs-6" ng-repeat="ctrl in ctrls">
+				<!-- small box -->
+				<div class="small-box {{ctrl.bgPanel}}">
+					<div class="inner">
+
+						<div class="counter" value="ctrl.myValue" to="ctrl.myTarget"
+							duration="ctrl.myDuration" effect="ctrl.myEffect">
+							<h3>{{ctrl.myValue | number:0 }}</h3>
+						</div>
+						<p>{{ctrl.nbPanel}}</p>
+					</div>
+					<div class="icon">
+						<i class="fa {{ctrl.icon}}"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4 center">
+				<div class="box">
+					<div class="box-body">
+						<input id="input-3" disabled="true" name="input-3"
+							class="rating rating-loading" data-min="0" data-max="5"
+							data-step="1" value="4">
+					</div>
+
+					<div class="box-footer">
+						<strong>Tu Calificación: 9</strong>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="box box-danger">
+					<div class="box-header with-border">
+						<div class="row">
+							<div class="col-md-6" style="line-height: 2.6;">
+								<h3 class="box-title">Solicitudes Por Mes</h3>
+							</div>
+							<div class="col-md-4 text-center">
+								<select class="form-control " id="zanio" name="zanio">
+									<option value="Enero" selected>Enero</option>
+									<option value="Febrero">Febrero</option>
+									<option value="Marzo">Marzo</option>
+									<option value="Abril">Abril</option>
+									<option value="Mayo">Mayo</option>
+									<option value="Junio">Junio</option>
+									<option value="Julio">Julio</option>
+									<option value="Agosto">Agosto</option>
+									<option value="Septiembre">Septiembre</option>
+									<option value="Octubre">Octubre</option>
+									<option value="Noviembre">Noviembre</option>
+									<option value="Diciembre">Diciembre</option>
+								</select>
+							</div>
+
+							<div class="col-md-2 text-center">
+								<select class="form-control" id="zanio" name="zanio">
+									<option value="2018" selected>2018</option>
+									<option value="2017">2017</option>
+									<option value="2016">2016</option>
+									<option value="2015">2015</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="box-tools pull-right">
+							<button class="btn btn-box-tool" type="button"
+								data-widget="collapse">
+								<i class="fa fa-minus"></i>
+							</button>
+						</div>
+					</div>
+
+					<div class="box-body">
+						<div class="row text-center">
+							<div class="col-md-12">
+								<div class="amCharts" id="entregaPaquetes"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="box box-danger">
+					<div class="box-header with-border">
+						<div class="row">
+							<div class="col-md-4" style="line-height: 2.5;">
+								<h3 class="box-title ng-binding">Vehículos más Solicitados</h3>
+							</div>
+							<div class="col-md-2 text-center">
+								<select class="form-control " id="zanio" name="zanio">
+									<option value="2018" selected>2018</option>
+									<option value="2017">2017</option>
+									<option value="2016">2016</option>
+									<option value="2015">2015</option>
+								</select>
+							</div>
+							<div class="col-md-3 text-center">
+								<select class="form-control " id="zanio" name="zanio">
+									<option value="Enero" selected>Enero</option>
+									<option value="Febrero">Febrero</option>
+									<option value="Marzo">Marzo</option>
+									<option value="Abril">Abril</option>
+									<option value="Mayo">Mayo</option>
+									<option value="Junio">Junio</option>
+									<option value="Julio">Julio</option>
+									<option value="Agosto">Agosto</option>
+									<option value="Septiembre">Septiembre</option>
+									<option value="Octubre">Octubre</option>
+									<option value="Noviembre">Noviembre</option>
+									<option value="Diciembre">Diciembre</option>
+								</select>
+							</div>
+							<div class="col-md-3 text-center">
+								<select class="form-control" select2 name="inspector"
+									id="inspector" idioma-s2="{{currentLanguage}}"
+									ng-model="objTMP.empTMP"
+									ng-options="c.id as c.nbTipoCamion for c in camiones">
+									<option value="">{{'APP.Base.mensaje.seleccioneOpcion'
+										| translate}}</option>
+								</select>
+							</div>
+						</div>
+						<div class="box-tools pull-right">
+							<button class="btn btn-box-tool" type="button"
+								data-widget="collapse">
+								<i class="fa fa-minus"></i>
+							</button>
+						</div>
+					</div>
+					<div class="box-body">
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<div class="amCharts" id="unidadesMantenimiento"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="box box-danger">
+					<div class="box-header with-border" align="center">
+						<h3 class="box-title">Vehículos con más Ingresos</h3>
+						<div class="box-tools pull-right">
+							<button class="btn btn-box-tool" type="button"
+								data-widget="collapse">
+								<i class="fa fa-minus"></i>
+							</button>
+						</div>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<div class="row">
+							<div class="col-md-4" style="line-height: 2.5;">
+								<!-- 										<h3 class="box-title ng-binding">Vehículos más -->
+								<!-- 											Solicitados</h3> -->
+							</div>
+							<div class="col-md-2 text-center">
+								<select class="form-control " id="zanio" name="zanio">
+									<option value="2018" selected>2018</option>
+									<option value="2017">2017</option>
+									<option value="2016">2016</option>
+									<option value="2015">2015</option>
+								</select>
+							</div>
+							<div class="col-md-3 text-center">
+								<select class="form-control " id="zanio" name="zanio">
+									<option value="Enero" selected>Enero</option>
+									<option value="Febrero">Febrero</option>
+									<option value="Marzo">Marzo</option>
+									<option value="Abril">Abril</option>
+									<option value="Mayo">Mayo</option>
+									<option value="Junio">Junio</option>
+									<option value="Julio">Julio</option>
+									<option value="Agosto">Agosto</option>
+									<option value="Septiembre">Septiembre</option>
+									<option value="Octubre">Octubre</option>
+									<option value="Noviembre">Noviembre</option>
+									<option value="Diciembre">Diciembre</option>
+								</select>
+							</div>
+							<div class="col-md-3 text-center">
+								<select class="form-control" select2 name="inspector"
+									id="inspector" idioma-s2="{{currentLanguage}}"
+									ng-model="objTMP.empTMP"
+									ng-options="c.id as c.nbTipoCamion for c in camiones">
+									<option value="">{{'APP.Base.mensaje.seleccioneOpcion'
+										| translate}}</option>
+								</select>
+							</div>
+							<div class="col-md-12">
+								<ul class="nav nav-tabs">
+									<li ng-repeat="tab in tabs" ng-class="{'active': tab.isActive}"
+										ng-click="changeGraph(tab.nbTab)"><a>{{tab.nbTab}}</a></li>
+								</ul>
+
+								<div class="amCharts" id="rendimientoVehiculosCombustible"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+</body>
+
+</html>

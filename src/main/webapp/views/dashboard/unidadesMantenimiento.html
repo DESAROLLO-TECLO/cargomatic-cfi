@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<section class="content-header">
+		<h1>Unidades en Mantenimiento</h1>
+		<ol class="breadcrumb">
+			<li><a> <i class="{{breadCrumbs.icono}}"></i>{{breadCrumbs.modulo}}
+			</a></li>
+			<li class="active">{{breadCrumbs.servicio}}</li>
+			<li class="active">Unidades en Mantenimiento</li>
+
+		</ol>
+	</section>
+
+	<section class="content contFullscreen" id="contFullScreen">
+		<form name="garantiaSinProceso" role="form">
+
+			<div class="col-md-4"></div>
+			<div class="tab-content">
+				<div class="row tab-pane active" id="op1">
+					<div class="col-xs-12">
+						<div class="box box-danger">
+							<div class="box-header col-md-12">
+								<div class="col-md-6 col-xs-12">
+									<h3 class="box-title">
+										Registros Encontrados: <span>{{ (vehiculosActivos |
+											filter:view.searchSomething | filter:consultaPersonalizada
+											).length}}</span>
+									</h3>
+								</div>
+								<div class="col-md-6 form-group">
+									<div class="row">
+
+										<div class="col-md-offset-4 col-md-7 col-xs-8">
+											<div class="input-group">
+												<input id="searchsomething" type="text" class="form-control"
+													placeholder="Buscar por filtro"
+													ng-model="view.searchSomething"> <span
+													class="input-group-addon"><i class="fa fa-search"></i></span>
+											</div>
+										</div>
+										<div class="col-md-1 col-xs-1">
+											<button type="button"
+												class="btn btn-primary btn-sm pull-right"
+												ng-click="launchFullScreen('contFullScreen');">
+												<span class="fa fa-arrows-alt" aria-hidden="true"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="box-body table-responsive no-padding">
+								<table id="garantiasTable"
+									class="table table-hover header-fixed">
+									<thead>
+										<tr>
+											<th>CODIGO VEHÍCULO</th>
+											<th>PLACA VEHÍCULO</th>
+											<th>MARCA VEHICULO</th>
+											<th>MODELO VEHÍCULO</th>
+											<th>TIPO VEHÍCULO</th>
+
+											<th>ESTATUS</th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr
+											dir-paginate="gestionMov in vehiculosActivos | filter:view.searchSomething | filter:consultaPersonalizada | itemsPerPage: view.rowsPerPage">
+											<td class="center">{{gestionMov.codigoVeh}}</td>
+											<td class="center">{{gestionMov.placaVeh}}</td>
+											<td class="center">{{gestionMov.marcaVeh}}</td>
+											<td class="center">{{gestionMov.modeloVeh}}</td>
+											<td class="center">{{gestionMov.tipoVeh}}</td>
+
+											<td class="center"><span class="label label-warning">Mantenimiento</span></td>
+
+
+
+										</tr>
+										<tr
+											ng-if="(vehiculosActivos | filter:view.searchSomething).length < 1">
+											<td colspan="5" class="text-center"><h4>No se
+													encontraron coincidencias</h4></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="container-fluid">
+								<div class="fixed-table-pagination" style="display: block;">
+									<rows-per-page rows="view.rowsPerPage"
+										filtro="view.searchSomething" array="vehiculosActivos"></rows-per-page>
+
+									<div class="pull-right pagination">
+										<dir-pagination-controls class="pagination"></dir-pagination-controls>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+			<div class="col-md-4 col-xs-12"></div>
+
+		</form>
+	</section>
+
+
+</body>
+</html>

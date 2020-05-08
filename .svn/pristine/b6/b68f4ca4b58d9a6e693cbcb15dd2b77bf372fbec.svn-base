@@ -1,0 +1,26 @@
+[
+	{
+		"idTema": 1,
+		"nbTema": "TECLO CLARO",
+		"cdTema": "tema-tecloLight",
+		"stActivo": 1
+	},
+	{
+		"idTema": 2,
+		"nbTema": "TECLO CLARO-OBSCURO",
+		"cdTema": "tema-tecloLightDark",
+		"stActivo": 1
+	},
+	{
+		"idTema": 3,
+		"nbTema": "TECLO OBSCURO-CLARO",
+		"cdTema": "tema-tecloDarkLight",
+		"stActivo": 1
+	},
+	{
+		"idTema": 4,
+		"nbTema": "TECLO OBSCURO",
+		"cdTema": "tema-tecloDark",
+		"stActivo": 1
+	}
+]

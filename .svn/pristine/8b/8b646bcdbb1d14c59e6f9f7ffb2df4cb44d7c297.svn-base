@@ -1,0 +1,47 @@
+[
+	{
+		"idResolucion": 0,
+		"cdResolucion": "XPQ",
+		"nbResolucion": "XPequeño",
+		"nuPixelesBase": "8",
+		"txResolucion": "Tamaño extra pequeño",
+		"txResolucionEn": "Extra small size",
+		"stActivo": 1
+	},
+	{
+		"idResolucion": 1,
+		"cdResolucion": "PQ",
+		"nbResolucion": "Pequeño",
+		"nuPixelesBase": "10",
+		"txResolucion": "Tamaño pequeño",
+		"txResolucionEn": "Small size",
+		"stActivo": 1
+	},
+	{
+		"idResolucion": 2,
+		"cdResolucion": "NM",
+		"nbResolucion": "Normal",
+		"nuPixelesBase": "12",
+		"txResolucion": "Tamaño normal",
+		"txResolucionEn": "Normal size",
+		"stActivo": 1
+	},
+	{
+		"idResolucion": 3,
+		"cdResolucion": "GR",
+		"nbResolucion": "Grande",
+		"nuPixelesBase": "14",
+		"txResolucion": "Tamaño grande",
+		"txResolucionEn" : "Big size",
+		"stActivo": 1
+	},
+	{
+		"idResolucion": 4,
+		"cdResolucion": "XGR",
+		"nbResolucion": "ExtraGrande",
+		"nuPixelesBase": "16",
+		"txResolucion": "Tamaño extra grande",
+		"txResolucionEn" : "Extra-large size",
+		"stActivo": 1
+	}
+]

@@ -1,0 +1,132 @@
+{
+	"nuIva": "16 %",
+	"nbRuta1":null,
+	"tipomoneda": [
+		{
+			"id": "1",
+			"nbTipoMoneda": "Pesos"
+		},
+		{
+			"id": "2",
+			"nbTipoMoneda": "Dolares"
+		},
+		{
+			"id": "3",
+			"nbTipoMoneda": "Euros"
+		}
+	],
+	"tipopresupuesto": [
+		{
+			"id": "1",
+			"nbTipoPresupuesto": "Aceptar Todas las Ofertas"
+		},
+		{
+			"id": "2",
+			"nbTipoPresupuesto": "Precio Fijo"
+		},
+		{
+			"id": "3",
+			"nbTipoPresupuesto": "Precio Deseado"
+		}
+	],
+	"rutas": [
+		{
+			"id": "1",
+			"nbRuta": "Camotl\u00E1n de Miraflores, Col. - Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+			"nbOrigen": "Camotl\u00E1n de Miraflores, Col.",
+			"nbDestino": "Intermex, 32575 Cd Ju\u00E1rez, Chih.",
+			"nuPrecioRuta": "$ 10,678.00",
+			"latOrigen": "19.2223273",
+			"lngOrigen": "-104.23562600000002",
+			"latDestino": "31.6316099",
+			"lngDestino": "-106.38906179999998"
+		},
+		{
+			"id": "2",
+			"nbRuta": "Pachuca de Soto, Hgo. - San FELIPE, Consuelo Ruiz, 68020 Oaxaca, Oax., M\u00E9xico",
+			"nbOrigen": "Pachuca de Soto, Hgo.",
+			"nbDestino": "San FELIPE, Consuelo Ruiz, 68020 Oaxaca, Oax., M\u00E9xico",
+			"nuPrecioRuta": "$ 10,678.00",
+			"latOrigen": "20.1010608",
+			"lngOrigen": "-98.75913109999999",
+			"latDestino": "17.0976148",
+			"lngDestino": "-96.71160650000002"
+		}
+	],
+	"camion": [
+		{
+			"id": "1",
+			"nbTipoCamion": "Cami\u00F3n de plataforma abierta",
+			"nuPrecio": "$ 50.00"
+		},
+		{
+			"id": "2",
+			"nbTipoCamion": "Rabon (1 eje)",
+			"nuPrecio": "$ 150.00"
+		},
+		{
+			"id": "3",
+			"nbTipoCamion": "Torton (2 ejes)",
+			"nuPrecio": "$ 60.00"
+		},
+		{
+			"id": "4",
+			"nbTipoCamion": "Caja cerrada de 53 pies",
+			"nuPrecio": "$ 80.70"
+		},
+		{
+			"id": "5",
+			"nbTipoCamion": "Caja Cerrada de 48 pies",
+			"nuPrecio": "$ 90.00"
+		},
+		{
+			"id": "6",
+			"nbTipoCamion": "Full/Doble semiremolque",
+			"nuPrecio": "$ 100.00"
+		},
+		{
+			"id": "7",
+			"nbTipoCamion": "Caja refrigerada",
+			"nuPrecio": "$ 180.00"
+		},
+		{
+			"id": "8",
+			"nbTipoCamion": "Autotanque/pipa",
+			"nuPrecio": "$ 195.00"
+		},
+		{
+			"id": "9",
+			"nbTipoCamion": "Jaula granel/granelera",
+			"nuPrecio": "$ 160.00"
+		},
+		{
+			"id": "10",
+			"nbTipoCamion": "Jaula ganadera",
+			"nuPrecio": "$ 300.00"
+		},
+		{
+			"id": "11",
+			"nbTipoCamion": "Low boy/cama baja",
+			"nuPrecio": "$ 600.00"
+		},
+		{
+			"id": "12",
+			"nbTipoCamion": "Tolva",
+			"nuPrecio": "$ 400.00"
+		},
+		{
+			"id": "13",
+			"nbTipoCamion": "Madrina/porta veh\u00EDculos",
+			"nuPrecio": "$ 400.00"
+		}
+	],
+	"prioridad": [
+		{
+			"id": "1",
+			"nbPrioridad": "Normal" 
+		},{
+			"id": "2",
+			"nbPrioridad": "Alta" 
+		}
+	]
+}

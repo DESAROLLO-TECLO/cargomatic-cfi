@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+.btnMas {
+	color: #cf0a2c;
+	font-size: 1.8rem;
+}
+</style>
+</head>
+
+<body>
+	<div class="row">
+		<form name="formStepTwo" novalidate role="form">
+			<div class="col-md-12">
+				<div class="box box-danger">
+					<div class="box-header text-center">
+						<ul class="nav nav-tabs nav-justified">
+							<li ng-repeat="tab in tabList" ng-class="{'active' : pedidoSelected === '{{tab.code}}'}">
+								<a ng-click="goPedido(tab.code)">Envío {{$index + 1}}</a>
+							</li>
+						</ul>
+						<div class="box-tools pull-right">
+							<a target="_self" ng-click="addNewTab()"><span class="btnMas" uib-tooltip="Añadir"> <i
+								class="fa fa-plus"></i></span></a>
+						</div>
+					</div>
+
+					<div class="box-body">
+						<div class="col-md-12" ng-if="pedidoSelected === taba.code" ng-repeat="taba in tabList">
+<!-- 							<div class="row"> -->
+<!-- 								<button ng-click="deleteTab(tab.id)" ng-if="tabList.length > 1" id="btn-{{$index + 1}}"  -->
+<!-- 									class="btn btn-danger btn-sm btn-box-tool" style="position: absolute;top: .1rem;right: 0.01rem;"> -->
+<!-- 									x -->
+<!--    								</button> -->
+<!-- 							</div> -->
+							
+							<div class="row">
+								
+    								
+								<fieldset class="fieldset">
+									<legend class="legendStyle">
+										<a data-toggle="collapse" href="" style="color: black">Categoría</a>
+									</legend>
+
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="nbCategoria">{{'COTIZACION.Nuevo.categoria'|translate}}:
+											</label>
+											<div class="input-group">
+												<div class="input-group-addon">
+													<i class="fa fa-list-ul"></i>
+												</div>
+												<select class="form-control" select2
+													idioma-s2="{{currentLanguage}}" id="categorias"
+													name="categorias"
+													ng-options="c as c.nbCategoria for c in vo.categoria"
+													ng-model="taba.categories"
+													ng-change="filtraSubcategoria(taba.categories)">
+													<option value="">{{'APP.Base.mensaje.seleccioneOpcion'
+														| translate}}</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="nbSubCategoria">{{'COTIZACION.Nuevo.subcategoria'|
+												translate}}: </label>
+											<div class="input-group">
+												<div class="input-group-addon">
+													<i class="fa fa-list-ul"></i>
+												</div>
+												<select class="form-control" select2 id="subCat"
+													name="subCat" idioma-s2="{{currentLanguage}}"
+													ng-model="taba.subcategories"
+													ng-options="c as c.nbSubCategoria for c in subcategoriasFiltro">
+													<option value="">{{'APP.Base.mensaje.seleccioneOpcion'
+														| translate}}</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="nbEmpaquetado">{{'COTIZACION.Nuevo.empaquetado'|
+												translate}}: </label>
+											<div class="input-group">
+												<span class="input-group-addon"> <i
+													class="fa fa-list"></i></span> <select name="nbEmpaquetado"
+													id="nbEmpaquetado" select2 idioma-s2="{{currentLanguage}}"
+													ng-options="e.nbEmpaquetado as e.nbEmpaquetado for e in vo.empaquetado"
+													ng-model="taba.empaquetado" class="form-control">
+													<option value="">{{'APP.Base.mensaje.seleccioneOpcion'|
+														translate}}</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+
+							<div class="row">
+								<fieldset class="fieldset">
+									<legend class="legendStyle">
+										<a data-toggle="collapse" href="" style="color: black">Dimensiones, Peso y Cantidad</a>
+									</legend>
+									
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="nuLargo">{{'COTIZACION.Nuevo.largo'|translate}}:
+											</label>
+											<div class="input-group">
+												<span class="input-group-addon"> <i
+													class="fa fa-list-ol"></i></span> <input class="form-control"
+													name="nuLargo" type="text" integer-number maxlength="10"
+													ng-model="taba.largo">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="nuAncho">{{'COTIZACION.Nuevo.ancho'|translate}}:
+											</label>
+											<div class="input-group">
+												<span class="input-group-addon"> <i
+													class="fa fa-list-ol"></i></span> <input class="form-control"
+													name="nuAncho" type="text" integer-number maxlength="10"
+													ng-model="taba.ancho">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="nuAlto">{{'COTIZACION.Nuevo.alto'|translate}}:
+											</label>
+											<div class="input-group">
+												<span class="input-group-addon"> <i
+													class="fa fa-list-ol"></i></span> <input class="form-control"
+													name="nuAlto" type="text" integer-number maxlength="10"
+													ng-model="taba.alto">
+											</div>
+										</div>
+									</div>
+									<br />
+									<div class="col-md-12">
+										<div class="container col-md-12">
+											<label class="col-md-2 radio-inline"> <input
+												type="radio" name="nbUnidadMed" ng-model="taba.unidadMedida"
+												value="Cms">{{'COTIZACION.Nuevo.cms'|translate}}
+											</label> <label class="col-md-2 radio-inline"> <input
+												type="radio" name="nbUnidadMed" ng-model="taba.unidadMedida"
+												value="Mts" checked>{{'COTIZACION.Nuevo.mts'|translate}}
+											</label> <label class="col-md-2 radio-inline"> <input
+												type="radio" name="nbUnidadMed" ng-model="taba.unidadMedida"
+												value="Pulgs">{{'COTIZACION.Nuevo.pulg'|translate}}
+											</label> <label class="col-md-2 radio-inline"> <input
+												type="radio" name="nbUnidadMed" ng-model="taba.unidadMedida"
+												value="Pie">{{'COTIZACION.Nuevo.pie'|translate}}
+											</label> <label class="col-md-2 radio-inline"> <input
+												type="radio" name="nbUnidadMed" ng-model="taba.unidadMedida"
+												value="Yds">{{'COTIZACION.Nuevo.yd'|translate}}
+											</label>
+										</div>
+									</div>
+									<br />
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="nuPesoArt">{{'COTIZACION.Nuevo.pesoart'|translate}}:
+											</label>
+											<div class="input-group">
+												<span class="input-group-addon"> <i
+													class="fa fa-list-ol"></i></span> <input class="form-control"
+													name="nuPesoArt" type="text" integer-number maxlength="10"
+													ng-model="taba.peso">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="nuPesoArt">Cantidad Artículos:
+											</label>
+											<div class="input-group">
+												<span class="input-group-addon"> <i
+													class="fa fa-list-ol"></i></span> <input class="form-control"
+													name="nuCantArt" type="text" integer-number maxlength="10"
+													ng-model="taba.cantidad">
+											</div>
+										</div>
+									</div>
+									
+									<!-- <div class="col-md-6">
+							<div class="form-group">
+								<label for="nuValor">{{'COTIZACION.Nuevo.valor'|translate}}:
+								</label>
+								<div class="input-group">
+									<span class="input-group-addon"> <i
+										class="fa fa-list-ol"></i></span> <input class="form-control"
+										name="nuValor" type="text" integer-number maxlength="10"
+										ng-model="vo.nuValor">
+								</div>
+							</div>
+						</div> -->
+									<div class="container col-md-12">
+										<label class="radio-inline col-md-2"> <input
+											type="radio" name="nbUnidadMedPes"
+											ng-model="taba.unidadPeso" value="Grs">{{'COTIZACION.Nuevo.gr'|translate}}
+										</label> <label class="radio-inline col-md-2"> <input
+											type="radio" name="nbUnidadMedPes"
+											ng-model="taba.unidadPeso" value="Kgs" checked>{{'COTIZACION.Nuevo.kg'|translate}}
+										</label> <label class="radio-inline col-md-2"> <input
+											type="radio" name="nbUnidadMedPes"
+											ng-model="taba.unidadPeso" value="Lbs">{{'COTIZACION.Nuevo.lbs'|translate}}
+										</label> <label class="radio-inline col-md-2"> <input
+											type="radio" name="nbUnidadMedPes"
+											ng-model="taba.unidadPeso" value="Tons">{{'COTIZACION.Nuevo.tons'|translate}}
+										</label>
+									</div>
+								</fieldset>
+							</div>
+
+							<div class="row">
+								<fieldset class="fieldset">
+									<legend class="legendStyle">
+										<a data-toggle="collapse" href="" style="color: black">Datos
+											Generales</a>
+									</legend>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="nuValor">Valor Declarado: </label>
+											<div class="input-group">
+												<span class="input-group-addon"> <i
+													class="fa fa-money"></i></span> <input class="form-control"
+													name="nuValor" type="text" integer-number maxlength="10"
+													ng-model="taba.valorDeclarado">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="nuValor">Descripción de Contenido: </label>
+											<div class="input-group">
+												<span class="input-group-addon"> <i
+													class="fa fa-font"></i></span>
+												<textarea class="form-control" rows="4" name="txObservacion"
+													id="txObservacion" ng-model="taba.observaciones" capitalize>
+												</textarea>
+											</div>
+										</div>
+									</div>
+
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
+				<!-- <div class="row col-md-12">
+					<div class="box-header with-border text-center">
+						<h3 class="box-title">
+							{{'COTIZACION.Nuevo.dimensiones'|translate}}
+							({{'COTIZACION.Nuevo.largo'|translate}},
+							{{'COTIZACION.Nuevo.ancho'|translate}},{{'COTIZACION.Nuevo.alto'|translate}}
+							)</h3>
+						<div class="box-tools pull-right"></div>
+					</div>
+				</div> -->
+
+
+
+
+
+
+				<div class="row centerCol">
+					<div class="col-xs-12 col-md-2">
+						<div class="centerRow">
+							<button class="btn btn-danger" wz-previous>
+								<i class="fa fa-arrow-left"></i>
+							</button>
+							<!-- <button class="btn btn-default" wz-reset>
+								<i class="fa fa-refresh"></i>
+							</button> -->
+							<button class="btn btn-danger" wz-next>
+								<i class="fa fa-arrow-right"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
